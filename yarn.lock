@@ -1545,11 +1545,14 @@
     url-template "^2.0.8"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@open-wc/testing-helpers@^0.8.6":
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/@open-wc/testing-helpers/-/testing-helpers-0.8.6.tgz#40e9516f2bc90a6d39a6dd13e7c7d96d00669e19"
   integrity sha512-ebPdI4wFDjTkEtiCuuY76JKINQ5Qj2z7KgE8JGNo0dLnNBX8tzI1x2wHpYQWvFEqT3G0dc61UsKsp9xvVx4UBA==
 =======
+=======
+>>>>>>> 76a1c7a... Added banner card component, with a storybook
 "@open-wc/chai-dom-equals@^0.11.2":
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/@open-wc/chai-dom-equals/-/chai-dom-equals-0.11.2.tgz#d6f5a012356e49ba8c182d704d7425e3e33c6fa1"
@@ -1568,6 +1571,24 @@
   resolved "https://registry.yarnpkg.com/@open-wc/testing-helpers/-/testing-helpers-0.7.25.tgz#aa541cc636ae8147d1aa400b3d623083cf82ca2a"
   integrity sha512-52MvJd28iIDuimNLcLP6X4EgKgOehJYPjcOmE4If1WLTluuu2/u3Y5wXJBqnNNduLHtwwE32CXcfFFCTanvk1Q==
 >>>>>>> Added banner card component, with a storybook
+
+"@open-wc/testing-helpers@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@open-wc/testing-helpers/-/testing-helpers-0.8.6.tgz#40e9516f2bc90a6d39a6dd13e7c7d96d00669e19"
+  integrity sha512-ebPdI4wFDjTkEtiCuuY76JKINQ5Qj2z7KgE8JGNo0dLnNBX8tzI1x2wHpYQWvFEqT3G0dc61UsKsp9xvVx4UBA==
+
+"@open-wc/testing@^0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@open-wc/testing/-/testing-0.11.2.tgz#954e31930a707f8146c19249707252b8a39e8df4"
+  integrity sha512-RyXsYxLerScdKQBMJriZJFIzl0UZ243D3MmFv+yqVapr1BYCaJj6tg26t6KfQLo7iO2sU7icIm6gjw/rOHWvPw==
+  dependencies:
+    "@bundled-es-modules/chai" "^4.2.0"
+    "@open-wc/chai-dom-equals" "^0.11.2"
+    "@open-wc/semantic-dom-diff" "^0.10.2"
+    "@open-wc/testing-helpers" "^0.8.6"
+    "@types/chai" "^4.1.7"
+    "@types/mocha" "^5.0.0"
+    mocha "^5.0.0"
 
 "@open-wc/testing-helpers@^0.8.6":
   version "0.8.6"
@@ -2111,11 +2132,14 @@
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@types/node@*", "@types/node@^11.13.4":
   version "11.13.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.4.tgz#f83ec3c3e05b174b7241fadeb6688267fe5b22ca"
   integrity sha512-+rabAZZ3Yn7tF/XPGHupKIL5EcAbrLxnTr/hgQICxbeuAfWtT0UZSfULE+ndusckBItcv4o6ZeOJplQikVcLvQ==
 =======
+=======
+>>>>>>> 76a1c7a... Added banner card component, with a storybook
 "@types/mocha@^5.0.0":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.6.tgz#b8622d50557dd155e9f2f634b7d68fd38de5e94b"
