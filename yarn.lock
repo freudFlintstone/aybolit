@@ -2,30 +2,6 @@
 # yarn lockfile v1
 
 
-"@aybolit/bootstrap@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@aybolit/bootstrap/-/bootstrap-0.1.0.tgz#e9379fd2bb629d984c599b1104bf0693e21ade47"
-  integrity sha512-8f11F9jBbdkeD1Qml2/Mw8FuMvtzBD5hXZb6DsUZDP4Pxt5b3WsMO9zZCS85vtzJmCuxaIjtRsxqxfV66i4t5w==
-  dependencies:
-    "@aybolit/core" "^0.1.0"
-    lit-element "^2.0.1"
-
-"@aybolit/bulma@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@aybolit/bulma/-/bulma-0.1.0.tgz#24dac2dbbf1a19f307336ee4195651f47d895727"
-  integrity sha512-4SQVk5tycI0xYmDxQjnSFboc7helqJub5cJ9hptwXCpneYCBw8ynOjjbHr565p7OYy0cVclEjQaryliwHFAmAA==
-  dependencies:
-    "@aybolit/core" "^0.1.0"
-    lit-element "^2.0.1"
-
-"@aybolit/material@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@aybolit/material/-/material-0.1.0.tgz#29cd0753ede9233dabe771f29ec9d717fa186823"
-  integrity sha512-D7ZxcujOxTk+bDWHMIAbblFm4kiQYjC7MOcF+Yy2SrI2NA0ILCB9v1NsNVlG52zC/fx5rZLqUYAD1vT6GELz/A==
-  dependencies:
-    "@aybolit/core" "^0.1.0"
-    lit-element "^2.0.1"
-
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"

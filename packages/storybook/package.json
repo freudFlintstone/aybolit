@@ -5,13 +5,17 @@
   "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@aybolit/bootstrap": "^0.1.0",
-    "@aybolit/bulma": "^0.1.0",
-    "@aybolit/material": "^0.1.0",
     "@aybolit/white-label": "^0.1.0",
+<<<<<<< HEAD
     "@storybook/addon-knobs": "^5.0.6",
     "@storybook/addons": "^5.0.6",
     "@storybook/polymer": "^5.0.6",
+=======
+    "@conversionxl/cxl-components": "^0.1.0",
+    "@storybook/addon-knobs": "^5.0.5",
+    "@storybook/addons": "^5.0.5",
+    "@storybook/polymer": "^5.0.5",
+>>>>>>> chore: updated storybook packages
     "lit-html": "^1.0.0"
   },
   "scripts": {
