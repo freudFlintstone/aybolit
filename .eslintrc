@@ -9,12 +9,7 @@
     "browser": true
   },
   "rules": {
-    "class-methods-use-this": [
-      "error",
-      {
-        "exceptMethods": [ "render" ]
-      }
-    ],
+    "class-methods-use-this": "off",
     "import/extensions": "off",
     "import/prefer-default-export": "off",
     "no-restricted-globals": "off",

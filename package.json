@@ -1,5 +1,6 @@
 {
   "name": "@conversionxl/cxl-core",
+  "private": true,
   "version": "0.1.0",
   "author": "CXL",
   "license": "UNLICENSED",
