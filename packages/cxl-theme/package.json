@@ -5,13 +5,13 @@
   "license": "UNLICENSED",
   "main": "src/index.js",
   "dependencies": {
-    "@polymer/iron-icon": "^3.0.1",
-    "@polymer/iron-iconset-svg": "^3.0.1",
-    "@vaadin/vaadin-lumo-styles": "^1.4.2",
     "@pika/pack": "^0.3.0",
     "@pika/plugin-build-web": "^0.3.0",
     "@pika/plugin-bundle-web": "^0.3.0",
-    "@pika/plugin-standard-pkg": "^0.3.0"
+    "@pika/plugin-standard-pkg": "^0.3.0",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-iconset-svg": "^3.0.1",
+    "@vaadin/vaadin-lumo-styles": "^1.4.2"
   },
   "@pika/pack": {
     "pipeline": [
