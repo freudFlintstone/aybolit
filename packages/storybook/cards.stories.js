@@ -1,4 +1,4 @@
-import '@conversionxl/cxl-marketing-layout'; // eslint-disable-line import/no-extraneous-dependencies
+import '@conversionxl/cxl-marketing-layout';
 import { storiesOf } from '@storybook/polymer';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
