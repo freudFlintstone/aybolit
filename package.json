@@ -9,7 +9,7 @@
     "build-styling": "node packages/sass-render/bin/sass-render.js -s 'packages/*/scss/*.scss'",
     "deploy-storybook": "storybook-to-ghpages",
     "dist": "lerna run dist",
-    "npm-publish": "lerna publish",
+    "npm-publish": "lerna publish from-package",
     "lint": "npm-run-all --parallel lint:*",
     "lint:js": "eslint *.js packages --ignore-path .gitignore",
     "lint:scss": "stylelint packages/**/*.scss",
