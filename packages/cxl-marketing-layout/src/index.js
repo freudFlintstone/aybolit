@@ -5,3 +5,6 @@ import './vendor-components';
 
 // Import CXL custom components
 import './custom-components';
+
+// Import cxl-marketing-layout styles
+import './layout-style-template';
