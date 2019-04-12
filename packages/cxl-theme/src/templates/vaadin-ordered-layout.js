@@ -1,14 +1,7 @@
-import scss from '../styles/vaadin-ordered-layout-css.js';
+import styles from '../styles/vaadin-ordered-layout-css.js';
 
 const $template = document.createElement('template');
 const $template2 = document.createElement('template');
-
-let styles = scss;
-
-// Webpack is adding :export {meta: '{"e":":host","f":[]}'; } to the end of the file
-// Need to remove it
-styles = styles.replace(':export {', '');
-styles = styles.replace('meta: \'{"e":":host","f":[]}\'; }', '');
 
 $template.innerHTML = `
 <dom-module id="lumo-horizontal-layout-edit" theme-for="vaadin-horizontal-layout">

@@ -1,3 +1,4 @@
+import '@conversionxl/cxl-theme';
 import '@conversionxl/cxl-components'; // eslint-disable-line import/no-extraneous-dependencies
 import { storiesOf } from '@storybook/polymer';
 import { withKnobs, text } from '@storybook/addon-knobs';
