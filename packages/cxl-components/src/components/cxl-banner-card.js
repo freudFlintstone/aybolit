@@ -8,18 +8,6 @@ class CXLBannerCard extends LitElement {
     return {
       banner_image: {
         type: String
-      },
-      banner_title: {
-        type: String
-      },
-      banner_description: {
-        type: String
-      },
-      banner_link_label: {
-        type: String
-      },
-      banner_link_url: {
-        type: String
       }
     };
   }
@@ -40,13 +28,24 @@ class CXLBannerCard extends LitElement {
 
   render() {
     return html`
-      <div id="content" part="content">
-        <p class="banner-image" style="background-image: url('${this.banner_image}');"></p>
-        <p class="banner-title">${this.banner_title}</p>
-        <small class="banner-description">${this.banner_description}</small>
-        <a class="banner-link" href="${this.banner_link_url}">${this.banner_link_label}</a>
+      <div class="entry" part="banner">
+        <header class="entry__header">
+          <p class="banner-image" style="background-image: url('${this.banner_image}');"></p>
+          <slot name="banner-title"></slot>
+        </header>
+        <div class="entry__content">
+          <slot name="banner-description"></slot>
+        </div>
+        <footer class="entry__footer">
+          <slot name="banner-link"></slot>
+        </footer>
       </div>
     `;
+  }
+
+  firstUpdated() {
+    super.firstUpdated();
+    this.setAttribute('role', 'article');
   }
 }
 

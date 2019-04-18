@@ -16,7 +16,6 @@
   background: #ffffff;
   border: 1px solid #000000;
   border-radius: 4px;
-  transition: all 0.5s ease;
   cursor: pointer;
 }
 /* Selectable items have a checkmark icon */
@@ -33,15 +32,12 @@
   color: var(--lumo-primary-text-color);
   flex: none;
   opacity: 0;
-  transition: transform 0.2s cubic-bezier(0.12, 0.32, 0.54, 2), opacity 0.1s;
 }
 :host([selected])::before {
   opacity: 1;
 }
 :host([active]:not([selected]))::before {
-  transform: scale(0.8);
   opacity: 0;
-  transition-duration: 0s;
 }
 /* Disabled item */
 :host([disabled]) {
@@ -66,7 +62,7 @@
   box-shadow: 0px 0px 0px 1px var(--lumo-primary-color);
 }
 
-[part="content"] {
+[part="banner"] {
   display: grid;
   grid-template-columns: auto;
   //grid-template-rows: 5em 1.5em 3em 9.5em auto;
@@ -84,21 +80,30 @@
     background-position: center;
   }
 
-  .banner-title {
+  ::slotted([slot=banner-title]) {
+    align-self: end;
     color: #ffffff;
     font-weight: bold;
     grid-area: banner-title;
-    margin: 0;
+    margin: 1em 0 0 !important;
   }
 
-  .banner-description {
+  .entry__content {
+    align-self: center;
+  }
+
+  .entry__footer {
+    align-self: end;
+  }
+
+  ::slotted([slot=banner-description]) {
     color: #ffffff;
     grid-area: banner-description;
   }
 
-  .banner-link {
+  ::slotted([slot=banner-link]) {
     align-self: end;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: var(--lumo-font-size-xs);
     grid-area: banner-link;
     text-decoration: none;

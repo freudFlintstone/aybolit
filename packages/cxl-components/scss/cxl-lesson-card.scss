@@ -1,0 +1,212 @@
+@import "@conversionxl/cxl-theme/scss/mixins";
+@import "@conversionxl/cxl-theme/scss/inject";
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  font-family: var(--lumo-font-family);
+  font-size: var(--lumo-font-size-m);
+  line-height: var(--lumo-line-height-xs);
+  padding: 2em;
+  min-height: var(--lumo-size-m);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.0437896);
+  background: #FFFFFF;
+  border: 1px solid #DADADA;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Selectable items have a checkmark icon */
+:host([tabindex])::before {
+  display: var(--_lumo-item-selected-icon-display, none);
+  content: var(--lumo-icons-checkmark);
+  font-family: lumo-icons;
+  font-size: var(--lumo-icon-size-m);
+  line-height: 1;
+  font-weight: normal;
+  width: 1em;
+  height: 1em;
+  margin: calc((1 - var(--lumo-line-height-xs)) * var(--lumo-font-size-m) / 2) 0;
+  color: var(--lumo-primary-text-color);
+  flex: none;
+  opacity: 0;
+}
+:host([selected])::before {
+  opacity: 1;
+}
+:host([active]:not([selected]))::before {
+  opacity: 0;
+}
+/* Disabled item */
+:host([disabled]) {
+  color: var(--lumo-disabled-text-color);
+  cursor: default;
+  pointer-events: none;
+}
+/* Slotted icons */
+:host ::slotted(iron-icon) {
+  width: var(--lumo-icon-size-m);
+  height: var(--lumo-icon-size-m);
+}
+/* Custom */
+:host {
+  box-shadow: var(--lumo-box-shadow-s);
+  border-radius: 5px;
+  height: auto;
+  min-height: 300px;
+  width: 750px;
+
+  @at-root #{&}([in-container]) {
+    height: 300px;
+  }
+}
+
+:host([selected]) {
+  box-shadow: 0px 0px 0px 1px var(--lumo-primary-color);
+}
+
+:host(:hover) {
+  border-color: #C53B26;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 4px #FFF3F1;
+}
+
+[part="lesson"] {
+  display: grid;
+  grid-template-columns: calc(80px + 2em); // hero image width + component padding
+  grid-template-rows: auto min-content auto;
+  grid-template-areas: "lesson-image content-inside" "separator separator" "lesson-description lesson-description";
+  height: 100%;
+  width: 100%;
+
+  .lesson-image {
+    align-self: center;
+    border-radius: 50%;
+    height: 80px;
+    grid-area: lesson-image;
+    width: 80px;
+    margin: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content-inside {
+    align-self: start;
+    grid-area: content-inside;
+  }
+
+  .separator {
+    align-self: center;
+    border-top: 1px solid #DADADA;
+    grid-area: separator;
+  }
+
+  .entry__content {
+    align-self: start;
+    grid-area: lesson-description;
+    margin: 0;
+    padding: 0.25em 0 0;
+  }
+
+  ::slotted([slot=lesson-description]) {
+    margin: 1.25em 0 0;
+  }
+}
+
+[part="content-inside"] {
+  /*  display: grid;
+    grid-template-columns: min-content min-content min-content;
+    grid-template-rows: auto;
+    grid-template-areas: "highlighted-title lesson-title lesson-title"
+    "type lesson-length lesson-instructor";
+    height: 100%;
+    width: 100%;*/
+  margin: auto 0;
+
+  ::slotted([slot=lesson-title]) {
+    align-self: end;
+    display: inline-block;
+    font-weight: bold;
+    grid-area: lesson-title;
+    grid-column-end: none;
+    margin: 0;
+  }
+
+  ::slotted([slot=highlighted-title]) {
+    align-self: end;
+    color: var(--lumo-primary-color);
+    display: inline-block;
+    font-weight: bold;
+    grid-area: highlighted-title;
+    white-space: nowrap;
+
+    &:after {
+      content: ': ';
+    }
+  }
+
+  ::slotted([slot=type]) {
+    grid-area: type;
+    white-space: nowrap;
+
+    &:after {
+      content: '\00a0|';
+    }
+  }
+
+  ::slotted([slot=lesson-length]) {
+    grid-area: lesson-length;
+    white-space: nowrap;
+
+    &:after {
+      content: '\00a0|\00a0';
+    }
+  }
+
+  ::slotted([slot=lesson-instructor]) {
+    grid-area: lesson-instructor;
+    white-space: nowrap;
+  }
+}
+
+@include respond-below(small) {
+  :host {
+    height: auto;
+    padding: 2em;
+    width: auto;
+
+    @at-root #{&}([in-container]) {
+      height: auto;
+      width: 250px;
+    }
+
+    [part="lesson"] {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+      grid-template-areas: "lesson-image lesson-image" "content-inside content-inside" "separator separator" "lesson-description lesson-description";
+      height: 100%;
+      width: 100%;
+    }
+
+    [part="content-inside"] {
+      padding: 1em 0 0;
+
+      ::slotted([slot=lesson-title]) {
+        margin: 0 0 0.25em;
+      }
+    }
+
+    .separator {
+      margin: 1em 0 0;
+    }
+
+    ::slotted([slot=lesson-description]) {
+      margin: 1.25em 0 0;
+    }
+  }
+}
+

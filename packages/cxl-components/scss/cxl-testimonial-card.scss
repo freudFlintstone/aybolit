@@ -1,0 +1,137 @@
+@import "@conversionxl/cxl-theme/scss/mixins";
+@import "@conversionxl/cxl-theme/scss/inject";
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  font-family: var(--lumo-font-family);
+  font-size: var(--lumo-font-size-m);
+  line-height: var(--lumo-line-height-xs);
+  padding: 2em;
+  min-height: var(--lumo-size-m);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.0437896);
+  background: #FFFFFF;
+  border: 1px solid #DADADA;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Selectable items have a checkmark icon */
+:host([tabindex])::before {
+  display: var(--_lumo-item-selected-icon-display, none);
+  content: var(--lumo-icons-checkmark);
+  font-family: lumo-icons;
+  font-size: var(--lumo-icon-size-m);
+  line-height: 1;
+  font-weight: normal;
+  width: 1em;
+  height: 1em;
+  margin: calc((1 - var(--lumo-line-height-xs)) * var(--lumo-font-size-m) / 2) 0;
+  color: var(--lumo-primary-text-color);
+  flex: none;
+  opacity: 0;
+}
+:host([selected])::before {
+  opacity: 1;
+}
+:host([active]:not([selected]))::before {
+  opacity: 0;
+}
+/* Disabled item */
+:host([disabled]) {
+  color: var(--lumo-disabled-text-color);
+  cursor: default;
+  pointer-events: none;
+}
+/* Slotted icons */
+:host ::slotted(iron-icon) {
+  width: var(--lumo-icon-size-m);
+  height: var(--lumo-icon-size-m);
+}
+/* Custom */
+:host {
+  box-shadow: var(--lumo-box-shadow-s);
+  border-radius: 5px;
+  height: auto;
+  width: 500px;
+
+  @at-root #{&}([in-container]) {
+    height: 350px;
+  }
+}
+:host([selected]) {
+  box-shadow: 0px 0px 0px 1px var(--lumo-primary-color);
+}
+
+[part="testimonial"] {
+/*
+  display: grid;
+  grid-template-columns: calc(80px + 2em); // hero image width + component padding
+  grid-template-rows: max-content auto auto max-content;
+  grid-template-areas: "customer-image company-image"
+  "content content" "customer-name customer-name" "customer-company customer-company";
+  height: 100%;
+  width: 100%;
+*/
+  
+  .customer-image {
+    align-self: end;
+    border-radius: 50%;
+    height: 80px;
+    grid-area: customer-image;
+    display: inline-block;
+    width: 80px;
+    margin: 0 2em 0 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    vertical-align: middle;
+  }
+
+  .company-image {
+    align-self: center;
+    height: 40px;
+    grid-area: company-image;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .entry__content {
+    align-self: end;
+    grid-area: content;
+    padding: 1em 0;
+  }
+
+  ::slotted([slot=customer-name]) {
+    align-self: end;
+    font-weight: bold;
+    grid-area: customer-name;
+    display: block;
+  }
+
+  ::slotted([slot=customer-company]) {
+    grid-area: customer-company;
+    display: block;
+  }
+}
+
+:host(:hover) {
+  border-color: #C53B26;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 4px #FFF3F1;
+}
+
+@include respond-below(small) {
+  :host {
+    height: auto;
+    width: auto;
+
+    @at-root #{&}([in-container]) {
+      height: auto;
+      width: 250px;
+    }
+  }
+}
+
