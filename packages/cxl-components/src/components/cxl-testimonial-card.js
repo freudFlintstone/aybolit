@@ -31,18 +31,10 @@ class CXLTestimonialCard extends LitElement {
 
   render() {
     return html`
-      <div class="entry" part="testimonial">
-        <header class="entry__header">
-          <p class="customer-image" style="background-image: url('${this.customer_image}');"></p>
-          <img class="company-image" src="${this.company_image}"></img>
-        </header>
-        <div class="entry__content">
-          <slot name="content"></slot>
-        </div>
-        <footer class="entry__footer">
-          <slot name="customer-name"></slot>
-          <slot name="customer-company"></slot>
-        </footer>
+      <div class="wrap">
+        <slot name="header"></slot>
+        <slot name="content"></slot>
+        <slot name="footer"></slot>
       </div>
     `;
   }

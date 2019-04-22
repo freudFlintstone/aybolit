@@ -34,9 +34,17 @@ storiesOf('Cards', module)
         const customer_company = text('Customer company', 'Managing Director - Sweden, at Trollweb Solutions');
         return `
           <cxl-testimonial-card customer_image="${customer_image}" company_image="${company_image}">
-            <p slot="content">"${content}"</p>
-            <small slot="customer-name">${customer_name}</small>
-            <small slot="customer-company">${customer_company}</small>
+            <header class="entry__header" slot="header">
+              <p class="customer-image" style="background-image: url('${customer_image}');"></p>
+              <img class="company-image" src="${company_image}"></img>
+            </header>
+            <div class="entry__content" slot="content">
+              <p class="content">"${content}"</p>
+            </div>
+            <footer class="entry__footer" slot="footer">
+              <small class="customer-name">${customer_name}</small>
+              <small class="customer-company">${customer_company}</small>
+            </footer>
           </cxl-testimonial-card>
         `
     })
