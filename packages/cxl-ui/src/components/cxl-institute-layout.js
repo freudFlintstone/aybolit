@@ -17,12 +17,12 @@ class CXLInstituteLayoutElement extends LitElement {
   render() {
     return html`
       <!-- Visible on mobile -->
-      <div id="header" part="header">
+      <header id="header" part="header">
         <a href="/" class="logo">
           <span class="cxl">C<span>XL</span></span>
         </a>
         <h3>Something something</h3>
-      </div>
+      </header>
 
       <!-- Visible on mobile -->
       <vaadin-tabs id="tabs" part="tabs" theme="equal-width-tabs" selected="1">

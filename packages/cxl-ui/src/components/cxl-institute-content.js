@@ -6,21 +6,11 @@ import cxlInstituteContentStyles from '../styles/cxl-institute-content-css.js';
 class CXLInstituteContentElement extends LitElement {
   static get properties() {
     return {
-      hideSidebar: {
-        type: String,
-        value: false,
-        reflect: true
-      },
       sidebarSize: {
         type: String,
         reflect: true
       }
     };
-  }
-
-  constructor() {
-    super();
-    this.hideSidebar = false;
   }
 
   static get styles() {

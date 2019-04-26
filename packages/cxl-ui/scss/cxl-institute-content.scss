@@ -10,7 +10,7 @@
 
   border-top-left-radius: var(--lumo-border-radius-l);
   border-bottom-left-radius: var(--lumo-border-radius-l);
-  box-shadow: -4px 1px 15px -8px #777;
+  box-shadow: -4px 1px 15px -8px var(--lumo-shade-50pct);
 
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 

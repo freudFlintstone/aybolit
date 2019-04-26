@@ -9,7 +9,7 @@ storiesOf('Layouts', module)
   .add('cxl-institute-layout', () => {
     return html`
       <cxl-institute-layout>
-        <div id="left-nav" slot="icon-nav">
+        <nav id="left-nav" slot="icon-nav">
           <a href="/">
             <div class="logo">
               <span class="cxl">C<span>XL</span></span>
@@ -50,7 +50,7 @@ storiesOf('Layouts', module)
               </li>
             </ul>
           </div>
-        </div>
+        </nav>
         <!-- Sidebar -->
         <h3 slot="sidebar-header">Training Manager</h3>
         <div class="sidebar-content" slot="sidebar-content">

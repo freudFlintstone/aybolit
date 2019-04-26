@@ -1,7 +1,6 @@
 {
-  "name": "@conversionxl/cxl-core",
+  "name": "cxl-workspace",
   "private": true,
-  "version": "0.1.0",
   "author": "CXL",
   "license": "UNLICENSED",
   "scripts": {
