@@ -4,6 +4,9 @@
     "stylelint-config-prettier"
   ],
   "rules": {
+    "declaration-block-single-line-max-declarations": null,
+    "order/properties-alphabetical-order": true,
+    "order/properties-order": null,
     "scss/dollar-variable-default": null,
     "scss/operator-no-newline-after": null,
     "number-leading-zero": null,
