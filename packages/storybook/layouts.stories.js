@@ -9,43 +9,43 @@ storiesOf('Layouts', module)
   .add('cxl-institute-layout', () => {
     return html`
       <cxl-institute-layout>
-        <nav id="left-nav" slot="icon-nav">
+        <nav class="icon-nav" slot="icon-nav">
           <a href="/">
             <div class="logo">
               <span class="cxl">C<span>XL</span></span>
             </div>
           </a>
-          <div class="top-nav">
-            <ul class="nav-items">
-              <li>
-                <a href="trainings" class="active">
-                  <iron-icon class="size-l" icon="cxl:nav-trainings"></iron-icon>
-                  <iron-icon class="size-l" icon="cxl:nav-trainings-active"></iron-icon>
-                  <span>Trainings</span>
+          <div class="icon-nav__top-nav">
+            <ul class="icon-nav__nav-items">
+              <li class="icon-nav__item">
+                <a href="trainings" class="icon-nav__item-active">
+                  <iron-icon class="icon size-l" icon="cxl:nav-trainings"></iron-icon>
+                  <iron-icon class="icon size-l" icon="cxl:nav-trainings-active"></iron-icon>
+                  <span class="mobile-text">Trainings</span>
                 </a>
               </li>
-              <li>
+              <li class="icon-nav__item">
                 <a href="roadmap">
-                  <iron-icon class="size-l" icon="cxl:nav-roadmap"></iron-icon>
-                  <iron-icon class="size-l" icon="cxl:nav-roadmap-active"></iron-icon>
-                  <span>Discover</span>
+                  <iron-icon class="icon size-l" icon="cxl:nav-roadmap"></iron-icon>
+                  <iron-icon class="icon size-l" icon="cxl:nav-roadmap-active"></iron-icon>
+                  <span class="mobile-text">Discover</span>
                 </a>
               </li>
-              <li>
+              <li class="icon-nav__item">
                 <a href="discover">
-                  <iron-icon class="size-l" icon="cxl:nav-discover"></iron-icon>
-                  <iron-icon class="size-l" icon="cxl:nav-discover-active"></iron-icon>
-                  <span>Manage</span>
+                  <iron-icon class="icon size-l" icon="cxl:nav-discover"></iron-icon>
+                  <iron-icon class="icon size-l" icon="cxl:nav-discover-active"></iron-icon>
+                  <span class="mobile-text">Manage</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="bottom-nav">
-            <ul class="nav-items">
-              <li>
+          <div class="icon-nav__bottom-nav">
+            <ul class="icon-nav__nav-items">
+              <li class="icon-nav__item">
                 <a href="/">
-                  <iron-icon class="size-l" icon="lumo:user"></iron-icon>
-                  <span>Profile</span>
+                  <iron-icon class="icon size-l" icon="lumo:user"></iron-icon>
+                  <span class="mobile-text">Profile</span>
                 </a>
               </li>
             </ul>

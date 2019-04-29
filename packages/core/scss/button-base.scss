@@ -13,11 +13,11 @@
  * 4. Remove the inheritance of text transform in Edge, Firefox, and IE.
  */
 button {
-  margin: 0; /* 1 */
-  overflow: visible; /* 2 */
   font-family: inherit; /* 3 */
   font-size: 100%; /* 3 */
   line-height: 1.15; /* 3 */
+  margin: 0; /* 1 */
+  overflow: visible; /* 2 */
   text-transform: none; /* 4 */
 
   &::-moz-focus-inner {

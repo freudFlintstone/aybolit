@@ -1,15 +1,15 @@
 :host([theme~="sidebar-track"]) {
   [part="summary"] {
-    padding: var(--lumo-space-l) var(--lumo-space-m);
     border-radius: 0;
     border-top: 2px solid var(--lumo-shade-5pct);
     cursor: pointer;
     display: flex;
+    padding: var(--lumo-space-l) var(--lumo-space-m);
 
     [part="toggle"] {
       font-size: var(--lumo-icon-size-m);
-      order: 1;
       margin-left: auto;
+      order: 1;
     }
   }
 }
@@ -17,6 +17,6 @@
 :host([opened]) {
   [part="summary"] {
     border-top: 2px solid var(--lumo-shade-5pct);
-    box-shadow: 0px 3px 4px var(--lumo-shade-10pct);
+    box-shadow: 0 3px 4px var(--lumo-shade-10pct);
   }
 }

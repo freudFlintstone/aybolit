@@ -1,8 +1,9 @@
 html,
 :host {
   /* Font families */
-  --lumo-font-family: "Roboto", Arial, sans-serif;
-  --lumo-font-secondary: "Libre Baskerville", Georgia, serif;
+  --lumo-font-family: "Roboto", arial, sans-serif;
+  --lumo-font-secondary: "Libre Baskerville", georgia, serif;
+
   /* Font sizes */
   --lumo-font-size-xxs: 0.75rem;
   --lumo-font-size-xs: 0.8125rem;
@@ -12,10 +13,12 @@ html,
   --lumo-font-size-xl: 1.375rem;
   --lumo-font-size-xxl: 1.75rem;
   --lumo-font-size-xxxl: 2.5rem;
+
   /* Line heights */
   --lumo-line-height-xs: 1.25;
   --lumo-line-height-s: 1.375;
   --lumo-line-height-m: 1.625;
+
   /* FYI @leho @jaan */
   --lumo-border-radius-s: 0.25em;
   --lumo-border-radius-m: 0.5em;
@@ -25,20 +28,18 @@ html,
 html {
   font-family: var(--lumo-font-family);
   font-size: var(--lumo-font-size, var(--lumo-font-size-m));
-  line-height: var(--lumo-line-height-m);
-  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: var(--lumo-line-height-m);
 }
 
 /* Can’t combine with the above selector because that doesn’t work in browsers without native shadow dom */
 :host {
   font-family: var(--lumo-font-family);
   font-size: var(--lumo-font-size, var(--lumo-font-size-m));
-  line-height: var(--lumo-line-height-m);
-  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: var(--lumo-line-height-m);
 }
 
 small,
@@ -90,15 +91,15 @@ h5 {
 
 h6 {
   font-size: var(--lumo-font-size-xs);
+  letter-spacing: 0.03em;
   margin-bottom: 0;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
 }
 
 p,
 blockquote {
-  margin-top: 0.5em;
   margin-bottom: 0.75em;
+  margin-top: 0.5em;
 }
 
 a {
@@ -110,13 +111,13 @@ a:hover {
 }
 
 hr {
-  display: block;
   align-self: stretch;
-  height: 1px;
-  border: 0;
-  padding: 0;
-  margin: var(--lumo-space-s) calc(var(--lumo-border-radius-m) / 2);
   background-color: var(--lumo-contrast-10pct);
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: var(--lumo-space-s) calc(var(--lumo-border-radius-m) / 2);
+  padding: 0;
 }
 
 blockquote {

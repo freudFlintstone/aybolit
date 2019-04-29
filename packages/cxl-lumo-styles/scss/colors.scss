@@ -2,6 +2,7 @@ html,
 :host {
   /* Base (background) */
   --lumo-base-color: #fff;
+
   /* Tint */
   --lumo-tint-5pct: hsla(0, 0%, 100%, 0.3);
   --lumo-tint-10pct: hsla(0, 0%, 100%, 0.37);
@@ -14,6 +15,7 @@ html,
   --lumo-tint-80pct: hsla(0, 0%, 100%, 0.84);
   --lumo-tint-90pct: hsla(0, 0%, 100%, 0.9);
   --lumo-tint: #fff;
+
   /* Shade */
   --lumo-shade-5pct: hsla(214, 61%, 25%, 0.05);
   --lumo-shade-10pct: hsla(214, 57%, 24%, 0.1);
@@ -26,6 +28,7 @@ html,
   --lumo-shade-80pct: hsla(214, 41%, 17%, 0.83);
   --lumo-shade-90pct: hsla(214, 40%, 16%, 0.94);
   --lumo-shade: hsl(214, 35%, 15%);
+
   /* Contrast */
   --lumo-contrast-5pct: var(--lumo-shade-5pct);
   --lumo-contrast-10pct: var(--lumo-shade-10pct);
@@ -38,26 +41,31 @@ html,
   --lumo-contrast-80pct: var(--lumo-shade-80pct);
   --lumo-contrast-90pct: var(--lumo-shade-90pct);
   --lumo-contrast: var(--lumo-shade);
+
   /* Text */
   --lumo-header-text-color: var(--lumo-contrast);
   --lumo-body-text-color: var(--lumo-contrast-90pct);
   --lumo-secondary-text-color: var(--lumo-contrast-70pct);
   --lumo-tertiary-text-color: var(--lumo-contrast-50pct);
   --lumo-disabled-text-color: var(--lumo-contrast-30pct);
+
   /* Primary */
   --lumo-primary-color: hsl(8, 100%, 39%);
   --lumo-primary-color-50pct: hsla(8, 100%, 39%, 0.5);
   --lumo-primary-color-10pct: hsla(8, 100%, 39%, 0.1);
   --lumo-primary-text-color: var(--lumo-primary-color);
   --lumo-primary-contrast-color: #fff;
+
   /* Error */
   --lumo-error-color: hsl(8, 100%, 39%);
   --lumo-error-color-50pct: hsla(8, 100%, 39%, 0.5);
   --lumo-error-color-10pct: hsla(8, 100%, 39%, 0.1);
   --lumo-error-text-color: hsl(8, 100%, 39%);
   --lumo-error-contrast-color: #fff;
+
   /* Success */
   --lumo-success-color: hsl(8, 100%, 39%);
+
   /* hsl(144,82%,37%); */
   --lumo-success-color-50pct: hsla(8, 100%, 39%, 0.55);
   --lumo-success-color-10pct: hsla(8, 100%, 39%, 0.12);
@@ -66,8 +74,8 @@ html,
 }
 
 html {
-  color: var(--lumo-body-text-color);
   background-color: var(--lumo-base-color);
+  color: var(--lumo-body-text-color);
 }
 
 h1,

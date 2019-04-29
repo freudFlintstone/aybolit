@@ -12,16 +12,16 @@
 }
 
 .label {
-  position: relative;
   display: inline-block;
+  position: relative;
 
   &::before {
-    display: block;
     content: "";
+    display: block;
   }
 
   &::after {
-    display: block;
     content: "";
+    display: block;
   }
 }

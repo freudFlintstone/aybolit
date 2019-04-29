@@ -7,9 +7,9 @@
 }
 
 .input {
-  position: absolute;
-  outline: none;
   opacity: 0;
+  outline: none;
+  position: absolute;
 
   &:focus {
     + .label {
@@ -49,34 +49,34 @@
 }
 
 .label {
-  padding-left: 3.25rem;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   font-size: 1rem;
+  padding-left: 3.25rem;
 
   &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    width: 2.75rem;
-    height: 1.5rem;
     background: #e2e2e2;
     border: solid 1px #ccc;
     border-radius: 24px;
+    box-sizing: border-box;
+    height: 1.5rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 2.75rem;
   }
 
   &::after {
-    position: absolute;
-    top: 0.125rem;
-    left: 0.125rem;
-    box-sizing: border-box;
-    width: 1.25rem;
-    height: 1.25em;
     background: #fff;
     border: solid 1px #ccc;
     border-radius: 50%;
-    transition: all 0.25s ease-out;
+    box-sizing: border-box;
+    height: 1.25em;
+    left: 0.125rem;
+    position: absolute;
+    top: 0.125rem;
     transform: translate3d(0, 0, 0);
+    transition: all 0.25s ease-out;
+    width: 1.25rem;
   }
 }

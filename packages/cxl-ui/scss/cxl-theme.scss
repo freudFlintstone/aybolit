@@ -13,8 +13,8 @@ a:hover {
 }
 
 .sub-title {
-  text-align: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .flex {
@@ -42,15 +42,10 @@ strong {
 }
 
 .wrap {
-  padding-right: calc(var(--lumo-space-m) / 2);
-  padding-left: calc(var(--lumo-space-m) / 2);
-  margin-right: auto;
   margin-left: auto;
-}
-
-.wrap {
-  margin: 0 auto;
-  position: relative;
+  margin-right: auto;
+  padding-left: calc(var(--lumo-space-m) / 2);
+  padding-right: calc(var(--lumo-space-m) / 2);
 }
 
 @media screen and (min-width: 1088px) {
