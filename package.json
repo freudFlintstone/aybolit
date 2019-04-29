@@ -12,7 +12,7 @@
     "npm-publish": "lerna publish from-package",
     "lint": "npm-run-all --parallel lint:*",
     "lint:js": "eslint *.js packages --ignore-path .gitignore",
-    "lint:scss": "stylelint packages/**/*.scss",
+    "lint:scss": "stylelint packages/**/*.scss --fix",
     "storybook": "yarn --cwd packages/storybook start-storybook -p 6006",
     "test": "karma start",
     "test:visual": "rimraf tmp && BABEL_ENV=visual webpack --config test/visual/webpack.config.js && rimraf test/visual/screenshots/chrome/* && vrtest run --config test/visual/vrtest.config.js --record",
@@ -66,6 +66,7 @@
     "stylelint": "^9.10.1",
     "stylelint-config-prettier": "^5.0.0",
     "stylelint-config-twbs-bootstrap": "^0.3.0",
+    "stylelint-declaration-use-variable": "^1.7.0",
     "vrtest": "^0.2.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
@@ -76,14 +77,22 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "prettier --single-quote=false --write",
-      "git add"
+    "linters": {
+      "*.js": [
+        "eslint --fix",
+        "prettier --write",
+        "git add"
+      ],
+      "*.scss": [
+        "stylelint --fix",
+        "prettier --single-quote=false --write",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "packages/core/scss",
+      "packages/white-label/scss",
+      "packages/cxl-lumo-styles/scss/typography.scss"
     ]
   }
 }

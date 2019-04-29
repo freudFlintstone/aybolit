@@ -3,12 +3,32 @@
     "stylelint-config-twbs-bootstrap/scss",
     "stylelint-config-prettier"
   ],
+  "plugins": [
+    "stylelint-declaration-use-variable"
+  ],
   "rules": {
+    "declaration-block-single-line-max-declarations": null,
+    "order/properties-alphabetical-order": true,
+    "order/properties-order": null,
     "scss/dollar-variable-default": null,
     "scss/operator-no-newline-after": null,
     "number-leading-zero": null,
-    "property-no-vendor-prefix": [true, {
-      "ignoreProperties": ["appearance", "user-select"]
-    }]
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "appearance",
+          "user-select"
+        ]
+      }
+    ],
+    "selector-max-id": 1,
+    "selector-no-qualifying-type": [ true, {
+      "ignore": [ "attribute" ]
+    } ],
+    "selector-type-no-unknown": [ true, {
+      "ignore": [ "custom-elements" ]
+    } ],
+    "sh-waqar/declaration-use-variable": [["/color/", "font-size", "line-height", { ignoreValues: ["/padding-/", "/margin-/"] }]]
   }
 }

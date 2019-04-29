@@ -1,14 +1,25 @@
 @import "./utils/mixins";
 
 :host {
-  position: relative;
+  background: var(--lumo-tint-20pct);
   display: grid;
   grid-template-areas: "nav sidebar content";
   grid-template-columns: 67px 315px auto;
-
-  background: var(--lumo-tint-20pct);
   height: 100%;
   min-height: 100%;
+  position: relative;
+
+  @include respond-below(small) {
+    grid-template-areas: "header" "tabs" "sidebar" "content" "nav";
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto 1fr auto;
+    margin-left: 0;
+    min-height: 100vh;
+  }
+
+  @include respond-between(small, medium) {
+    margin-left: 0;
+  }
 }
 
 :host([sidebarsize="small"]) {
@@ -23,57 +34,61 @@
 [part="sidebar"] {
   grid-area: sidebar;
   overflow: auto;
+
+  @include respond-below(small) {
+    display: none;
+  }
 }
 
 [part="content"] {
   grid-area: content;
   position: relative;
+
+  @include respond-below(small) {
+    display: none;
+  }
 }
 
 [part="content"][page-visible] {
-  display: block !important;
+  display: block;
 }
 
 [part="sidebar"][page-visible] {
-  display: flex !important;
+  display: flex;
 }
 
-// TODO: Add theme for layout tabs and move styles to cxl-lumo-styles package
-vaadin-tabs {
-  grid-area: tabs;
-  border-bottom: 1px solid var(--lumo-contrast-10pct);
-  box-shadow: none;
+[part="tabs"] {
   display: none;
-}
+  grid-area: tabs;
 
-vaadin-tabs vaadin-tab {
-  font-size: var(--lumo-font-size-s);
-  box-shadow: none;
-}
-
-vaadin-tabs vaadin-tab::before,
-vaadin-tabs vaadin-tab::after {
-  width: 80%;
+  @include respond-below(small) {
+    display: flex;
+  }
 }
 
 [part="header"] {
-  grid-area: header;
-  padding: var(--lumo-space-m);
   border-bottom: 1px solid var(--lumo-contrast-10pct);
   display: none;
+  grid-area: header;
+  padding: var(--lumo-space-m);
+
+  h3 {
+    font-weight: 500;
+    margin: 0;
+    padding-left: var(--lumo-space-m);
+  }
+
+  @include respond-below(small) {
+    display: flex;
+  }
 }
-[part="header"] h3 {
-  line-height: 30px;
-  font-size: 18px;
-  margin: 0;
-  font-weight: 500;
-  padding-left: var(--lumo-space-m);
-}
+
+// TODO: replace with cxl-logo
 [part="header"] .logo {
-  text-decoration: none;
-  color: #1a1a1a;
-  margin-right: var(--lumo-space-m);
+  color: var(--lumo-shade);
   flex: 0 auto;
+  margin-right: var(--lumo-space-m);
+  text-decoration: none;
 }
 [part="header"] .logo .cxl {
   font: italic 900 1.6rem Roboto, sans-serif;
@@ -88,41 +103,10 @@ vaadin-tabs vaadin-tab::after {
   .sidebar-header {
     padding: var(--lumo-space-m);
   }
-}
 
-@include respond-below(small) {
-  :host {
-    grid-template-areas: "header" "tabs" "sidebar" "content" "nav";
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto auto 1fr auto;
-    margin-left: 0;
-    min-height: 100vh;
-  }
-
-  vaadin-tabs {
-    display: block;
-  }
-
-  [part="header"] {
-    display: flex;
-  }
-
-  [part="content"],
-  [part="sidebar"] {
-    display: none;
-  }
-}
-
-@include respond-below(medium) {
-  #sidebar {
+  @include respond-below(medium) {
     .sidebar-header {
       display: none;
     }
-  }
-}
-
-@include respond-between(small, medium) {
-  :host {
-    margin-left: 0;
   }
 }

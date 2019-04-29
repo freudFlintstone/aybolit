@@ -11,31 +11,31 @@
 }
 
 ::slotted(a) {
-  padding: var(--lumo-space-s);
-  padding-left: var(--lumo-space-m);
-  padding-bottom: var(--lumo-space-s);
-  padding-right: 0;
-  color: var(--lumo-contrast-90pct) !important;
-  text-decoration: none;
+  color: var(--lumo-contrast-90pct);
 
   flex: 1;
+  padding: var(--lumo-space-s);
+  padding-bottom: var(--lumo-space-s);
+  padding-left: var(--lumo-space-m);
+  padding-right: 0;
+  text-decoration: none;
 }
 
-::slotted(a.active) {
-  color: var(--lumo-primary-text-color) !important;
+::slotted(.active) {
+  color: var(--lumo-primary-text-color);
 }
 
 ::slotted(a:hover) {
-  text-decoration: none !important;
-  color: var(--lumo-primary-text-color) !important;
+  color: var(--lumo-primary-text-color);
+  text-decoration: none;
 }
 
 [part="track-time"] {
+  color: var(--lumo-contrast-40pct);
   display: none;
-  padding-top: var(--lumo-space-s);
   padding-bottom: var(--lumo-space-s);
   padding-right: var(--lumo-space-m);
-  color: var(--lumo-contrast-40pct);
+  padding-top: var(--lumo-space-s);
 }
 
 :host([item-type="track"]) [part="track-time"] {

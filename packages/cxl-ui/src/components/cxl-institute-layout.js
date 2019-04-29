@@ -25,7 +25,12 @@ class CXLInstituteLayoutElement extends LitElement {
       </header>
 
       <!-- Visible on mobile -->
-      <vaadin-tabs id="tabs" part="tabs" theme="equal-width-tabs" selected="1">
+      <vaadin-tabs
+        id="tabs"
+        part="tabs"
+        theme="equal-width-tabs institute-layout-tabs"
+        selected="1"
+      >
         <vaadin-tab @click="${() => this.changeTab('sidebar')}">Menu</vaadin-tab>
         <vaadin-tab @click="${() => this.changeTab('content')}">Something here</vaadin-tab>
       </vaadin-tabs>

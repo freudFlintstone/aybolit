@@ -1,7 +1,7 @@
 progress {
-  height: 0.75rem;
-  color: #ccc;
   background-color: #e2e2e2;
+  color: #ccc;
+  height: 0.75rem;
 
   &::-webkit-progress-bar {
     background-color: transparent;
@@ -23,9 +23,9 @@ progress {
   }
 
   &:indeterminate {
+    animation: abw-progress 2.5s infinite linear;
     background-image: linear-gradient(to right, currentColor 30%, transparent 30%);
     background-size: 200% 100%;
-    animation: abw-progress 2.5s infinite linear;
 
     &::-webkit-progress-value {
       background-color: transparent;

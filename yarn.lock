@@ -12513,6 +12513,13 @@ stylelint-config-twbs-bootstrap@^0.3.0:
     stylelint-order "^2.0.0"
     stylelint-scss "^3.5.1"
 
+stylelint-declaration-use-variable@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/stylelint-declaration-use-variable/-/stylelint-declaration-use-variable-1.7.0.tgz#cf64c6a9837003fc226872899ad099791c5ae546"
+  integrity sha512-f/a0J/CRu4H0MGVXH4aAvQYeMucIdk+r9AAcZ7+mZ/x2av9Mp8ZaHvBUpqy0T6Rw1BoGrY66wZt/VzueaeYtmg==
+  dependencies:
+    stylelint "^9.1.1"
+
 stylelint-order@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-2.2.1.tgz#cd2d4a0d81d91c705f1d275a58487e5ad5aa5828"
@@ -12533,7 +12540,7 @@ stylelint-scss@^3.5.1:
     postcss-selector-parser "^5.0.0"
     postcss-value-parser "^3.3.1"
 
-stylelint@^9.10.1:
+stylelint@^9.1.1, stylelint@^9.10.1:
   version "9.10.1"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-9.10.1.tgz#5f0ee3701461dff1d68284e1386efe8f0677a75d"
   integrity sha512-9UiHxZhOAHEgeQ7oLGwrwoDR8vclBKlSX7r4fH0iuu0SfPwFaLkb1c7Q2j1cqg9P7IDXeAV2TvQML/fRQzGBBQ==
