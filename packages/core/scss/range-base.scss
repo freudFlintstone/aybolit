@@ -7,13 +7,13 @@
 }
 
 .range {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 
   &::-moz-focus-outer {
     border: 0;
@@ -32,24 +32,24 @@
   }
 
   &::-ms-track {
-    width: 100%;
     color: transparent;
+    width: 100%;
   }
 
   &::-webkit-slider-thumb {
-    border: none;
     -webkit-appearance: none;
     appearance: none;
+    border: none;
   }
 
   &::-moz-range-thumb {
-    border: none;
     -moz-appearance: none;
     appearance: none;
+    border: none;
   }
 
   &::-ms-thumb {
-    border: none;
     appearance: none;
+    border: none;
   }
 }
