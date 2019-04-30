@@ -1,1 +1,30 @@
 @import "@conversionxl/cxl-ui/scss/utils/mixins";
+
+:host([theme~="cxl-button"]) {
+  font-weight: 500;
+  height: calc(var(--lumo-button-size) * 1.1);
+  padding: 0 calc(var(--lumo-button-size) / 2);
+}
+
+:host([theme~="margin-right"]) {
+  margin-right: calc(var(--lumo-button-size) / 2);
+}
+
+:host([theme~="transparent"]) {
+  background-color: transparent;
+  color: var(--lumo-primary-color);
+  border: 1px solid var(--lumo-primary-color);
+}
+
+:host([theme~="contrast"]) {
+  background-color: transparent;
+  color: var(--lumo-shade-90pct);
+  border: 1px solid var(--lumo-shade-90pct);
+}
+
+@include respond-below(small) {
+  :host([theme~="transparent"]) {
+    border-color: var(--lumo-tint-10pct);
+    color: var(--lumo-tint-70pct);
+  }
+}

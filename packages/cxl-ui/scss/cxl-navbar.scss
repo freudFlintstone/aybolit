@@ -1,0 +1,89 @@
+@import "./utils/mixins";
+
+:host {
+  display: block;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+[part="nav-buttons"] {
+  display: flex;
+  padding: 0;
+}
+
+[part="topnav"] {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+[part="topnav"],
+[part="bottomnav"] {
+  display: flex;
+  padding-bottom: var(--lumo-space-s);
+  padding-top: var(--lumo-space-s);
+}
+
+[part="topnav"] .wrap,
+[part="bottomnav"] .wrap {
+  width: 100%;
+}
+
+[part="bottomnav"] {
+  background-color: var(--lumo-shade-5pct);
+  bottom: 0;
+  box-shadow: 0 -1px 1px 0 var(--lumo-shade-10pct);
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+[part="bottomnav"].fixed {
+  background-color: rgb(245, 245, 245);
+  bottom: initial;
+  position: fixed;
+  top: 0;
+}
+
+::slotted(cxl-burger-button) {
+  display: none;
+}
+
+@include respond-below(small) {
+  :host([theme="bottomnav"]) {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  [part="bottomnav"] {
+    background-color: var(--lumo-shade);
+  }
+}
+
+@include respond-above(small) {
+  :host([theme~="waves"]) [part="bottomnav"] {
+    background-color: transparent;
+    bottom: 0;
+    box-shadow: none;
+    left: 0;
+    position: relative;
+    right: 0;
+  }
+}
+
+@include respond-below(medium) {
+  ::slotted(cxl-burger-button) {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+@include respond-between(medium, large) {
+  [part="topnav"] {
+    background-color: #fff;
+    box-shadow: 0 5px 9px var(--lumo-shade-10pct);
+  }
+}
