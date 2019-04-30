@@ -296,6 +296,17 @@ storiesOf('Layouts', module)
             </vaadin-button>
           </cxl-institute-content-header>
 
+          <div class="embed-container" slot="content-video">
+            <iframe
+              src="https://player.vimeo.com/video/321840987"
+              height="400"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+
           <h2>Betrayed cheerful declared end and</h2>
 
           <p>

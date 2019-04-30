@@ -20,6 +20,7 @@ class CXLInstituteContentElement extends LitElement {
   render() {
     return html`
       <slot name="content-header"></slot>
+      <slot name="content-video"></slot>
       <div class="wrapper">
         <div id="content" part="content" media-size="large">
           <slot></slot>
