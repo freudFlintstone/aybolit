@@ -2,7 +2,12 @@ import { storiesOf } from '@storybook/polymer';
 import { withKnobs } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
-import '@conversionxl/cxl-institute';
+import '@conversionxl/cxl-institute/src/templates/global';
+import '@conversionxl/cxl-ui/src/components/cxl-institute-layout.js';
+import '@conversionxl/cxl-ui/src/components/cxl-institute-content.js';
+import '@conversionxl/cxl-ui/src/components/cxl-institute-content-header.js';
+import '@conversionxl/cxl-ui/src/components/cxl-institute-sidebar-items.js';
+import '@conversionxl/cxl-ui/src/components/cxl-institute-sidebar-item.js';
 
 storiesOf('CXL Institute Layouts', module)
   .addDecorator(withKnobs)

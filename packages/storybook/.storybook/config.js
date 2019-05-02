@@ -1,8 +1,6 @@
-import { configure } from '@storybook/polymer';
+// Import lumo styles
+import '@conversionxl/cxl-lumo-styles';
 
-function loadStories() {
-  const req = require.context('../', true, /\.stories\.js$/);
-  req.keys().forEach(filename => req(filename));
-}
-
-configure(loadStories, module);
+// Import third-party components
+import '@vaadin/vaadin-button';
+import '@vaadin/vaadin-details';

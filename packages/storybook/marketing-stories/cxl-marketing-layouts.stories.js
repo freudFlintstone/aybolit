@@ -2,7 +2,9 @@ import { storiesOf } from '@storybook/polymer';
 import { withKnobs } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
-import '@conversionxl/cxl-marketing';
+import '@conversionxl/cxl-marketing/src/templates/global';
+import '@conversionxl/cxl-ui/src/components/cxl-navbar.js';
+import '@conversionxl/cxl-ui/src/components/cxl-marketing-layout.js';
 
 storiesOf('CXL Marketing Layouts', module)
   .addDecorator(withKnobs)

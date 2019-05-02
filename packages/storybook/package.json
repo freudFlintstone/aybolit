@@ -1,14 +1,20 @@
 {
-  "name": "@aybolit/storybook",
-  "private": true,
+  "name": "@conversionxl/cxl-storybook",
   "version": "0.1.0",
-  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
-  "license": "MIT",
+  "author": "CXL <leho@conversionxl.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conversionxl/aybolit",
+    "directory": "packages/cxl-storybook"
+  },
   "dependencies": {
     "@aybolit/white-label": "^0.1.0",
     "@conversionxl/cxl-institute": "^0.1.0",
     "@conversionxl/cxl-lumo-styles": "^0.1.0",
     "@conversionxl/cxl-marketing": "^0.1.0",
+    "@conversionxl/cxl-ui": "^0.1.0",
     "@storybook/addon-knobs": "^5.0.6",
     "@storybook/addon-viewport": "^5.0.6",
     "@storybook/addons": "^5.0.6",

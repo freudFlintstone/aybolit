@@ -13,7 +13,9 @@
     "lint": "npm-run-all --parallel lint:*",
     "lint:js": "eslint *.js packages --ignore-path .gitignore",
     "lint:scss": "stylelint packages/**/*.scss --fix",
-    "storybook": "yarn --cwd packages/storybook start-storybook -p 6006",
+    "storybook": "npm-run-all --parallel storybook:*",
+    "storybook:institute": "yarn --cwd packages/cxl-institute start-storybook -p 6006",
+    "storybook:marketing": "yarn --cwd packages/cxl-marketing start-storybook -p 6007",
     "test": "karma start",
     "test:visual": "rimraf tmp && BABEL_ENV=visual webpack --config test/visual/webpack.config.js && rimraf test/visual/screenshots/chrome/* && vrtest run --config test/visual/vrtest.config.js --record",
     "watch": "node scripts/watcher.js"
