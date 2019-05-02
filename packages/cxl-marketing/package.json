@@ -1,0 +1,39 @@
+{
+  "name": "@conversionxl/cxl-marketing",
+  "version": "0.1.0",
+  "author": "CXL <leho@conversionxl.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conversionxl/aybolit",
+    "directory": "packages/cxl-marketing"
+  },
+  "dependencies": {
+    "@conversionxl/cxl-lumo-styles": "^0.1.0",
+    "@conversionxl/cxl-ui": "^0.1.0",
+    "@pika/pack": "^0.3.0",
+    "@pika/plugin-build-web": "^0.3.0",
+    "@pika/plugin-bundle-web": "^0.3.0",
+    "@pika/plugin-standard-pkg": "^0.3.0",
+    "@vaadin/vaadin-button": "^2.1.5",
+    "lit-element": "^2.1.0"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-bundle-web"
+      ]
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "pack build"
+  }
+}
