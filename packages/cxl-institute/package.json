@@ -1,9 +1,14 @@
 {
   "name": "@conversionxl/cxl-institute",
   "version": "0.1.0",
-  "author": "CXL",
-  "license": "UNLICENSED",
+  "author": "CXL <leho@conversionxl.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conversionxl/aybolit",
+    "directory": "packages/cxl-institute"
+  },
   "dependencies": {
     "@conversionxl/cxl-lumo-styles": "^0.1.0",
     "@conversionxl/cxl-ui": "^0.1.0",
