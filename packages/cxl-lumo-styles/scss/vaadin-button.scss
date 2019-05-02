@@ -12,14 +12,14 @@
 
 :host([theme~="transparent"]) {
   background-color: transparent;
-  color: var(--lumo-primary-color);
   border: 1px solid var(--lumo-primary-color);
+  color: var(--lumo-primary-color);
 }
 
 :host([theme~="contrast"]) {
   background-color: transparent;
-  color: var(--lumo-shade-90pct);
   border: 1px solid var(--lumo-shade-90pct);
+  color: var(--lumo-shade-90pct);
 }
 
 @include respond-below(small) {

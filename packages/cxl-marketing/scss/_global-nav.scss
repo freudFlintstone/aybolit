@@ -17,7 +17,7 @@
       display: block;
       font-size: var(--lumo-font-size-m);
       font-weight: 500;
-      padding: 5px 20px;
+      padding: var(--lumo-space-s) var(--lumo-space-l);
 
       &:hover {
         color: var(--lumo-primary-color);
@@ -43,18 +43,17 @@
   }
 
   &__sub-menu {
-    background: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 4px;
-    box-shadow: 0 8px 8px rgba(26, 26, 26, 0.1);
+    background: var(--lumo-base-color);
+    border: 1px solid var(--lumo-tint-5pct);
+    border-radius: var(--lumo-space-s);
+    box-shadow: 0 8px 8px var(--lumo-shade-20pct);
     display: none;
-    left: -10px;
+    left: var(--lumo-space-l);
     list-style: none;
     margin: 0;
     min-width: 130px;
     opacity: 0;
-    padding: 0;
-    padding: 10px;
+    padding: var(--lumo-space-m);
     padding-top: 0;
     position: absolute;
     transition: all 0.5s ease;
@@ -68,7 +67,7 @@
 
       a {
         display: block;
-        padding: 8px;
+        padding: var(--lumo-space-m);
       }
     }
   }
@@ -82,14 +81,14 @@
 
 @include respond-between(medium, large) {
   [part="topnav"] {
-    background-color: #fff;
+    background-color: var(--lumo-base-color);
 
     .menu {
       margin-left: auto;
 
       li a {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: var(--lumo-space-l);
+        padding-right: var(--lumo-space-l);
       }
     }
   }
