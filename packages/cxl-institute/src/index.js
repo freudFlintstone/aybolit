@@ -7,6 +7,9 @@ import '@conversionxl/cxl-lumo-styles';
 // Import third-party components
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-details';
+import '@vaadin/vaadin-grid';
+import '@vaadin/vaadin-context-menu';
+import '@vaadin/vaadin-item';
 
 // Import custom components
 import '@conversionxl/cxl-ui/src/components/cxl-institute-layout.js';

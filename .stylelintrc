@@ -29,6 +29,7 @@
     "selector-type-no-unknown": [ true, {
       "ignore": [ "custom-elements" ]
     } ],
-    "sh-waqar/declaration-use-variable": [["/color/", "font-size", "line-height", { ignoreValues: ["/padding-/", "/margin-/"] }]]
+    "sh-waqar/declaration-use-variable": [["/color/", "font-size", "line-height", { ignoreValues: ["/padding-/", "/margin-/"] }]],
+    "selector-max-attribute": 4
   }
 }

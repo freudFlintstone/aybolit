@@ -18,7 +18,10 @@
     "@pika/plugin-standard-pkg": "^0.3.0",
     "@polymer/iron-icon": "^3.0.1",
     "@vaadin/vaadin-button": "^2.1.5",
+    "@vaadin/vaadin-context-menu": "^4.3.5",
     "@vaadin/vaadin-details": "^1.0.1",
+    "@vaadin/vaadin-grid": "^5.4.0",
+    "@vaadin/vaadin-item": "^2.1.0",
     "lit-element": "^2.1.0",
     "sass-mq": "^5.0.0"
   },

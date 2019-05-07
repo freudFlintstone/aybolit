@@ -1,0 +1,24 @@
+:host([theme~="cxl-grid"]) {
+  [part~="header-cell"] ::slotted(vaadin-grid-cell-content) {
+    color: var(--lumo-shade-60pct);
+    font-size: var(--lumo-font-size-m);
+  }
+
+  [part~="cell"] ::slotted(vaadin-grid-cell-content) {
+    padding: var(--lumo-space-m) var(--lumo-space-m);
+  }
+}
+
+:host([theme~="cxl-grid"]:not([reordering]))
+  [part~="row"][selected]
+  [part~="body-cell"]:not([part~="details-cell"]) {
+  background: var(--lumo-primary-color-2pct);
+  background-image: none;
+}
+
+:host([theme~="cxl-grid"]:not([theme~="no-row-borders"]))
+  [part~="row"][selected]
+  [part~="cell"]:not([part~="details-cell"]) {
+  border-top: var(--_lumo-grid-border-width) solid var(--lumo-primary-color);
+  box-shadow: 0 var(--_lumo-grid-border-width) 0 0 var(--lumo-primary-color);
+}

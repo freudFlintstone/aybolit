@@ -6,3 +6,4 @@ import './templates/icons.js';
 
 import './templates/vaadin-details.js';
 import './templates/vaadin-tabs.js';
+import './templates/vaadin-grid.js';
