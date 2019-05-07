@@ -17,3 +17,4 @@ import '@conversionxl/cxl-ui/src/components/cxl-institute-content.js';
 import '@conversionxl/cxl-ui/src/components/cxl-institute-content-header.js';
 import '@conversionxl/cxl-ui/src/components/cxl-institute-sidebar-items.js';
 import '@conversionxl/cxl-ui/src/components/cxl-institute-sidebar-item.js';
+import '@conversionxl/cxl-ui/src/components/cxl-grid.js';
