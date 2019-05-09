@@ -6,40 +6,15 @@ import cxlGridStyles from '../styles/cxl-grid-css.js';
 class CXLGridElement extends LitElement {
   static get properties() {
     return {
-      data: {
-        type: Array
+      gridData: {
+        type: Array,
+        attribute: 'grid-data'
       }
     };
   }
 
   static get styles() {
     return [cxlThemeStyles, cxlGridStyles];
-  }
-
-  constructor() {
-    super();
-    this.data = [
-      {
-        'order-number':
-          '<a href="https://conversionxli.warmpress.com/my-account/view-order/1031988">#25<a>',
-        'order-date': 'May 6, 2019',
-        'order-status': 'Completed',
-        'order-total':
-          '<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$<span>3745</span> for 6 items',
-        'order-actions':
-          '<a href="https://conversionxli.warmpress.com/my-account/view-order/1031988" class="button view">View</a><a href="https://conversionxli.warmpress.com/wp-admin/admin-ajax.php?action=generate_wpo_wcpdf&document_type=invoice&order_ids=1031988&my-account&_wpnonce=1118f43534" class="button invoice">Download invoice (PDF)</a>'
-      },
-      {
-        'order-number':
-          '<a href="https://conversionxli.warmpress.com/my-account/view-order/1031988">#25<a>',
-        'order-date': 'May 6, 2019',
-        'order-status': 'Completed',
-        'order-total':
-          '<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$<span>3745</span> for 6 items',
-        'order-actions':
-          '<a href="https://conversionxli.warmpress.com/my-account/view-order/1031988" class="button view">View</a><a href="https://conversionxli.warmpress.com/wp-admin/admin-ajax.php?action=generate_wpo_wcpdf&document_type=invoice&order_ids=1031988&my-account&_wpnonce=1118f43534" class="button invoice">Download invoice (PDF)</a>'
-      }
-    ];
   }
 
   render() {
@@ -56,7 +31,7 @@ class CXLGridElement extends LitElement {
       const vaadinGridColumns = [];
       const vaadinGridChildrenElements = vaadinGrid.children;
 
-      vaadinGrid.items = that.data;
+      vaadinGrid.items = that.gridData;
 
       Object.keys(vaadinGridChildrenElements).forEach(function(key) {
         if (vaadinGridChildrenElements[key].tagName === 'VAADIN-GRID-COLUMN') {
@@ -113,25 +88,26 @@ class CXLGridElement extends LitElement {
     return template.content.childNodes;
   }
 
-  // Dropdown items TODO: remove if possible
+  // Dropdown items
   _contextMenuRenderer(root, contextMenu, context, actions) {
     let listBox = root.firstElementChild;
 
     if (!listBox) {
-      listBox = document.createElement('vaadin-list-box');
+      listBox = document.createElement('div');
       root.appendChild(listBox);
     }
 
     const item = listBox.querySelector('vaadin-item');
-    const filteredActions = Array.from(this._htmlToElements(actions)).filter(
-      node => node.nodeName === 'A'
-    );
 
     if (!item) {
-      Object.keys(filteredActions).forEach(function(key) {
+      Object.keys(actions).forEach(function(key) {
         const item = window.document.createElement('vaadin-item');
-        item.appendChild(filteredActions[key]);
+        item.setAttribute('theme', 'cxl-dropdown-item');
+        const hrefHTML = `<a href="${actions[key].url}">${actions[key].name}</a>`;
+
+        item.innerHTML = hrefHTML;
         listBox.appendChild(item);
+        console.log(listBox);
       });
     }
   }
