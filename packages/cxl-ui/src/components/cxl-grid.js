@@ -7,7 +7,7 @@ class CXLGridElement extends LitElement {
   static get properties() {
     return {
       gridData: {
-        type: Array,
+        type: String,
         attribute: 'grid-data'
       }
     };
@@ -24,6 +24,9 @@ class CXLGridElement extends LitElement {
   }
 
   firstUpdated() {
+    this.gridData = JSON.parse(this.gridData);
+    console.log('asd3');
+
     const that = this;
 
     window.addEventListener('WebComponentsReady', function() {
@@ -88,30 +91,6 @@ class CXLGridElement extends LitElement {
     return template.content.childNodes;
   }
 
-  // Dropdown items
-  _contextMenuRenderer(root, contextMenu, context, actions) {
-    let listBox = root.firstElementChild;
-
-    if (!listBox) {
-      listBox = document.createElement('div');
-      root.appendChild(listBox);
-    }
-
-    const item = listBox.querySelector('vaadin-item');
-
-    if (!item) {
-      Object.keys(actions).forEach(function(key) {
-        const item = window.document.createElement('vaadin-item');
-        item.setAttribute('theme', 'cxl-dropdown-item');
-        const hrefHTML = `<a href="${actions[key].url}">${actions[key].name}</a>`;
-
-        item.innerHTML = hrefHTML;
-        listBox.appendChild(item);
-        console.log(listBox);
-      });
-    }
-  }
-
   _actionsRenderer(root, column, rowData) {
     const columnRoot = root;
 
@@ -123,15 +102,19 @@ class CXLGridElement extends LitElement {
 
     const actions = rowData.item['order-actions'];
 
-    const icon = window.document.createElement('iron-icon');
-    icon.setAttribute('icon', 'lumo:edit');
+    if (typeof actions !== 'undefined') {
+      const icon = window.document.createElement('iron-icon');
+      icon.setAttribute('icon', 'lumo:edit');
 
-    const contextMenu = window.document.createElement('vaadin-context-menu');
-    contextMenu.openOn = 'click';
-    contextMenu.appendChild(icon);
-    contextMenu.renderer = (columnRoot, contextMenu, context) =>
-      this._contextMenuRenderer(columnRoot, contextMenu, context, actions);
-    columnRoot.appendChild(contextMenu);
+      const contextMenu = window.document.createElement('vaadin-context-menu');
+      contextMenu.setAttribute('theme', 'cxl-actions-dropdown');
+      contextMenu.openOn = 'click';
+      contextMenu.appendChild(icon);
+      contextMenu.renderer = columnRoot => {
+        columnRoot.innerHTML = actions;
+      };
+      columnRoot.appendChild(contextMenu);
+    }
   }
 }
 

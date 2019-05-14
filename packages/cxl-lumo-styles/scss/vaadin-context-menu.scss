@@ -1,0 +1,8 @@
+:host([theme~="cxl-actions-dropdown"]) ::slotted(a) {
+  display: block;
+  padding: var(--lumo-space-s) var(--lumo-space-m);
+}
+
+:host([theme~="cxl-actions-dropdown"]) ::slotted(a:focus) {
+  outline: none;
+}
