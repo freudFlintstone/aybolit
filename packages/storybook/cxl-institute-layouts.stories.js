@@ -4,7 +4,7 @@ import { html } from 'lit-html';
 
 import '@conversionxl/cxl-institute';
 
-storiesOf('Layouts', module)
+storiesOf('CXL Institute Layouts', module)
   .addDecorator(withKnobs)
   .add('cxl-institute-layout', () => {
     return html`

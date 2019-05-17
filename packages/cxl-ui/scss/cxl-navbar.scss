@@ -1,0 +1,93 @@
+@import "./utils/mq";
+
+:host {
+  display: block;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+[part="nav-buttons"] {
+  display: flex;
+  padding: 0;
+}
+
+[part="topnav"] {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+
+  @include mq($from: tablet, $until: desktop) {
+    [part="topnav"] {
+      background-color: #fff;
+      box-shadow: 0 5px 9px var(--lumo-shade-10pct);
+    }
+  }
+}
+
+[part="topnav"],
+[part="bottomnav"] {
+  display: flex;
+  padding-bottom: var(--lumo-space-s);
+  padding-top: var(--lumo-space-s);
+}
+
+[part="topnav"] .wrap,
+[part="bottomnav"] .wrap {
+  width: 100%;
+}
+
+:host([theme="bottomnav"]) {
+  [part="bottomnav"] {
+    background-color: var(--lumo-shade-5pct);
+    bottom: 0;
+    box-shadow: 0 -1px 1px 0 var(--lumo-shade-10pct);
+    left: 0;
+    position: absolute;
+    right: 0;
+
+    &.fixed {
+      background-color: rgb(245, 245, 245);
+      bottom: initial;
+      position: fixed;
+      top: 0;
+    }
+
+    @include mq($until: tablet) {
+      background-color: var(--lumo-shade);
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+:host([theme~="waves"]) {
+  @include mq($from: tablet) {
+    [part="bottomnav"] {
+      background-color: transparent;
+      bottom: 0;
+      box-shadow: none;
+      left: 0;
+      position: relative;
+      right: 0;
+    }
+  }
+}
+
+::slotted(cxl-burger-button) {
+  display: block;
+  margin-left: auto;
+
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
+::slotted(vaadin-button[theme~="cxl-transparent"]) {
+  @include mq($until: tablet) {
+    border-color: var(--lumo-tint-10pct);
+    color: var(--lumo-tint-70pct);
+  }
+}
