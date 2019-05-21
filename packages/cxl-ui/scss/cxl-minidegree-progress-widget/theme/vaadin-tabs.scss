@@ -1,0 +1,12 @@
+:host([theme~="cxl-course"]) {
+  [part="tabs"] {
+    ::slotted(vaadin-tab) {
+      min-height: var(--lumo-size-s);
+      text-align: left;
+    }
+
+    ::slotted(vaadin-tab[disabled]) {
+      min-height: var(--lumo-size-m);
+    }
+  }
+}

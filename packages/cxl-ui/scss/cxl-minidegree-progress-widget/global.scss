@@ -1,0 +1,28 @@
+cxl-minidegree-progress-widget {
+  .entry__title,
+  .module__title {
+    font-size: var(--lumo-font-size-m);
+    font-weight: 400;
+    margin: 0;
+  }
+
+  vaadin-accordion-panel[theme~="cxl-track"][opened] > vaadin-item {
+    .entry__title { color: var(--lumo-primary-color); }
+  }
+
+  vaadin-tabs[theme~="cxl-course"] {
+    $font-size: var(--lumo-font-size-s);
+
+    .entry__title {
+      font-size: $font-size;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .module__title {
+      color: var(--lumo-shade-50pct);
+      font-size: $font-size;
+      text-transform: uppercase;
+    }
+  }
+}

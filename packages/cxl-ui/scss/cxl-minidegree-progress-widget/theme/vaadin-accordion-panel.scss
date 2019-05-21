@@ -1,35 +1,33 @@
-:host([theme~="cxl-sidebar-panel"]) {
+:host([theme~="cxl-track"]) {
   border-bottom: none;
   border-top: solid 1px var(--lumo-contrast-10pct);
+
   [part="summary"] {
     border-radius: 0;
     color: var(--lumo-header-text-color);
     cursor: pointer;
-    display: flex;
-    padding: var(--lumo-space-m) var(--lumo-space-m);
-
-    [part="toggle"] {
-      font-size: var(--lumo-icon-size-m);
-      margin-left: auto;
-      order: 1;
-    }
+    padding: var(--lumo-space-m);
   }
 
   [part="content"] {
     padding: 0;
   }
+
+  ::slotted(vaadin-item) {
+    line-height: var(--lumo-line-height-m);
+    padding: 0;
+  }
 }
 
-:host([theme~="cxl-sidebar-panel"]:last-child) {
+:host([theme~="cxl-track"]:last-child) {
   border-bottom: solid 1px var(--lumo-contrast-10pct);
 }
 
-:host([theme~="cxl-sidebar-panel"][opened]) {
+:host([theme~="cxl-track"][opened]) {
   [part="summary"] {
     background-color: var(--lumo-tint-80pct);
     border-bottom: solid 1px var(--lumo-contrast-20pct);
     box-shadow: 0 0 4px 1px var(--lumo-shade-10pct);
-    color: var(--lumo-primary-color);
 
     [part="toggle"] {
       color: var(--lumo-primary-color);
@@ -37,23 +35,25 @@
   }
 }
 
-:host([theme~="cxl-sidebar-subpanel"]) {
+:host([theme~="cxl-course"]) {
+  [part="content"] {
+    padding: 0;
+  }
+
   [part="summary"] {
     border-radius: 0;
     color: var(--lumo-header-text-color);
     cursor: pointer;
-    display: flex;
-    padding: var(--lumo-space-m) var(--lumo-space-m);
+    padding: var(--lumo-space-s);
+  }
 
-    [part="toggle"] {
-      font-size: var(--lumo-icon-size-xs);
-      margin-left: -var(--lumo-space-xs);
-      order: 0;
-    }
+  ::slotted(vaadin-item) {
+    line-height: var(--lumo-line-height-m);
+    padding: 0;
   }
 }
 
-:host([theme~="cxl-sidebar-subpanel"]:last-child) {
+:host([theme~="cxl-course"]:last-child) {
   border-bottom: none;
 
   [part="summary"] {
@@ -61,7 +61,7 @@
   }
 }
 
-:host([theme~="cxl-sidebar-subpanel"][opened]) {
+:host([theme~="cxl-course"][opened]) {
   [part="summary"] {
     border-bottom: 1px solid var(--lumo-shade-5pct);
     box-shadow: none;

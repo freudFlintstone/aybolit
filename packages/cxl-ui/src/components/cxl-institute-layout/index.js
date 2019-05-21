@@ -1,13 +1,14 @@
 // Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
+import './theme.js';
 import '@vaadin/vaadin-tabs';
-import './cxl-institute-content.js';
-import './cxl-institute-content-header.js';
-import './cxl-icon-nav.js';
-import cxlThemeStyles from '../styles/cxl-theme-css.js';
-import cxlInstituteLayoutStyles from '../styles/cxl-institute-layout-css.js';
+import '../cxl-institute-content.js';
+import '../cxl-institute-content-header.js';
+import '../cxl-icon-nav';
+import cxlThemeStyles from '../../styles/cxl-theme-css.js';
+import cxlInstituteLayoutStyles from '../../styles/cxl-institute-layout-css.js';
 
-class CXLInstituteLayoutElement extends LitElement {
+export class CXLInstituteLayoutElement extends LitElement {
   static get properties() {
     return {};
   }

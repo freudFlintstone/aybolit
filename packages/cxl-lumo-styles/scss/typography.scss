@@ -8,14 +8,3 @@ html,
 p {
   font-family: var(--lumo-font-secondary);
 }
-
-h4.module-header {
-  margin-bottom: 0;
-  padding-left: var(--lumo-space-l);
-  color: var(--lumo-shade-50pct);
-  display: block;
-  font-size: var(--lumo-font-size-s);
-  font-weight: 500;
-  line-height: var(--lumo-line-height-m);
-  text-transform: uppercase;
-}

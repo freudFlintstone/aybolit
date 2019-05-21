@@ -1,3 +1,4 @@
+import '@vaadin/vaadin-accordion';
 import { AccordionElement } from '@vaadin/vaadin-accordion/src/vaadin-accordion';
 
 class CXLVaadinAccordion extends AccordionElement {

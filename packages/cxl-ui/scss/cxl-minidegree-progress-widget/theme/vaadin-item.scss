@@ -1,12 +1,9 @@
-:host([theme~="cxl-sidebar-panel-summary"]) {
-  line-height: var(--lumo-line-height-s);
-  padding: 0;
+:host([theme~="cxl-track"]) {
   ::slotted(label) {
     color: var(--lumo-shade-50pct);
     display: block;
     font-size: var(--lumo-font-size-xxs);
     font-weight: 600;
-    line-height: var(--lumo-line-height-m);
     text-transform: uppercase;
   }
 }
