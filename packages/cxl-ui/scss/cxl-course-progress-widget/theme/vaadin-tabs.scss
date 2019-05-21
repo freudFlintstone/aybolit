@@ -1,0 +1,7 @@
+:host([theme~="cxl-course"]) {
+  [part="tabs"] {
+    ::slotted(vaadin-tab) {
+      text-align: left;
+    }
+  }
+}

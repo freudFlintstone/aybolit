@@ -1,18 +1,22 @@
-// Import global styles
+// Global styles.
 import './templates/global.js';
 
-// Import lumo styles
+// Lumo.
 import '@conversionxl/cxl-lumo-styles';
 
-// Import third-party components
-import '@vaadin/vaadin-button';
-import '@vaadin/vaadin-details';
-import '@vaadin/vaadin-list-box';
-import '@vaadin/vaadin-item';
-import '@vaadin/vaadin-dialog';
+/**
+ * Themes first.
+ *
+ * @see https://github.com/vaadin/vaadin-themable-mixin#theme-modules
+ * @todo Is there a better way? Individual component usage must duplicate theme imports?
+ */
+import '@conversionxl/cxl-ui/src/components/cxl-institute-layout/theme.js';
+import '@conversionxl/cxl-ui/src/components/cxl-minidegree-progress-widget/theme.js';
+import '@conversionxl/cxl-ui/src/components/cxl-course-progress-widget/theme.js';
 
-// Import custom components
-import '@conversionxl/cxl-ui/src/components/cxl-institute-layout.js';
-import '@conversionxl/cxl-ui/src/components/cxl-institute-sidebar-items.js';
-import '@conversionxl/cxl-ui/src/components/cxl-institute-sidebar-item.js';
-import '@conversionxl/cxl-ui/src/components/cxl-vaadin-accordion.js';
+// Custom components.
+import '@conversionxl/cxl-ui/src/components/cxl-institute-layout';
+import '@conversionxl/cxl-ui/src/components/cxl-minidegree-progress-widget';
+
+// Third-party components.
+import '@vaadin/vaadin-button';

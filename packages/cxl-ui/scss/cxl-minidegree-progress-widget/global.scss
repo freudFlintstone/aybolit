@@ -1,0 +1,9 @@
+@import "../utils/mixins";
+
+cxl-minidegree-progress-widget {
+  @include cxl-institute-progress-widget-titles;
+
+  vaadin-accordion-panel[theme~="cxl-track"][opened] > vaadin-item {
+    .entry__title { color: var(--lumo-primary-color); }
+  }
+}

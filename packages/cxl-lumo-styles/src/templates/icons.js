@@ -12,12 +12,12 @@ $documentContainer.innerHTML = `
       width: var(--lumo-icon-size-s);
       height: var(--lumo-icon-size-s);
     }
-    
+
     iron-icon.size-m {
       width: var(--lumo-icon-size-m);
       height: var(--lumo-icon-size-m);
     }
-    
+
     iron-icon.size-l {
       width: var(--lumo-icon-size-l);
       height: var(--lumo-icon-size-l);
@@ -76,6 +76,20 @@ $documentContainer.innerHTML = `
       h-41.402l45.43-77.915l-44.257-76.656h41.07L203.857,66.206z"/>
       <path fill="#D61F2D" d="M321.929,141.03h66.542v27.61H285.914V14.069h36.016V141.03z"/>
     </g>
+    </defs>
+  </svg>
+</iron-iconset-svg>
+
+<iron-iconset-svg size="1000" id="cxl-vaadin" name="cxl-vaadin">
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <g id="check" width="16" height="16" viewBox="0 0 16 16">
+        <path d="M7.3 14.2l-7.1-5.2 1.7-2.4 4.8 3.5 6.6-8.5 2.3 1.8z"></path>
+      </g>
+      <g id="progressbar" width="16" height="16" viewBox="0 0 16 16">
+        <path d="M0 5v6h16v-6h-16zM15 10h-14v-4h14v4z"></path>
+        <path d="M2 7h7v2h-7v-2z"></path>
+      </g>
     </defs>
   </svg>
 </iron-iconset-svg>

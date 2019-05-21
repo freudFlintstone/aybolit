@@ -1,0 +1,27 @@
+:host([theme~="cxl-course"]) {
+  [part="content"] {
+    padding: 0;
+  }
+
+  [part="summary"] {
+    border-radius: 0;
+    color: var(--lumo-header-text-color);
+    cursor: pointer;
+    padding: var(--lumo-space-m);
+  }
+
+  [part="summary-content"] {
+    flex: 1;
+  }
+
+  ::slotted(vaadin-item) {
+    padding: 0;
+  }
+}
+
+:host([theme~="cxl-course"][opened]) {
+  [part="summary"] {
+    border-bottom: 1px solid var(--lumo-shade-5pct);
+    box-shadow: none;
+  }
+}

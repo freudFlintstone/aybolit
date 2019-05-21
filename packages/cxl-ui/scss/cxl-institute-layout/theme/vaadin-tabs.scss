@@ -1,0 +1,18 @@
+:host([theme~="cxl-institute-layout-tabs"]) [part="tabs"] {
+  border-bottom: 1px solid var(--lumo-contrast-10pct);
+  box-shadow: none;
+}
+
+:host([theme~="cxl-institute-layout-tabs"]) [part="tabs"] ::slotted(vaadin-tab) {
+  box-shadow: none;
+  font-size: var(--lumo-font-size-m);
+  width: 50%;
+}
+
+:host([theme~="cxl-institute-layout-tabs"]) [part="tabs"] ::slotted(vaadin-tab)::before {
+  width: 80%;
+}
+
+:host([theme~="cxl-institute-layout-tabs"]) [part="tabs"] ::slotted(vaadin-tab)::after {
+  width: 80%;
+}

@@ -1,0 +1,35 @@
+:host([theme~="cxl-track"]) {
+  border-bottom: none;
+  border-top: solid 1px var(--lumo-contrast-10pct);
+
+  [part="summary"] {
+    border-radius: 0;
+    color: var(--lumo-header-text-color);
+    cursor: pointer;
+    padding: var(--lumo-space-m);
+  }
+
+  [part="content"] {
+    padding: 0;
+  }
+
+  ::slotted(vaadin-item) {
+    padding: 0;
+  }
+}
+
+:host([theme~="cxl-track"]:last-child) {
+  border-bottom: solid 1px var(--lumo-contrast-10pct);
+}
+
+:host([theme~="cxl-track"][opened]) {
+  [part="summary"] {
+    background-color: var(--lumo-tint-80pct);
+    border-bottom: solid 1px var(--lumo-contrast-20pct);
+    box-shadow: 0 0 4px 1px var(--lumo-shade-10pct);
+
+    [part="toggle"] {
+      color: var(--lumo-primary-color);
+    }
+  }
+}

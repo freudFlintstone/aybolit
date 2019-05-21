@@ -16,14 +16,7 @@
     "@pika/plugin-build-web": "^0.3.0",
     "@pika/plugin-bundle-web": "^0.3.0",
     "@pika/plugin-standard-pkg": "^0.3.0",
-    "@polymer/iron-icon": "^3.0.1",
-    "@vaadin/vaadin-accordion": "^1.0.0",
-    "@vaadin/vaadin-button": "^2.1.5",
-    "@vaadin/vaadin-details": "^1.0.1",
-    "@vaadin/vaadin-dialog": "^2.2.1",
-    "@vaadin/vaadin-item": "^2.1.0",
-    "@vaadin/vaadin-list-box": "^1.1.0",
-    "@vaadin/vaadin-tabs": "^3.0.0",
+    "@vaadin/vaadin-button": "^2.2.0",
     "lit-element": "^2.1.0"
   },
   "devDependencies": {

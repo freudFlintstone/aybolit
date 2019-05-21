@@ -1,0 +1,36 @@
+@import "../utils/mixins";
+
+cxl-course-progress-widget {
+  @include cxl-institute-progress-widget-titles;
+
+  vaadin-progress-bar {
+    height: 2px;
+    margin-bottom: 0;
+  }
+
+  vaadin-tabs[theme~="cxl-course"] {
+    $font-size: var(--lumo-font-size-s);
+
+    .entry__title {
+      font-size: $font-size;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .module__title {
+      color: var(--lumo-shade-50pct);
+      font-size: $font-size;
+      text-transform: uppercase;
+    }
+
+    .entry__title + iron-icon {
+      height: var(--cxl-lumo-icon-size-xs);
+      margin-left: auto;
+      width: var(--cxl-lumo-icon-size-xs);
+
+      &[icon="cxl-vaadin:check"] {
+        --iron-icon-fill-color: var(--lumo-primary-color);
+      }
+    }
+  }
+}
