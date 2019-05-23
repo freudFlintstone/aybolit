@@ -1,0 +1,37 @@
+@import "./utils/mq";
+
+:host {
+  display: block;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+[part="topnav"] {
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .wrap,
+  .nav-items {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  @include mq($from: tablet, $until: desktop) {
+    background-color: var(--lumo-base-color);
+    box-shadow: 0 5px 9px var(--lumo-shade-10pct);
+  }
+
+  @include mq($from: tablet) {
+    .nav-items {
+      display: flex;
+    }
+  }
+}

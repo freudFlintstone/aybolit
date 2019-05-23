@@ -1,0 +1,20 @@
+:host([theme~="cxl-button"]) {
+  cursor: pointer;
+  font-weight: 500;
+  height: calc(var(--lumo-button-size) * 1.1);
+  padding: 0 calc(var(--lumo-button-size) / 2);
+}
+
+:host([theme~="cxl-transparent"]) {
+  background-color: transparent; // stylelint-disable sh-waqar/declaration-use-variable
+  border: 1px solid var(--lumo-primary-color);
+  color: var(--lumo-primary-color);
+}
+
+// Extensions
+
+:host([theme~="contrast"]) {
+  background-color: transparent;
+  border: 1px solid var(--lumo-shade-90pct);
+  color: var(--lumo-shade-90pct);
+}

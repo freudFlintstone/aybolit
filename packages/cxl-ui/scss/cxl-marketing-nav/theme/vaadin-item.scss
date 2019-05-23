@@ -1,0 +1,26 @@
+@import "../../utils/mq";
+
+:host([theme~="cxl-marketing-nav-item"]) {
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+
+  ::slotted(a) {
+    color: var(--lumo-shade-90pct);
+    display: block;
+    font-size: var(--lumo-font-size-m);
+    font-weight: 500;
+    padding: var(--lumo-space-s) var(--lumo-space-m);
+
+    &:hover {
+      color: var(--lumo-primary-color);
+      text-decoration: none;
+    }
+  }
+
+  @include mq($from: desktop) {
+    ::slotted(a) {
+      padding: var(--lumo-space-s) var(--lumo-space-l);
+    }
+  }
+}

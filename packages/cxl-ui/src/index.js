@@ -1,4 +1,5 @@
 export { CXLInstituteLayoutElement } from './components/cxl-institute-layout';
+export { CXLMarketingLayoutElement } from './components/cxl-marketing-layout';
 export { CXLMinidegreeProgressWidgetElement } from './components/cxl-minidegree-progress-widget';
 export { CXLCatalog } from './components/cxl-catalog.js';
 export { CXLCourseCard } from './components/cxl-course-card.js';
