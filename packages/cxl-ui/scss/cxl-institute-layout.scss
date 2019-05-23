@@ -76,14 +76,17 @@
   }
 }
 
-[part="header"] {
+[part="mobile-header"] {
   border-bottom: 1px solid var(--lumo-contrast-10pct);
   display: flex;
+  flex-direction: row;
   grid-area: header;
-  padding: var(--lumo-space-m);
+  padding: var(--lumo-space-s) var(--lumo-space-m);
 
-  h3 {
+  h2 {
+    font-size: calc(var(--lumo-font-size-s) * 1.4);
     font-weight: 500;
+    line-height: calc(var(--lumo-line-height-m) * 1.175);
     margin: 0;
     padding-left: var(--lumo-space-m);
   }
@@ -91,22 +94,6 @@
   @include mq($from: tablet) {
     display: none;
   }
-}
-
-// TODO: replace with cxl-logo
-[part="header"] .logo {
-  color: var(--lumo-shade);
-  flex: 0 auto;
-  margin-right: var(--lumo-space-m);
-  text-decoration: none;
-}
-[part="header"] .logo .cxl {
-  font: italic 900 1.6rem Roboto, sans-serif;
-  text-transform: none;
-}
-[part="header"] .logo .cxl span {
-  color: var(--lumo-primary-text-color);
-  font-style: normal;
 }
 
 #sidebar {

@@ -14,6 +14,10 @@ storiesOf('Layouts', module)
   .add('cxl-institute-layout (cxl-minidegree-progress-widget)', () => {
     return html`
       <cxl-institute-layout>
+        <a href="" slot="mobile-header-logo">
+          <iron-icon class="icon size-l" icon="cxl:logo"></iron-icon>
+        </a>
+        <span slot="mobile-header-title">Mobile header title</span>
         <vaadin-dialog theme="cxl-search-overlay">
           <template>
             <iron-icon class="icon size-l" icon="lumo:cross"></iron-icon>
@@ -44,8 +48,7 @@ storiesOf('Layouts', module)
         </div>
 
         <cxl-institute-content>
-          ${cxlInstituteContentHeader}
-          ${trainingVideoContent}
+          ${cxlInstituteContentHeader} ${trainingVideoContent}
         </cxl-institute-content>
       </cxl-institute-layout>
     `;
