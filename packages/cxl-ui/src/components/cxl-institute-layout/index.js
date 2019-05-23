@@ -21,10 +21,8 @@ export class CXLInstituteLayoutElement extends LitElement {
     return html`
       <!-- Visible on mobile -->
       <header part="mobile-header">
-        <a href="/" class="logo">
-          <span class="cxl">C<span>XL</span></span>
-        </a>
-        <h3>Something something</h3>
+        <slot name="mobile-header-logo"></slot>
+        <h2><slot name="mobile-header-title"></slot></h2>
       </header>
 
       <!-- Visible on mobile -->
