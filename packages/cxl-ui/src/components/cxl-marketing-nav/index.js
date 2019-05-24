@@ -1,7 +1,6 @@
 // Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
 import './theme.js';
-import './cxl-marketing-nav-item.js';
 import cxlThemeStyles from '../../styles/cxl-theme-css.js';
 import cxlMarketingNavStyles from '../../styles/cxl-marketing-nav-css.js';
 
