@@ -8,7 +8,8 @@
   display: none;
 }
 
-[part="topnav"] {
+[part="topnav"],
+[part="bottomnav"] {
   background: transparent;
   display: flex;
   flex-direction: row;
@@ -18,20 +19,52 @@
   .nav-items {
     display: flex;
     flex-direction: row;
-  }
-
-  .nav-items {
-    display: none;
+    width: 100%;
   }
 
   @include mq($from: tablet, $until: desktop) {
     background-color: var(--lumo-base-color);
     box-shadow: 0 5px 9px var(--lumo-shade-10pct);
   }
+}
+
+[part="topnav"] {
+  .nav-items {
+    display: none;
+    &.mobile {
+      display: flex;
+      margin-left: auto;
+      width: auto;
+    }
+  }
 
   @include mq($from: tablet) {
     .nav-items {
       display: flex;
+      &.mobile {
+        display: none;
+      }
     }
+  }
+}
+
+[part="bottomnav"] {
+  background-color: var(--lumo-shade);
+  bottom: 0;
+  box-shadow: 0 -1px 1px 0 var(--lumo-shade-10pct);
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+
+  &.fixed {
+    background-color: var(--lumo-shade-5pct);
+    bottom: initial;
+    position: fixed;
+    top: 0;
+  }
+
+  @include mq($from: tablet) {
+    background-color: var(--lumo-shade-5pct);
   }
 }

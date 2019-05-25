@@ -6,7 +6,17 @@ import cxlMarketingNavStyles from '../../styles/cxl-marketing-nav-css.js';
 
 class CXLMarketingNavElement extends LitElement {
   static get properties() {
-    return {};
+    return {
+      navType: {
+        type: String,
+        attribute: 'nav-type'
+      },
+      fixed: {
+        type: Boolean,
+        value: false,
+        reflect: true
+      }
+    };
   }
 
   static get styles() {
@@ -15,20 +25,49 @@ class CXLMarketingNavElement extends LitElement {
 
   render() {
     return html`
-      <nav part="topnav">
+      <nav part="${this.navType}" class="${this.fixed ? 'fixed' : ''}">
         <div class="wrap">
-          <div class="logo">
-            <slot name="topnav-logo"></slot>
-          </div>
-          <div class="nav-items">
-            <slot></slot>
-          </div>
+          ${this.navType === 'topnav'
+            ? html`
+                <div class="logo">
+                  <slot name="topnav-logo"></slot>
+                </div>
+                <div class="nav-items">
+                  <slot></slot>
+                </div>
+                <div class="nav-items mobile">
+                  <vaadin-item>
+                    <a href="#">
+                      <iron-icon class="icon size-l" icon="lumo:menu"></iron-icon>
+                    </a>
+                  </vaadin-item>
+                </div>
+              `
+            : html`
+                <div class="nav-items">
+                  <slot></slot>
+                </div>
+              `}
         </div>
       </nav>
     `;
   }
 
-  firstUpdated() {}
+  scroll() {
+    if (!this.isScrolledIntoView(this)) {
+      this.setAttribute('fixed', '');
+    } else {
+      this.removeAttribute('fixed');
+    }
+  }
+
+  isScrolledIntoView(el) {
+    const rect = el.getBoundingClientRect();
+    const elemTop = rect.top;
+    const isVisible = elemTop >= 0;
+
+    return isVisible;
+  }
 }
 
 customElements.define('cxl-marketing-nav', CXLMarketingNavElement);

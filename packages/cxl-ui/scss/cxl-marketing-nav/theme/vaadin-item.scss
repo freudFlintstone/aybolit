@@ -23,4 +23,18 @@
       padding: var(--lumo-space-s) var(--lumo-space-l);
     }
   }
+
+  ::slotted(vaadin-button[theme~="cxl-transparent"]) {
+    @include mq($until: tablet) {
+      border-color: var(--lumo-tint-10pct);
+      color: var(--lumo-tint-70pct);
+    }
+  }
+}
+
+:host([theme~="cxl-from-tablet"]) {
+  display: none;
+  @include mq($from: tablet) {
+    display: flex;
+  }
 }
