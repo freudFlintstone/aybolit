@@ -1,6 +1,7 @@
 // Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
 import '../cxl-marketing-nav';
+import '@vaadin/vaadin-tabs';
 import cxlThemeStyles from '../../styles/cxl-theme-css.js';
 
 export class CXLMarketingLayoutElement extends LitElement {

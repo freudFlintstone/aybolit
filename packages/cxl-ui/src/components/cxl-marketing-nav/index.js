@@ -26,42 +26,31 @@ class CXLMarketingNavElement extends LitElement {
   render() {
     return html`
       <nav part="${this.navType}" class="${this.fixed ? 'fixed' : ''}">
-        <div class="wrap">
-          ${this.navType === 'topnav'
-            ? html`
-                <div class="logo">
-                  <slot name="topnav-logo"></slot>
-                </div>
-                <div class="nav-items">
-                  <slot></slot>
-                </div>
-                <div class="nav-items mobile">
-                  <vaadin-item>
-                    <a href="#">
-                      <iron-icon class="icon size-l" icon="lumo:menu"></iron-icon>
-                    </a>
-                  </vaadin-item>
-                </div>
-              `
-            : html`
-                <div class="nav-items">
-                  <slot></slot>
-                </div>
-              `}
-        </div>
+        ${this.navType === 'topnav'
+          ? html`
+              <slot></slot>
+            `
+          : html`
+              <div class="wrap">
+                <slot></slot>
+              </div>
+            `}
       </nav>
     `;
   }
 
-  scroll() {
-    if (!this.isScrolledIntoView(this)) {
-      this.setAttribute('fixed', '');
-    } else {
-      this.removeAttribute('fixed');
-    }
+  firstUpdated() {
+    const that = this;
+    document.querySelector('body').addEventListener('scroll', function() {
+      if (!that._isScrolledIntoView(that)) {
+        that.setAttribute('fixed', '');
+      } else {
+        that.removeAttribute('fixed');
+      }
+    });
   }
 
-  isScrolledIntoView(el) {
+  _isScrolledIntoView(el) {
     const rect = el.getBoundingClientRect();
     const elemTop = rect.top;
     const isVisible = elemTop >= 0;

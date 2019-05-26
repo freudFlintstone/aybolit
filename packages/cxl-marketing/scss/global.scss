@@ -1,2 +1,7 @@
 @import "@conversionxl/cxl-ui/scss/utils/mq";
 @import "@conversionxl/cxl-ui/scss/cxl-theme";
+
+html,
+body {
+  overflow-x: hidden;
+}

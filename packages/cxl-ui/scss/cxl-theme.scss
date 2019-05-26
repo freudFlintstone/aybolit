@@ -43,6 +43,16 @@ img {
 .wrap {
   margin-left: auto;
   margin-right: auto;
-  padding-left: calc(var(--lumo-space-m) / 2);
-  padding-right: calc(var(--lumo-space-m) / 2);
+  max-width: 720px;
+  padding-left: calc(var(--lumo-space-m));
+  padding-right: calc(var(--lumo-space-m));
+  width: 100%;
+
+  @include mq($from: tablet) {
+    max-width: 960px;
+  }
+
+  @include mq($from: desktop) {
+    max-width: 1140px;
+  }
 }

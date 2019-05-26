@@ -1,0 +1,110 @@
+@import "./utils/mq";
+
+:host {
+  background-repeat: no-repeat;
+  display: flex;
+  height: auto;
+  min-height: 575px;
+  position: relative;
+
+  ::slotted(cxl-marketing-nav) {
+    margin-left: calc(var(--lumo-space-m) / -1);
+    margin-right: calc(var(--lumo-space-m) / -1);
+  }
+
+  .bgimage {
+    background-position: right -260px top 100px;
+    background-repeat: no-repeat;
+    background-size: 550px;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    min-height: 575px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  [part="hero-content"] {
+    padding-bottom: calc(var(--lumo-space-xl) * 3);
+    padding-right: 35%;
+    position: relative;
+  }
+
+  ::slotted(h1) {
+    margin: 0;
+  }
+
+  .waves {
+    display: none;
+  }
+
+  @include mq($from: tablet) {
+    .bgimage {
+      background-position: right -425px top 10px;
+      background-repeat: no-repeat;
+      background-size: 1000px;
+    }
+
+    [part="hero-content"] {
+      padding-bottom: calc(var(--lumo-space-xl) * 3);
+      padding-right: 40%;
+      padding-top: calc(var(--lumo-space-l));
+    }
+  }
+
+  @include mq($from: tablet, $until: desktop) {
+    [part="hero-content"] {
+      padding-right: 35%;
+      padding-top: calc(var(--lumo-space-xl) * 1.4);
+    }
+  }
+
+  @include mq($from: desktop) {
+    .bgimage {
+      background-position: right -300px top 30%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-right: 200px;
+    }
+
+    [part="hero-content"] {
+      padding-bottom: calc(var(--lumo-space-xl) * 3);
+      padding-right: 40%;
+    }
+  }
+
+  @include mq($from: wide) {
+    .bgimage {
+      background-position: center top 10%;
+      background-repeat: no-repeat;
+      background-size: 1000px;
+      padding-right: 600px;
+    }
+  }
+}
+
+:host([hero-style="waves"]) {
+  @include mq($from: tablet) {
+    [part="hero-content"] {
+      padding-bottom: calc(var(--lumo-space-xs));
+    }
+
+    .waves {
+      bottom: 0;
+      display: block;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  @include mq($from: tablet, $until: desktop) {
+    min-height: 850px;
+  }
+
+  @include mq($from: desktop) {
+    min-height: 700px;
+  }
+}

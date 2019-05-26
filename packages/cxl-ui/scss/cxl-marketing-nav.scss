@@ -14,13 +14,7 @@
   display: flex;
   flex-direction: row;
   position: relative;
-
-  .wrap,
-  .nav-items {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
+  z-index: 1;
 
   @include mq($from: tablet, $until: desktop) {
     background-color: var(--lumo-base-color);
@@ -28,43 +22,37 @@
   }
 }
 
-[part="topnav"] {
-  .nav-items {
-    display: none;
-    &.mobile {
-      display: flex;
-      margin-left: auto;
-      width: auto;
-    }
-  }
-
-  @include mq($from: tablet) {
-    .nav-items {
-      display: flex;
-      &.mobile {
-        display: none;
-      }
-    }
-  }
-}
-
 [part="bottomnav"] {
   background-color: var(--lumo-shade);
   bottom: 0;
-  box-shadow: 0 -1px 1px 0 var(--lumo-shade-10pct);
+  box-shadow: 0 -1px 5px 0 var(--lumo-shade-5pct);
   left: 0;
   position: absolute;
   right: 0;
   width: 100%;
 
+  .wrap {
+    padding: 0;
+  }
+
   &.fixed {
-    background-color: var(--lumo-shade-5pct);
+    background-color: var(--lumo-base-color);
     bottom: initial;
     position: fixed;
     top: 0;
   }
 
   @include mq($from: tablet) {
-    background-color: var(--lumo-shade-5pct);
+    background-color: var(--lumo-tint-50pct);
+  }
+}
+
+:host([waves]) {
+  @include mq($from: tablet) {
+    [part="bottomnav"] {
+      background-color: transparent; // stylelint-disable sh-waqar/declaration-use-variable
+      box-shadow: none;
+      position: relative;
+    }
   }
 }

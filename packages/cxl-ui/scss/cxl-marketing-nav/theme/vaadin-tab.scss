@@ -1,0 +1,61 @@
+@import "../../utils/mq";
+
+:host([theme~="cxl-marketing-nav-tab"]:first-child) {
+  padding-left: 0;
+}
+
+:host([theme~="cxl-marketing-nav-tab"]:last-child) {
+  padding-right: 0;
+}
+
+:host([theme~="cxl-marketing-nav-tab"]) {
+  height: 100%;
+  position: relative;
+
+  &::after,
+  &::before {
+    display: none;
+  }
+
+  ::slotted(a) {
+    color: var(--lumo-shade-90pct);
+    display: flex;
+    font-size: var(--lumo-font-size-m);
+    font-weight: 500;
+    padding: var(--lumo-space-s) var(--lumo-space-m);
+
+    &:hover {
+      color: var(--lumo-primary-color);
+      text-decoration: none;
+    }
+  }
+
+  @include mq($from: tablet) {
+    display: block;
+  }
+
+  ::slotted(vaadin-button[theme~="cxl-transparent"]) {
+    @include mq($until: tablet) {
+      border-color: var(--lumo-tint-10pct);
+      color: var(--lumo-tint-70pct);
+    }
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-mobile-icon"]) {
+  margin-left: auto;
+
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-from-tablet"]) {
+  @include mq($until: tablet) {
+    display: none;
+  }
+
+  @include mq($from: tablet) {
+    display: block;
+  }
+}
