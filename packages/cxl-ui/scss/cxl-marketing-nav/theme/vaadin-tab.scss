@@ -1,28 +1,31 @@
 @import "../../utils/mq";
 
-:host([theme~="cxl-marketing-nav-tab"]:first-child) {
+:host([theme~="cxl-marketing-nav-tab"][orientation="horizontal"]:first-child) {
   padding-left: 0;
 }
 
-:host([theme~="cxl-marketing-nav-tab"]:last-child) {
-  padding-right: 0;
-}
-
 :host([theme~="cxl-marketing-nav-tab"]) {
-  height: 100%;
-  position: relative;
-
+  align-self: center;
   &::after,
   &::before {
     display: none;
   }
+}
 
-  ::slotted(a) {
+:host([theme~="cxl-marketing-nav-tab"][orientation="horizontal"]) {
+  height: 100%;
+  position: relative;
+
+  ::slotted(a[href]) {
     color: var(--lumo-shade-90pct);
-    display: flex;
+    display: block;
     font-size: var(--lumo-font-size-m);
     font-weight: 500;
+    height: auto;
+    justify-content: center;
+    margin: 0;
     padding: var(--lumo-space-s) var(--lumo-space-m);
+    width: auto;
 
     &:hover {
       color: var(--lumo-primary-color);
@@ -31,31 +34,69 @@
   }
 
   @include mq($from: tablet) {
-    display: block;
+    display: flex;
   }
 
   ::slotted(vaadin-button[theme~="cxl-transparent"]) {
     @include mq($until: tablet) {
       border-color: var(--lumo-tint-10pct);
-      color: var(--lumo-tint-70pct);
     }
   }
 }
 
+:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-mobile-nav-icon"]:not([orientation="vertical"])) {
+  display: none;
+}
+
 :host([theme~="cxl-marketing-nav-tab"][theme~="cxl-mobile-icon"]) {
   margin-left: auto;
+  padding-right: 0;
 
   @include mq($from: tablet) {
     display: none;
   }
 }
 
-:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-from-tablet"]) {
+:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-from-tablet"]:not([orientation="vertical"])) {
   @include mq($until: tablet) {
     display: none;
   }
 
   @include mq($from: tablet) {
-    display: block;
+    display: flex;
   }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation="vertical"]) {
+  ::slotted(a) {
+    color: var(--lumo-base-color) !important; // stylelint-disable declaration-no-important
+    font-size: var(--lumo-font-size-l);
+    justify-content: left;
+    padding: var(--lumo-space-m) var(--lumo-space-l);
+  }
+
+  ::slotted(vaadin-button[theme~="cxl-button"]) {
+    border-color: var(--lumo-base-color);
+    color: var(--lumo-base-color);
+    margin: var(--lumo-space-l) var(--lumo-space-s);
+    width: 100%;
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation="vertical"]:first-child) {
+  margin-top: calc(var(--lumo-space-l) * 2);
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation~="vertical"][theme~="cxl-mobile-icon"]) {
+  display: none;
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation~="vertical"][theme~="cxl-logo"]) {
+  padding: 0 var(--lumo-space-m);
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation~="vertical"][theme~="cxl-mobile-nav-icon"]) {
+  position: absolute;
+  right: 0;
+  top: var(--lumo-space-xs);
 }

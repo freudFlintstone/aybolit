@@ -1,11 +1,31 @@
 @import "./utils/mq";
 
 :host {
-  display: block;
+  display: flex;
+  height: 57px;
 }
 
 :host([hidden]) {
   display: none;
+}
+
+::slotted(a[slot="cxl-logo"]) {
+  align-self: center;
+  height: auto;
+  justify-content: center;
+  margin: 0;
+  padding: var(--lumo-space-s) var(--lumo-space-m);
+  width: auto;
+
+  @include mq($from: tablet, $until: desktop) {
+    align-items: center;
+    background-color: var(--lumo-base-color);
+    box-shadow: -9px 5px 9px hsla(214, 57%, 24%, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    height: 57px;
+    z-index: 10;
+  }
 }
 
 [part="topnav"],
@@ -14,11 +34,16 @@
   display: flex;
   flex-direction: row;
   position: relative;
+  width: 100%;
   z-index: 1;
+
+  .wrap {
+    padding: 0;
+  }
 
   @include mq($from: tablet, $until: desktop) {
     background-color: var(--lumo-base-color);
-    box-shadow: 0 5px 9px var(--lumo-shade-10pct);
+    box-shadow: -10px 5px 9px var(--lumo-shade-10pct);
   }
 }
 
@@ -30,10 +55,6 @@
   position: absolute;
   right: 0;
   width: 100%;
-
-  .wrap {
-    padding: 0;
-  }
 
   &.fixed {
     background-color: var(--lumo-base-color);
@@ -54,5 +75,18 @@
       box-shadow: none;
       position: relative;
     }
+  }
+}
+
+:host([orientation="vertical"]) {
+  [part="topnav"] {
+    background: #1e2122;
+    bottom: 0;
+    box-shadow: -2px 0 24px 16px var(--lumo-contrast-30pct);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 265px;
+    z-index: 9;
   }
 }

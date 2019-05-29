@@ -15,6 +15,10 @@ class CXLMarketingNavElement extends LitElement {
         type: Boolean,
         value: false,
         reflect: true
+      },
+      mobileNav: {
+        type: Boolean,
+        value: false
       }
     };
   }
@@ -25,10 +29,13 @@ class CXLMarketingNavElement extends LitElement {
 
   render() {
     return html`
+      <slot name="cxl-logo"></slot>
       <nav part="${this.navType}" class="${this.fixed ? 'fixed' : ''}">
         ${this.navType === 'topnav'
           ? html`
-              <slot></slot>
+              <div class="wrap">
+                <slot></slot>
+              </div>
             `
           : html`
               <div class="wrap">
@@ -48,6 +55,24 @@ class CXLMarketingNavElement extends LitElement {
         that.removeAttribute('fixed');
       }
     });
+
+    if (this.navType === 'topnav') {
+      const mobileNavButtons = [
+        document.querySelector(
+          'cxl-marketing-nav vaadin-tabs vaadin-tab[theme="cxl-marketing-nav-tab cxl-mobile-icon"] a'
+        ),
+        document.querySelector(
+          'cxl-marketing-nav vaadin-tabs vaadin-tab[theme="cxl-marketing-nav-tab cxl-mobile-nav-icon"] a'
+        )
+      ];
+
+      mobileNavButtons.forEach(function(elem) {
+        elem.addEventListener('click', function(e) {
+          e.preventDefault();
+          that.toggleMobileNav();
+        });
+      });
+    }
   }
 
   _isScrolledIntoView(el) {
@@ -56,6 +81,18 @@ class CXLMarketingNavElement extends LitElement {
     const isVisible = elemTop >= 0;
 
     return isVisible;
+  }
+
+  toggleMobileNav() {
+    this.mobileNav = !this.mobileNav;
+
+    this.setAttribute('orientation', 'horizontal');
+    this.querySelector('vaadin-tabs').setAttribute('orientation', 'horizontal');
+
+    if (this.mobileNav) {
+      this.setAttribute('orientation', 'vertical');
+      this.querySelector('vaadin-tabs').setAttribute('orientation', 'vertical');
+    }
   }
 }
 

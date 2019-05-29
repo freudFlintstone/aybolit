@@ -3,12 +3,19 @@
   font-weight: 500;
   height: calc(var(--lumo-button-size) * 1.1);
   padding: 0 calc(var(--lumo-button-size) / 2);
+
+  ::slotted(a) {
+    color: var(--lumo-base-color) !important; // stylelint-disable declaration-no-important
+  }
 }
 
 :host([theme~="cxl-transparent"]) {
   background-color: transparent; // stylelint-disable sh-waqar/declaration-use-variable
   border: 1px solid var(--lumo-primary-color);
-  color: var(--lumo-primary-color);
+
+  ::slotted(a) {
+    color: var(--lumo-primary-color) !important;
+  }
 }
 
 // Extensions
@@ -17,4 +24,8 @@
   background-color: transparent;
   border: 1px solid var(--lumo-shade-90pct);
   color: var(--lumo-shade-90pct);
+
+  ::slotted(a) {
+    color: var(--lumo-shade-90pct) !important;
+  }
 }
