@@ -36,6 +36,7 @@ class CXLMarketingHeroElement extends LitElement {
           <slot></slot>
         </div>
         <slot name="bottomnav"></slot>
+        <slot name="catalog-search"></slot>
       </div>
       ${this.heroStyle === 'waves'
         ? html`

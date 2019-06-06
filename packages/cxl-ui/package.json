@@ -19,7 +19,8 @@
     "@vaadin/vaadin-item": "^2.1.0",
     "@vaadin/vaadin-tabs": "^3.0.0",
     "lit-element": "^2.1.0",
-    "lit-html": "^1.1.0"
+    "lit-html": "^1.1.0",
+    "simplebar": "^4.0.0"
   },
   "devDependencies": {
     "sass-mq": "^5.0.0"

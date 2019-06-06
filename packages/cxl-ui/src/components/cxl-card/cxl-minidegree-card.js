@@ -1,5 +1,5 @@
-import { CXLBaseCard } from '@conversionxl/cxl-core';
-import minidegreeCardStyles from '../styles/cxl-minidegree-card-css.js';
+import { CXLBaseCard } from './cxl-base-card.js';
+import minidegreeCardStyles from '../../styles/cxl-minidegree-card-css.js';
 
 export class CXLMinidegreeCard extends CXLBaseCard {
   static get styles() {

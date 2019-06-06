@@ -1,1 +1,0 @@
-export { CXLBaseCard } from './components/cxl-base-card.js';

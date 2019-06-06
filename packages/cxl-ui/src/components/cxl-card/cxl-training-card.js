@@ -1,9 +1,8 @@
 import { html } from 'lit-element';
 import { render } from 'lit-html';
 import '@vaadin/vaadin-dialog';
-import { CXLBaseCard } from '@conversionxl/cxl-core';
-import trainingCardStyles from '../styles/cxl-training-card-css.js';
-
+import { CXLBaseCard } from './cxl-base-card.js';
+import trainingCardStyles from '../../styles/cxl-training-card-css.js';
 
 export class CXLTrainingCard extends CXLBaseCard {
   static get styles() {
@@ -32,22 +31,20 @@ export class CXLTrainingCard extends CXLBaseCard {
   }
 
   render() {
+    // TODO: get HTML from cxl-base-card
     return html`
-      <header class="entry__header">
-        <slot name="entry__header-thumbnail">
-          <span class="font-icon play"></span>
-        </slot>
-        <h2 class="entry__title">
-          <slot name="entry__title"></slot>
-        </h2>
+      <header>
+        <slot name="thumbnail"></slot>
+        <div part="header-right">
+          <slot name="header-right"></slot>
+        </div>
       </header>
-      <div class="entry__content">
-        <slot name="entry__content"></slot>
-      </div>
-      <footer class="entry__footer">
-        <slot name="entry__footer"></slot>
+      <slot name="title"></slot>
+      <slot name="content"></slot>
+      <footer>
+        <slot name="footer"></slot>
       </footer>
-      
+
       <vaadin-dialog
         id="video"
         theme="video"

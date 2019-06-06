@@ -1,0 +1,88 @@
+@import "./utils/mq";
+
+/* stylelint-disable declaration-no-important */
+
+:host {
+  background: var(--lumo-white);
+  border: 1px solid var(--lumo-contrast-30pct);
+  border-radius: var(--lumo-border-radius-s);
+  box-shadow: var(--lumo-box-shadow-s);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--lumo-font-family);
+  font-size: var(--lumo-font-size-m);
+  height: auto;
+  line-height: var(--lumo-line-height-xs);
+  margin-right: var(--lumo-space-l);
+  max-width: 100%;
+  min-width: 270px;
+  padding: var(--lumo-space-l);
+  width: auto;
+
+  header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: var(--lumo-space-m);
+
+    ::slotted([part="thumbnail"]) {
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      height: calc(var(--lumo-space-xl) * 1.5);
+      line-height: calc(var(--lumo-space-xl) * 1.5);
+      margin: 0;
+      margin-right: var(--lumo-space-l);
+      text-align: center;
+      width: calc(var(--lumo-space-xl) * 1.5);
+    }
+
+    [part="header-right"] {
+      display: flex;
+      flex-direction: column;
+      ::slotted(img) {
+        height: 30px !important;
+      }
+      ::slotted(small) {
+        font-size: var(--lumo-font-size-s) !important;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--lumo-font-size-s) !important;
+    margin-top: auto;
+    padding-top: var(--lumo-space-l);
+  }
+
+  ::slotted(h2) {
+    font-size: var(--lumo-font-size-l) !important;
+    margin: 0 !important;
+  }
+
+  ::slotted(small) {
+    font-size: var(--lumo-font-size-m) !important;
+    margin-top: var(--lumo-space-xs);
+  }
+
+  ::slotted([slot="content"]) {
+    font-family: var(--lumo-font-family) !important;
+    font-size: var(--lumo-font-size-m) !important;
+    line-height: var(--lumo-font-size-xl) !important;
+    margin-top: var(--lumo-space-l) !important;
+  }
+
+  @at-root #{&}(:hover) {
+    border-color: var(--lumo-primary-color);
+    box-shadow: none;
+  }
+
+  @include mq($from: tablet) {
+    margin-bottom: var(--lumo-space-l);
+    max-width: 50%;
+  }
+}
