@@ -1,0 +1,15 @@
+@import "../../utils/mq";
+
+:host([theme~="cxl-hero-content"]) {
+  padding: 0;
+
+  // ::slotted(*) {
+  //   display: none;
+  // }
+
+  // @include mq($from: tablet) {
+  //   ::slotted(*) {
+  //     display: block;
+  //   }
+  // }
+}

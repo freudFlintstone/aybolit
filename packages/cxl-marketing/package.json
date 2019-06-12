@@ -1,5 +1,5 @@
 {
-  "name": "@conversionxl/cxl-ui",
+  "name": "@conversionxl/cxl-marketing",
   "version": "0.1.0",
   "author": "CXL <leho@conversionxl.com>",
   "license": "SEE LICENSE IN LICENSE",
@@ -7,21 +7,20 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/conversionxl/aybolit",
-    "directory": "packages/cxl-ui"
+    "directory": "packages/cxl-marketing"
   },
   "dependencies": {
+    "@conversionxl/cxl-lumo-styles": "^0.1.0",
+    "@conversionxl/cxl-ui": "^0.1.0",
     "@pika/pack": "^0.3.0",
     "@pika/plugin-build-web": "^0.3.0",
     "@pika/plugin-bundle-web": "^0.3.0",
     "@pika/plugin-standard-pkg": "^0.3.0",
-    "@vaadin/vaadin-accordion": "^1.0.0",
+    "@vaadin/vaadin-button": "^2.2.0",
     "@vaadin/vaadin-context-menu": "^4.3.10",
-    "@vaadin/vaadin-dialog": "^2.2.1",
     "@vaadin/vaadin-item": "^2.1.0",
-    "@vaadin/vaadin-tabs": "^3.0.0",
-    "lit-element": "^2.1.0",
-    "lit-html": "^1.1.0",
-    "simplebar": "^4.0.0"
+    "@vaadin/vaadin-list-box": "^1.1.0",
+    "lit-element": "^2.1.0"
   },
   "devDependencies": {
     "sass-mq": "^5.0.0"

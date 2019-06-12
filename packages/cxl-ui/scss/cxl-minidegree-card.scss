@@ -1,79 +1,27 @@
-@import 'sass-mq';
+@import "./utils/mq";
+
+/* stylelint-disable declaration-no-important */
 
 :host {
-  color: var(--lumo-white);
   background-color: var(--lumo-black);
-  display: flex;
-  flex-direction: column;
-  width: 300px;
+  color: var(--lumo-white);
 
-  .entry__header {
-    height: calc( 12.5 * var(--lumo-margin) );
-    overflow: hidden;
-
-    &:hover {
-      overflow: visible;
-      z-index: 1;
-
-      ::slotted(h2) {
-        background-color: var(--lumo-black);
-        padding-bottom: var(--lumo-padding);
-      }
-    }
-
-    ::slotted(.entry__header-minidegree-thumbnail) {
-      height: calc( 1.5 * var(--lumo-card-thumbnail-size) );
-      margin: 0;
-      background-size: cover;
-      background-position: center;
-    }
-
-    ::slotted(.entry__header-minidegree-title) {
-      font-weight: bold;
-      margin: var(--lumo-margin) 0 0;
-    }
-
-    ::slotted(h2) {
-      font-size: var(--lumo-font-size-xl);
+  header {
+    ::slotted([part="thumbnail"]) {
+      border-radius: 0;
+      height: calc(var(--lumo-space-xl) * 2.5);
+      margin-right: 0;
+      width: 100%;
     }
   }
 
-  .entry__content {
-    flex: 1 0 auto;
-    margin: 0 0 var(--lumo-margin);
+  ::slotted([slot="title"]) {
+    color: var(--lumo-white) !important;
   }
 
-  .entry__footer {
-    align-self: end;
-
-    ::slotted(.entry__footer-minidegree-more-link) {
-      color: var(--lumo-white);
-    }
-  }
-
-  @include mq($until: tablet) {
-    width: 250px;
-
-    .entry__header {
-      height: auto;
-
-      ::slotted(h2) {
-        font-size: var(--lumo-font-size-l);
-      }
-
-      &:hover {
-        ::slotted(h2) {
-          padding: 0;
-        }
-      }
-    }
-
-    .entry__content {
-      margin: var(--lumo-margin) 0;
-    }
-
-    .entry__footer {
-      ::slotted(.entry__footer-minidegree-more-link) {}
+  footer {
+    ::slotted([slot="footer"]) {
+      color: var(--lumo-primary-color) !important;
     }
   }
 }

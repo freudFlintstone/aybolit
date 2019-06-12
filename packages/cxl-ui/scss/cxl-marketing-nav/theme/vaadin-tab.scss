@@ -1,0 +1,142 @@
+@import "../../utils/mq";
+
+:host([theme~="cxl-marketing-nav-tab"][orientation="horizontal"]:first-child) {
+  padding-left: 0;
+}
+
+:host([theme~="cxl-marketing-nav-tab"]) {
+  align-self: center;
+  &::after,
+  &::before {
+    display: none;
+  }
+
+  ::slotted(vaadin-context-menu)::after {
+    color: var(--lumo-shade-90pct);
+    content: var(--lumo-icons-angle-down);
+    font-family: var(--lumo-icons);
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 14px;
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"]:hover) {
+  ::slotted(vaadin-context-menu)::before {
+    color: var(--lumo-primary-color);
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation="horizontal"]) {
+  height: 100%;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+
+  ::slotted(a[href]),
+  ::slotted(vaadin-context-menu) {
+    color: var(--lumo-shade-90pct);
+    display: flex;
+    font-size: var(--lumo-font-size-m);
+    font-weight: 500;
+    height: auto;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    min-height: 50px;
+    padding: 0 var(--lumo-space-l);
+    width: auto;
+
+    &:hover {
+      color: var(--lumo-primary-color);
+      text-decoration: none;
+    }
+  }
+
+  ::slotted(vaadin-context-menu) {
+    padding-right: calc(var(--lumo-space-l) * 1.5);
+
+    &::after {
+      right: var(--lumo-space-m);
+    }
+  }
+
+  @include mq($from: tablet) {
+    display: flex;
+  }
+
+  ::slotted(vaadin-button[theme~="cxl-transparent"]) {
+    @include mq($until: tablet) {
+      border-color: var(--lumo-tint-10pct);
+    }
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-mobile-nav-icon"]:not([orientation="vertical"])) {
+  display: none;
+}
+
+:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-mobile-icon"]) {
+  margin-left: auto;
+  padding-right: 0;
+
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][theme~="cxl-from-tablet"]:not([orientation="vertical"])) {
+  @include mq($until: tablet) {
+    display: none;
+  }
+
+  @include mq($from: tablet) {
+    display: flex;
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation="vertical"]) {
+  ::slotted(a),
+  ::slotted(vaadin-context-menu) {
+    color: var(--lumo-base-color) !important; // stylelint-disable declaration-no-important
+    font-size: var(--lumo-font-size-l);
+    justify-content: left;
+    padding: var(--lumo-space-m) var(--lumo-space-l);
+  }
+
+  ::slotted(vaadin-context-menu) {
+    padding-left: 11px;
+    position: relative;
+  }
+
+  ::slotted(vaadin-context-menu)::after {
+    color: var(--lumo-base-color);
+    top: 16px;
+  }
+
+  ::slotted(vaadin-button[theme~="cxl-button"]) {
+    border-color: var(--lumo-base-color);
+    color: var(--lumo-base-color);
+    margin: var(--lumo-space-l) var(--lumo-space-s);
+    width: 100%;
+  }
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation="vertical"]:first-child) {
+  margin-top: calc(var(--lumo-space-l) * 2);
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation~="vertical"][theme~="cxl-mobile-icon"]) {
+  display: none;
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation~="vertical"][theme~="cxl-logo"]) {
+  padding: 0 var(--lumo-space-m);
+}
+
+:host([theme~="cxl-marketing-nav-tab"][orientation~="vertical"][theme~="cxl-mobile-nav-icon"]) {
+  position: absolute;
+  right: 0;
+  top: var(--lumo-space-xs);
+}

@@ -36,6 +36,16 @@ img {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  strong {
+    color: var(--lumo-primary-color);
+  }
+}
+
 .screen-reader-text {
   display: none;
 }
@@ -43,6 +53,24 @@ img {
 .wrap {
   margin-left: auto;
   margin-right: auto;
-  padding-left: calc(var(--lumo-space-m) / 2);
-  padding-right: calc(var(--lumo-space-m) / 2);
+  max-width: 720px;
+  padding-left: calc(var(--lumo-space-m));
+  padding-right: calc(var(--lumo-space-m));
+  width: 100%;
+
+  &.no-padding {
+    padding: 0;
+  }
+
+  @include mq($from: tablet) {
+    max-width: 960px;
+  }
+
+  @include mq($from: desktop) {
+    max-width: 1280px;
+
+    &.shrunk {
+      max-width: 720px;
+    }
+  }
 }

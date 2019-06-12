@@ -3,22 +3,7 @@ html,
   /* Font families */
   --lumo-font-family: "Roboto", arial, sans-serif;
   --lumo-font-secondary: "Libre Baskerville", georgia, serif;
-
-  /* Border radius */
-  --lumo-border-radius-round: 50%;
-
-  /* Margins */
-  --lumo-margin: 1em;
-
-  /* Paddings */
-  --lumo-padding: 1em;
-
-  /* Card thumbnail sizes */
-  --lumo-card-thumbnail-size: 80px;
-
-  /* Grid columns */
-  --lumo-data-grid-items: 4;
-  --lumo-data-grid-column-size: 250px;
+  --lumo-icons: "lumo-icons";
 }
 
 p {

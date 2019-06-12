@@ -4,6 +4,7 @@ module.exports = ({ config }) => {
   // tweak babel-loader to transpile dependencies
   config.module.rules.push({
     test: new RegExp(`node_modules(\\/|\\\\)(${transpilePackages.join('|')})(.*)\\.js$`),
+    exclude: /node_modules\/(?!(@webcomponents\/shadycss|lit-element|lit-html|@polymer|@vaadin|@lit)\/).*/,
     use: {
       loader: 'babel-loader',
       options: {

@@ -1,4 +1,5 @@
 import '@vaadin/vaadin-lumo-styles/sizing.js';
+import '@vaadin/vaadin-lumo-styles/spacing.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/iron-iconset-svg/iron-iconset-svg.js';
 
@@ -21,6 +22,11 @@ $documentContainer.innerHTML = `
     iron-icon.size-l {
       width: var(--lumo-icon-size-l);
       height: var(--lumo-icon-size-l);
+    }
+
+    iron-icon.size-xl {
+      width: 50px; // var(--lumo-space-l) doesn't work
+      height: 50px;
     }
   </style>
 </custom-style>

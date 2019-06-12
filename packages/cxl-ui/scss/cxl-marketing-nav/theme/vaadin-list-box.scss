@@ -1,0 +1,7 @@
+:host([theme~="cxl-nav-dropdown"]) {
+  min-width: 150px;
+  padding: var(--lumo-space-s) 0;
+  ::slotted(a) {
+    padding: var(--lumo-space-xs) var(--lumo-space-m);
+  }
+}

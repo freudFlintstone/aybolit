@@ -1,3 +1,5 @@
+@import "@conversionxl/cxl-ui/scss/utils/mq";
+
 html,
 :host {
   /**
@@ -11,8 +13,8 @@ html,
   --lumo-contrast-90pct: hsla(214, 40%, 16%, 0.94);
 
   /* Custom colors */
-  --lumo-white: #FFFFFF;
-  --lumo-black: #000000;
+  --lumo-white: #fff;
+  --lumo-black: #000;
 }
 
 a {
@@ -20,5 +22,44 @@ a {
 
   &:hover {
     color: var(--lumo-primary-color);
+  }
+}
+
+vaadin-button[theme~="cxl-transparent"] a {
+  color: var(--lumo-base-color);
+}
+
+vaadin-button[theme~="cxl-button"]:not([theme~="contrast"]):not([theme~="cxl-transparent"]) a {
+  color: var(--lumo-base-color);
+}
+
+vaadin-button[theme~="contrast"] a {
+  color: var(--lumo-base-color);
+}
+
+@include mq($from: tablet) {
+  vaadin-button[theme~="cxl-transparent"] a {
+    color: var(--lumo-primary-color);
+  }
+
+  vaadin-button[theme~="contrast"] a {
+    color: var(--lumo-contrast-90pct);
+  }
+}
+
+vaadin-context-menu[theme~="cxl-nav-dropdown"] {
+  a {
+    color: var(--lumo-base-color);
+  }
+}
+
+@include mq($from: tablet) {
+  vaadin-context-menu[theme~="cxl-nav-dropdown"] {
+    a {
+      color: var(--lumo-contrast-90pct);
+      &:hover {
+        color: var(--lumo-primary-color);
+      }
+    }
   }
 }

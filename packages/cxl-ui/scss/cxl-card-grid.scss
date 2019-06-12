@@ -1,0 +1,48 @@
+@import "./utils/mq";
+@import "./utils/simplebar";
+
+:host([columns="2"]) {
+  .grid-container {
+    margin: 0 var(--lumo-space-l);
+  }
+
+  @include mq($from: desktop) {
+    .grid-container {
+      .wrap {
+        padding: 0 calc(var(--lumo-space-l) * 5);
+      }
+    }
+  }
+}
+
+:host {
+  @include mq($from: tablet) {
+    .grid {
+      display: grid;
+      grid-gap: var(--lumo-space-l);
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    }
+
+    ::slotted(*) {
+      max-width: 100%;
+    }
+  }
+}
+
+:host([flow="horizontal"]),
+:host([flow="auto"]) {
+  .wrap {
+    padding: 0;
+    position: relative;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    ::slotted(*) {
+      margin-right: var(--lumo-space-l);
+    }
+  }
+}
