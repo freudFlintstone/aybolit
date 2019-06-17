@@ -18,13 +18,14 @@
       {
         "ignoreProperties": [
           "appearance",
-          "user-select"
+          "user-select",
+          "mask-image"
         ]
       }
     ],
     "selector-max-id": 1,
     "selector-no-qualifying-type": [ true, {
-      "ignore": [ "attribute" ]
+      "ignore": [ "attribute", "class" ]
     } ],
     "selector-type-no-unknown": [ true, {
       "ignore": [ "custom-elements" ]

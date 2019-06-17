@@ -33,10 +33,14 @@
     }
   }
 
+  p {
+    display: block;
+  }
+
   @include mq($from: tablet) {
     h1 {
-      font-size: calc(var(--lumo-font-size-xxxl) * 1.5);
-      line-height: calc(var(--lumo-font-size-xxxl) * 1.5);
+      font-size: calc(var(--lumo-font-size-xxxl) * 1.2);
+      line-height: calc(var(--lumo-font-size-xxxl) * 1.2);
       margin-top: 0;
     }
 

@@ -15,10 +15,10 @@
   font-size: var(--lumo-font-size-m);
   height: auto;
   line-height: var(--lumo-line-height-xs);
-  margin-right: var(--lumo-space-l);
   max-width: 100%;
   min-width: 270px;
   padding: var(--lumo-space-l);
+  text-align: left;
   width: auto;
 
   header {
@@ -83,6 +83,29 @@
 
   @include mq($from: tablet) {
     margin-bottom: var(--lumo-space-l);
-    max-width: 50%;
+    // max-width: 50%;
   }
+}
+
+:host([theme~="no-padding"]) {
+  padding: 0;
+}
+
+:host([theme~="no-header"]) {
+  header {
+    display: none;
+  }
+  ::slotted([slot="content"]) {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+:host([theme~="no-border"]) {
+  border: 0;
+  box-shadow: none;
+}
+
+:host([theme~="no-shadow"]) {
+  box-shadow: none;
 }

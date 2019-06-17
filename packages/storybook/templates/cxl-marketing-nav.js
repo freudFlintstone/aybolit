@@ -71,27 +71,32 @@ const bottomnav = html`
     <vaadin-tabs>
       <vaadin-tab theme="cxl-marketing-nav-tab">
         <vaadin-button theme="primary cxl-button margin-right"
-          ><a href="">Start free trial</a></vaadin-button
+          ><a href="">Download case studies</a></vaadin-button
         >
       </vaadin-tab>
       <vaadin-tab theme="cxl-marketing-nav-tab">
         <vaadin-button theme="primary cxl-button cxl-transparent"
-          ><a href="">Get syllabus</a></vaadin-button
+          ><a href="">Get in touch</a></vaadin-button
         >
       </vaadin-tab>
       <vaadin-tab theme="cxl-marketing-nav-tab cxl-from-tablet">
         <a href="">
-          Testimonials
+          Video testimonials
         </a>
       </vaadin-tab>
       <vaadin-tab theme="cxl-marketing-nav-tab cxl-from-tablet">
         <a href="">
-          Instructor
+          Case studies
         </a>
       </vaadin-tab>
       <vaadin-tab theme="cxl-marketing-nav-tab cxl-from-tablet">
         <a href="">
-          Curriculum
+          Services
+        </a>
+      </vaadin-tab>
+      <vaadin-tab theme="cxl-marketing-nav-tab cxl-from-tablet">
+        <a href="">
+          Pricing
         </a>
       </vaadin-tab>
     </vaadin-tabs>

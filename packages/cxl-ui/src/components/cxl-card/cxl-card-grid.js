@@ -77,7 +77,7 @@ export class CXLCardGridElement extends LitElement {
     if (!this.columns) return;
 
     const gridElement = this.shadowRoot.querySelector('.grid');
-    gridElement.style.gridTemplateColumns = `repeat(${this.columns}, minmax(280px, 1fr))`;
+    gridElement.style.gridTemplateColumns = `repeat(${this.columns}, minmax(260px, 1fr))`;
   }
 
   _destroySimplebar(gridContainer) {

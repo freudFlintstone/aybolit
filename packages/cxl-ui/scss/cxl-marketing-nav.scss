@@ -28,16 +28,6 @@
   }
 }
 
-[part="topnav"] {
-  align-items: center;
-
-  @include mq($from: tablet) {
-    ::slotted(vaadin-tabs) {
-      float: right;
-    }
-  }
-}
-
 [part="topnav"],
 [part="bottomnav"] {
   background: transparent;
@@ -53,6 +43,19 @@
 
   .wrap {
     padding: 0;
+  }
+}
+
+[part="topnav"] {
+  align-items: center;
+
+  .nav-items {
+    display: none;
+    &.mobile {
+      display: flex;
+      margin-left: auto;
+      width: auto;
+    }
   }
 
   @include mq($from: tablet, $until: desktop) {
@@ -78,20 +81,19 @@
     position: fixed;
     top: 0;
   }
-}
-
-[part="topnav"] {
-  .nav-items {
-    display: none;
-    &.mobile {
-      display: flex;
-      margin-left: auto;
-      width: auto;
-    }
-  }
 
   @include mq($from: tablet) {
     background-color: var(--lumo-tint-50pct);
+  }
+}
+
+:host([hero-style="video"]) {
+  @include mq($from: tablet) {
+    [part="topnav"] {
+      ::slotted(vaadin-tabs) {
+        float: right;
+      }
+    }
   }
 }
 
@@ -115,15 +117,5 @@
     top: 0;
     width: 265px;
     z-index: 9;
-  }
-}
-
-:host([waves]) {
-  @include mq($from: tablet) {
-    [part="bottomnav"] {
-      background-color: transparent; // stylelint-disable sh-waqar/declaration-use-variable
-      box-shadow: none;
-      position: relative;
-    }
   }
 }

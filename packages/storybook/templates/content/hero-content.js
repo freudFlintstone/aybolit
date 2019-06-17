@@ -15,6 +15,16 @@ const getHeroContent = contentType => {
           </p>
         </vaadin-item>
       `;
+    case 'video':
+      return html`
+        <vaadin-item theme="cxl-hero-content">
+          <h1>Optimization <strong>success</strong> stories</h1>
+          <p>
+            Get a proven and hand-on UX framework to make more money with your website &amp; landing
+            pages.
+          </p>
+        </vaadin-item>
+      `;
     case 'catalog':
       return html`
         <vaadin-item theme="cxl-hero-content cxl-hero-style-catalog-content">

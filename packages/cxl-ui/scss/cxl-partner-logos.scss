@@ -1,0 +1,19 @@
+@import "./utils/mq";
+
+:host {
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px;
+  padding: var(--lumo-space-m) 0;
+
+  ::slotted(*) {
+    padding: 0 var(--lumo-space-l);
+  }
+
+  @include mq($from: tablet) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

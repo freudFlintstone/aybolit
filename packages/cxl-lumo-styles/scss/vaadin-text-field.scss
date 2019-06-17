@@ -1,0 +1,25 @@
+[part="input-field"] {
+  background-color: transparent; // stylelint-disable-line sh-waqar/declaration-use-variable
+  border: 1px solid var(--lumo-shade-20pct);
+}
+
+[part="value"],
+[part="input-field"] ::slotted(input),
+[part="input-field"] ::slotted(textarea),
+[part="input-field"] ::slotted([part="value"]) {
+  background: var(--lumo-base-color);
+  -webkit-mask-image: none;
+  min-height: var(--lumo-size-l);
+}
+
+[part="label"] {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+:host([invalid]) {
+  [part="input-field"] {
+    background-color: transparent; // stylelint-disable-line sh-waqar/declaration-use-variable
+    border: 1px solid var(--lumo-error-color-50pct);
+  }
+}

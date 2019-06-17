@@ -6,3 +6,4 @@ import './templates/icons.js';
 
 import './templates/vaadin-dialog-overlay.js';
 import './templates/vaadin-button.js';
+import './templates/vaadin-text-field.js';

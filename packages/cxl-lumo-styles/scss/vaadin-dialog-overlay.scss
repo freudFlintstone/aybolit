@@ -29,3 +29,13 @@
     }
   }
 }
+
+::slotted(vaadin-form-layout) {
+  margin: var(--lumo-space-m) var(--lumo-space-l);
+}
+
+:host([theme~="cxl-optin"]) {
+  [part="overlay"] {
+    max-width: 550px;
+  }
+}

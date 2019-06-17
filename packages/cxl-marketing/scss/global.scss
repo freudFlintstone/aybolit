@@ -47,9 +47,6 @@ section {
     br {
       display: none;
     }
-    hr {
-      margin: 30px 0;
-    }
     h2 {
       font-size: calc(var(--lumo-font-size-xl) * 1.3);
       line-height: calc(var(--lumo-font-size-xl) * 1.3);
@@ -106,6 +103,61 @@ section {
         img {
           float: left;
         }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: var(--lumo-shade);
+  color: var(--lumo-base-color);
+  padding: var(--lumo-space-m) 0;
+
+  a {
+    color: var(--lumo-base-color);
+    font-size: calc(var(--lumo-font-size-s));
+
+    &:hover {
+      color: var(--lumo-base-color);
+    }
+  }
+
+  .menu {
+    &__items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__item {
+      display: inline-flex;
+      padding-left: var(--lumo-space-s);
+      padding-right: var(--lumo-space-s);
+      position: relative;
+
+      &::after {
+        border-right: 1px solid #fff;
+        content: "";
+        height: 13px;
+        position: absolute;
+        right: 0;
+        top: 7px;
+        width: 1px;
+      }
+
+      &:first-child,
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
       }
     }
   }

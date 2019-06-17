@@ -70,9 +70,11 @@ class CXLMarketingHeroElement extends LitElement {
               `
             : ''}
         </div>
+
         <slot name="bottomnav"></slot>
         <slot name="catalog-search"></slot>
       </div>
+
       ${this.heroStyle === 'waves'
         ? html`
             <svg class="waves" xmlns="http://www.w3.org/2000/svg">
