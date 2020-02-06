@@ -43,5 +43,5 @@ export const CxlVaadinAccordionThemeFaq = () => {
 };
 
 CxlVaadinAccordionThemeFaq.story = {
-  name: '[theme=cxl-faq]'
+  name: 'Theme: FAQ'
 };
