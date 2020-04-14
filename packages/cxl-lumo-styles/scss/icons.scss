@@ -1,6 +1,10 @@
 // Unicode character map for the icons
 $icons: (
+<<<<<<< HEAD
+  --lumo-icons-quote-right: '\\275e'
+=======
   quote-right: '\\275e'
+>>>>>>> 8237a81ba04ec5b6a85e9c5600c5fe4e6d2e2ac5
 );
 
 // For adding font icons to elements using CSS pseudo-elements
@@ -14,6 +18,17 @@ $icons: (
       content: "#{map-get($icons, $icon)}";
     }
     @if $styles {
+<<<<<<< HEAD
+      font-family: lumo-icons, serif;
+      font-size: var(--lumo-font-size-xxxl);
+      font-style: normal;
+      color: var(--lumo-primary-color);
+    }
+
+    @content
+  }
+}
+=======
       font-family: 'lumo-icons';
       color: var(--lumo-primary-color);
       font-size: var(--lumo-font-size-xxl);
@@ -24,3 +39,4 @@ $icons: (
     }
   }
 }
+>>>>>>> 8237a81ba04ec5b6a85e9c5600c5fe4e6d2e2ac5
