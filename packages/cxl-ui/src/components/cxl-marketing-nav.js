@@ -235,15 +235,52 @@ export class CXLMarketingNavElement extends LitElement {
    * @private
    */
   _highlightCurrentMenuItem() {
-    this.menuItemsElements.forEach(menuItemsEl => {
-      const currentMenuItemEl = menuItemsEl.querySelector('.current-menu-item');
+    // Test for partial match, catches url's with query strings, like referral links
+    const matchPartial = href => {
+      return Number(window.location.href.indexOf(href.pathname) !== -1);
+    };
+    // Match pathname only, awards higher score for lengthier matches
+    const matchPath = href => {
+      return Number(window.location.pathname === href.pathname) * window.location.pathname.length;
+    };
+    // Match query string only
+    const matchSearch = href => {
+      return Number(window.location.search === href.search);
+    };
+    // Returns compound score
+    const matchScore = link => {
+      if (!link.href || link.href.endsWith('/')) return 0;
+      const href = new URL(link.href);
+      return (
+        matchPartial(href) +
+        matchPath(href) +
+        matchSearch(href) +
+        (matchPath(href) + matchSearch(href))
+      );
+    };
 
-      if (currentMenuItemEl && currentMenuItemEl.id) {
-        const idx = menuItemsEl.items.findIndex(i => i.id === currentMenuItemEl.id);
+    const findBestMatch = menuItems => {
+      let currentItem;
+      let bestScore = 0;
+      menuItems.forEach(item => {
+        const link = item.firstChild;
+        const score = matchScore(link);
+        if (score > bestScore) {
+          bestScore = score;
+          currentItem = item;
+        }
+      });
+      return currentItem;
+    };
 
-        menuItemsEl.setAttribute('selected', idx);
-      }
-    });
+    const allMenuItems = Object.values(this.menuItemsElements)
+      .map(i => i.items)
+      .flat();
+    const currentItem = findBestMatch(allMenuItems);
+    if (currentItem) {
+      const idx = currentItem.parentElement.items.findIndex(i => i.id === currentItem.id);
+      currentItem.parentElement.selected = idx;
+    }
   }
 
   /**
