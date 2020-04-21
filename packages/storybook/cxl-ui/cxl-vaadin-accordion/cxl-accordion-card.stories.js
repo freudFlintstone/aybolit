@@ -9,21 +9,22 @@ export default {
 };
 
 export const CxlVaadinAccordionThemeArchive = () => {
-  let lastEntryTitle1stLetter = 'Z';
+  // TEMPORARILY UNUSED LETTER HEADINGS HELPER FUNCTION
+  // let lastEntryTitle1stLetter = 'Z';
+  
+  // const firstLetterHeading = el => {
+  //   const firstLetter = el.title.raw.charAt(0);
+  //   let heading = html``;
 
-  const firstLetterHeading = el => {
-    const firstLetter = el.title.raw.charAt(0);
-    let heading = html``;
+  //   if (firstLetter !== lastEntryTitle1stLetter) {
+  //     heading = html`
+  //       <h3 id="letter-${firstLetter}" class='letter-heading'>${firstLetter}</h3>
+  //     `;
+  //     lastEntryTitle1stLetter = firstLetter;
+  //   }
 
-    if (firstLetter !== lastEntryTitle1stLetter) {
-      heading = html`
-        <h3 id="letter-${firstLetter}" class='letter-heading'>${firstLetter}</h3>
-      `;
-      lastEntryTitle1stLetter = firstLetter;
-    }
-
-    return heading;
-  };
+  //   return heading;
+  // };
 
   return html`
     <style>
@@ -54,7 +55,6 @@ export const CxlVaadinAccordionThemeArchive = () => {
     >
       ${archiveData.map(
         el => html`
-          ${firstLetterHeading(el)}
           <div class='card-wrapper'>
             <cxl-accordion-card
               id="${el.cxl_hybrid_attr_post['@attributes'].id}"
