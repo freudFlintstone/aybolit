@@ -1,5 +1,7 @@
 {
   "extends": [
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:lit/recommended",
     "airbnb-base",
@@ -44,7 +46,7 @@
       }
     }
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "legacyDecorators": true
