@@ -48,5 +48,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "pika build"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.3"
   }
 }
