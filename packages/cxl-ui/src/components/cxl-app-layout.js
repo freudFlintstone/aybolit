@@ -36,6 +36,35 @@ export class CXLAppLayout extends LitElement {
   @property({ type: Boolean, reflect: true })
   wide;
 
+  @property({ type: Boolean, attribute: false })
+  _twoColumn;
+
+  @property({ type: Boolean, attribute: false })
+  _rightSideMain;
+
+  @property({ type: String })
+  get theme() {
+    return this._theme;
+  }
+
+  set theme(value) {
+    if (typeof value !== 'string') return;
+    switch (value) {
+      case '2c-l':
+        this._twoColumn = true;
+        this._rightSideMain = true;
+        break;
+      case 'cxl-institute':
+        this._twoColumn = true;
+        this._rightSideMain = false;
+        break;
+      default:
+        this._twoColumn = false;
+        break;
+    }
+    this._theme = value;
+  }
+
   static get styles() {
     return [cxlAppLayoutStyles];
   }
@@ -74,13 +103,7 @@ export class CXLAppLayout extends LitElement {
       </header>
 
       <div id="main">
-        ${this.getAttribute('theme') === '2c-l'
-          ? html`
-              ${mainElement} ${asideElement}
-            `
-          : html`
-              ${asideElement} ${mainElement}
-            `}
+        ${this._renderMainComponents(mainElement, asideElement)}
       </div>
 
       <footer role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
@@ -97,6 +120,21 @@ export class CXLAppLayout extends LitElement {
         }}"
       ></vaadin-device-detector>
     `;
+  }
+
+  _renderMainComponents(mainElement, asideElement) {
+    if (!this._twoColumn)
+      return html`
+        ${mainElement}
+      `;
+
+    return this._rightSideMain
+      ? html`
+          ${asideElement} ${mainElement}
+        `
+      : html`
+          ${mainElement} ${asideElement}
+        `;
   }
 
   firstUpdated(_changedProperties) {
