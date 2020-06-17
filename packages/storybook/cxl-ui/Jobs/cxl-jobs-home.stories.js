@@ -9,31 +9,33 @@ export default {
 export const CxlAppLayout = () => {
   return html`
     <cxl-app-layout id="container" theme="cxl-jobs-home">
-      <cxl-marketing-nav slot="header">
+      <cxl-marketing-nav class="menu menu-primary" slot="header" theme="cxl-jobs-nav">
         <vaadin-tabs
-          id="menu-primary-items"
+          id="menu-global-items"
           class="menu-items"
-          orientation="vertical"
+          orientation="horizontal"
           selected="-1"
-          theme="cxl-marketing-nav"
+          theme="cxl-jobs-nav"
         >
-          <vaadin-tab class="menu-item menu-item-logo menu-item-wide" theme="cxl-marketing-nav">
+          <vaadin-tab class="menu-item menu-item-logo menu-item-wide">
             <a href="https://conversionxl.com"
               ><iron-icon icon="cxl:logo" style="width: var(--lumo-icon-size-xl, 48px);"></iron-icon
             ></a>
           </vaadin-tab>
-          <vaadin-tab
-            theme="cxl-marketing-nav"
-            id="menu-item-1820277"
-            class="menu-item-split-nav menu-item-wide menu-item-search menu-item menu-item-type-custom menu-item-object-custom menu-item-1820277 menu-item-depth-0"
-            aria-selected="false"
-            role="tab"
-            orientation="horizontal"
-            tabindex="0"
+
+          <vaadin-tab class="menu-item-split-nav menu-item"><a>Current Openings </a></vaadin-tab>
+
+          <vaadin-tab class="menu-item"><a>Internship</a></vaadin-tab>
+
+          <vaadin-tab class="menu-item"><a>Offices</a></vaadin-tab>
+
+          <vaadin-tab class="menu-item"><a>About</a></vaadin-tab>
+
+          <vaadin-tab class="menu-item"
+            ><a><vaadin-button theme="primary">See current openings</vaadin-button></a></vaadin-tab
           >
-            <a>Search <iron-icon icon="lumo:search"></iron-icon></a>
-          </vaadin-tab> </vaadin-tabs
-      ></cxl-marketing-nav>
+        </vaadin-tabs></cxl-marketing-nav
+      >
 
       <article class="entry">
         <header class="entry-header">
