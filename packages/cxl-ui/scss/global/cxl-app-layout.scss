@@ -6,20 +6,27 @@ cxl-app-layout {
    */
 
   &[theme~="cxl-jobs-home"] {
-    .entry {
+    --cxl-content-width: 54em;
+
+    > article.entry {
+      /* stylelint-disable-line selector-no-qualifying-type */
       margin-top: var(--cxl-wrap-padding);
       margin-bottom: var(--cxl-wrap-padding);
 
       .entry-header {
+        /* stylelint-disable-line selector-no-qualifying-type */
         margin: auto;
       }
 
-      .entry-title {
+      /* stylelint-disable-next-line selector-max-type */
+      h1.entry-title {
+        /* stylelint-disable-line selector-no-qualifying-type */
         padding-top: calc(var(--cxl-wrap-padding) * 3);
         text-align: center;
       }
 
       .entry-byline {
+        /* stylelint-disable-line selector-no-qualifying-type */
         text-align: center;
       }
     }
