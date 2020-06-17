@@ -1,7 +1,7 @@
 @use "../mixins";
 
 // Collapse margins.
-:host([orientation="vertical"][theme~="cxl-marketing-nav"]) {
+:host([orientation="vertical"][theme$="nav"]) {
   display: flex;
   flex-direction: column;
 }
@@ -9,17 +9,17 @@
 /**
  * Wrap.
  */
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) {
+:host([orientation="horizontal"][theme$="nav"]) {
   justify-content: center;
 }
 
 // Override `justify-content: center`.
 // @todo upstream `forward-button` has `right: 0`, but nothing for this. Bug?
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) [part="back-button"] {
+:host([orientation="horizontal"][theme$="nav"]) [part="back-button"] {
   left: 0;
 }
 
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) [part="tabs"] {
+:host([orientation="horizontal"][theme$="nav"]) [part="tabs"] {
   @include mixins.wrap();
 }
 
@@ -29,16 +29,16 @@
 $vaadin-tab-horizontal-padding: 0.75rem;
 
 // Reduce spacing between tabs. Vertical is noop, upstream padding already matches our wrap.
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item) {
+:host([orientation="horizontal"][theme$="nav"]) ::slotted(.menu-item) {
   padding-right: $vaadin-tab-horizontal-padding;
   padding-left: $vaadin-tab-horizontal-padding;
 }
 
 // Match container wrap.
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item:first-child) {
+:host([orientation="horizontal"][theme$="nav"]) ::slotted(.menu-item:first-child) {
   padding-left: 0;
 }
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item:last-child) {
+:host([orientation="horizontal"][theme$="nav"]) ::slotted(.menu-item:last-child) {
   padding-right: 0;
 }
 
@@ -46,22 +46,22 @@ $vaadin-tab-horizontal-padding: 0.75rem;
  * User configurable menu item display for [non-]wide states.
  */
 /* stylelint-disable-next-line selector-class-pattern */
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item-not-wide) {
+:host([orientation="horizontal"][theme$="nav"]) ::slotted(.menu-item-not-wide) {
   display: none;
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
-:host([orientation="vertical"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item-wide) {
+:host([orientation="vertical"][theme$="nav"]) ::slotted(.menu-item-wide) {
   display: none;
 }
 
 // Split navigation pattern.
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item-split-nav) {
+:host([orientation="horizontal"][theme$="nav"]) ::slotted(.menu-item-split-nav) {
   margin-left: auto;
 }
 
 // Search menu item.
-:host([theme~="cxl-marketing-nav"]#menu-shadow-items) ::slotted(.menu-item-search) {
+:host([theme$="nav"]#menu-shadow-items) ::slotted(.menu-item-search) {
   margin-right: auto;
   margin-left: auto;
 }
