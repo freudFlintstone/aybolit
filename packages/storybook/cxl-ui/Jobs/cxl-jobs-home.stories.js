@@ -55,6 +55,56 @@ export const CxlAppLayout = () => {
             <vaadin-tab>Job offers</vaadin-tab>
             <vaadin-tab>Find Employees</vaadin-tab>
           </vaadin-tabs>
+          <cxl-vaadin-accordion id="cxl-vaadin-accordion-26107" class="plural" theme="reverse">
+            <vaadin-accordion-panel id="1" class="entry" theme="reverse">
+              <header class="entry-header" slot="summary">
+                <h5 class="entry-title" itemprop="headline">
+                  <a>Wordpress Developer extralong title for sure</a>
+                </h5>
+                <ul class="entry-info">
+                  <li class="entry-byline" itemprop="company">CXL</li>
+                  <li class="entry-byline" itemprop="office">Any office</li>
+                  <li class="entry-byline" itemprop="location">Remote</li>
+                </ul>
+              </header>
+              <div class="entry-summary" itemprop="description">
+                <p>Job description details</p>
+                <p>Job description details</p>
+              </div>
+            </vaadin-accordion-panel>
+            <vaadin-accordion-panel id="1" class="entry" theme="reverse">
+              <header class="entry-header" slot="summary">
+                <h5 class="entry-title" itemprop="headline">
+                  <a>Content Marketer</a>
+                </h5>
+                <ul class="entry-info">
+                  <li class="entry-byline" itemprop="company">HubSpot</li>
+                  <li class="entry-byline" itemprop="office">Any office</li>
+                  <li class="entry-byline" itemprop="location">Remote</li>
+                </ul>
+              </header>
+              <div class="entry-summary" itemprop="description">
+                <p>Job description details</p>
+                <p>Job description details</p>
+              </div>
+            </vaadin-accordion-panel>
+            <vaadin-accordion-panel id="1" class="entry" theme="reverse">
+              <header class="entry-header" slot="summary">
+                <h5 class="entry-title" itemprop="headline">
+                  <a>Quality Assurance tester</a>
+                </h5>
+                <ul class="entry-info">
+                  <li class="entry-byline" itemprop="company">Taxify</li>
+                  <li class="entry-byline" itemprop="office">Estonia</li>
+                  <li class="entry-byline" itemprop="location">Tallinn</li>
+                </ul>
+              </header>
+              <div class="entry-summary" itemprop="description">
+                <p>Job description details</p>
+                <p>Job description details</p>
+              </div>
+            </vaadin-accordion-panel>
+          </cxl-vaadin-accordion>
         </div>
       </article>
     </cxl-app-layout>
@@ -62,5 +112,5 @@ export const CxlAppLayout = () => {
 };
 
 CxlAppLayout.story = {
-  name: 'cxl-jobs-home'
+  name: 'cxl-jobs-openings'
 };
