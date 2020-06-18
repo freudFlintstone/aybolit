@@ -1,6 +1,7 @@
 import { html } from 'lit-html';
 import '@conversionxl/cxl-ui/src/components/cxl-app-layout.js';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
+import '@conversionxl/cxl-ui/src/components/cxl-info-container.js';
 
 export default {
   title: 'CXL UI|Jobs'
@@ -61,11 +62,11 @@ export const CxlAppLayout = () => {
                 <h5 class="entry-title" itemprop="headline">
                   <a>Wordpress Developer extralong title for sure</a>
                 </h5>
-                <ul class="entry-info">
-                  <li class="entry-byline" itemprop="company">CXL</li>
+                <cxl-info-container>
+                  <li class="entry-byline highlighted" itemprop="company">CXL</li>
                   <li class="entry-byline" itemprop="office">Any office</li>
                   <li class="entry-byline" itemprop="location">Remote</li>
-                </ul>
+                </cxl-info-container>
               </header>
               <div class="entry-summary" itemprop="description">
                 <p>Job description details</p>
@@ -77,11 +78,11 @@ export const CxlAppLayout = () => {
                 <h5 class="entry-title" itemprop="headline">
                   <a>Content Marketer</a>
                 </h5>
-                <ul class="entry-info">
-                  <li class="entry-byline" itemprop="company">HubSpot</li>
+                <cxl-info-container>
+                  <li class="entry-byline highlighted" itemprop="company">HubSpot</li>
                   <li class="entry-byline" itemprop="office">Any office</li>
                   <li class="entry-byline" itemprop="location">Remote</li>
-                </ul>
+                </cxl-info-container>
               </header>
               <div class="entry-summary" itemprop="description">
                 <p>Job description details</p>
@@ -93,11 +94,11 @@ export const CxlAppLayout = () => {
                 <h5 class="entry-title" itemprop="headline">
                   <a>Quality Assurance tester</a>
                 </h5>
-                <ul class="entry-info">
-                  <li class="entry-byline" itemprop="company">Taxify</li>
+                <cxl-info-container>
+                  <li class="entry-byline highlighted" itemprop="company">Taxify</li>
                   <li class="entry-byline" itemprop="office">Estonia</li>
                   <li class="entry-byline" itemprop="location">Tallinn</li>
-                </ul>
+                </cxl-info-container>
               </header>
               <div class="entry-summary" itemprop="description">
                 <p>Job description details</p>
