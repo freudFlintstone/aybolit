@@ -1,0 +1,26 @@
+:host {
+  display: block;
+
+  > ul {
+    display: flex;
+
+    ::slotted(li),
+    ::slotted(.entry-byline) {
+      margin-right: var(--lumo-space-m);
+      list-style: none;
+    }
+
+    ::slotted(.highlighted) {
+      color: var(--lumo-primary-text-color);
+    }
+
+    ::slotted(:not(:first-child))::before {
+      margin-right: var(--lumo-space-m);
+      content: "•";
+    }
+  }
+}
+
+:host([hidden]) {
+  display: none;
+}
