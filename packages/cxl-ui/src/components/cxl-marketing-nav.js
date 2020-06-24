@@ -1,5 +1,6 @@
 import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
+import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
 import cxlMarketingNavStyles from '../styles/cxl-marketing-nav-css.js';
 import cxlMarketingNavGlobalStyles from '../styles/global/cxl-marketing-nav-css.js';
 import '@vaadin/vaadin-button';
@@ -34,6 +35,7 @@ export class CXLMarketingNavElement extends LitElement {
   @property({ type: Boolean, reflect: true })
   minimal = false;
 
+  // vaadin-device-detector.
   @property({ type: Boolean, reflect: true })
   wide;
 
@@ -91,7 +93,18 @@ export class CXLMarketingNavElement extends LitElement {
 
       <vaadin-device-detector
         @wide-changed="${e => {
-          this.wide = e.target.wide;
+          /**
+           * Initial page load doesn't seem to trigger `wide` attribute reflection.
+           *
+           * @see https://github.com/Polymer/lit-element/issues/549
+           * @see https://polymer.slack.com/archives/C03PF4L4L/p1581109849195000
+           * @see https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask
+           */
+          const { wide } = e.target;
+
+          Promise.resolve().then(() => {
+            this.wide = wide;
+          });
         }}"
       ></vaadin-device-detector>
     `;
@@ -100,12 +113,10 @@ export class CXLMarketingNavElement extends LitElement {
   firstUpdated(changedProperties) {
     /**
      * Global styles.
-     *
-     * @todo Helper function usable across components.
      */
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = `<style id="cxl-marketing-nav-global">${cxlMarketingNavGlobalStyles}</style>`;
-    document.head.appendChild(tmpl.content);
+    registerGlobalStyles(cxlMarketingNavGlobalStyles, {
+      moduleId: 'cxl-marketing-nav-global'
+    });
 
     /**
      * Configure context menu trigger on main link click.
@@ -119,16 +130,17 @@ export class CXLMarketingNavElement extends LitElement {
     });
 
     /**
-     * Configure .menu-item-search keydown listeners.
-     *
-     * `<vaadin-context-menu-item>` interferes with form input.
-     *
-     * @see https://github.com/vaadin/vaadin-item/blob/v2.1.1/src/vaadin-item-mixin.html#L136
+     * Configure `.menu-item-search`.
      */
     const menuItemSearchContextMenu = this.menuItemSearchElement.querySelector(
       'vaadin-context-menu'
     );
 
+    /**
+     * `<vaadin-context-menu-item>` interferes with form input.
+     *
+     * @see https://github.com/vaadin/vaadin-item/blob/v2.1.1/src/vaadin-item-mixin.html#L136
+     */
     menuItemSearchContextMenu.addEventListener(
       'opened-changed',
       ee => {
@@ -136,13 +148,17 @@ export class CXLMarketingNavElement extends LitElement {
 
         searchForm.addEventListener('keydown', ef => {
           // Allow Esc.
-          if (ef.key !== 'Esc') {
+          if (ef.key !== 'Escape') {
             ef.stopPropagation();
           }
         });
-      } /* , { once: true } necessary for `content-changed`? */
+      },
+      { once: true }
     );
 
+    /**
+     * Avoid upstream default immediate close behavior.
+     */
     menuItemSearchContextMenu.addEventListener('item-selected', e => {
       e.stopImmediatePropagation();
     });
@@ -158,13 +174,22 @@ export class CXLMarketingNavElement extends LitElement {
       ];
     }
 
-    // @todo Focus search box.
-    menuItemSearchContextMenu.$.overlay.focusTrap = true;
+    /**
+     * Enable instant typing, avoid focus click.
+     */
+    menuItemSearchContextMenu.$.overlay.addEventListener('vaadin-overlay-open', e =>
+      e.target.querySelector('#search-input').focus()
+    );
 
     /**
      * Decide `<vaadin-tabs>` initial orientation.
      */
     this._updatedWide();
+
+    /**
+     * Highlight current menu item.
+     */
+    this._highlightCurrentMenuItem();
 
     super.firstUpdated(changedProperties);
   }
@@ -209,6 +234,25 @@ export class CXLMarketingNavElement extends LitElement {
     });
 
     return contextMenuItems;
+  }
+
+  /**
+   * Highlight menu item with special class.
+   * Improves visual "Where am I?" navigation clarity.
+   *
+   * @since 2020.04.12
+   * @private
+   */
+  _highlightCurrentMenuItem() {
+    this.menuItemsElements.forEach(menuItemsEl => {
+      const currentMenuItemEl = menuItemsEl.querySelector('.current-menu-item');
+
+      if (currentMenuItemEl && currentMenuItemEl.id) {
+        const idx = menuItemsEl.items.findIndex(i => i.id === currentMenuItemEl.id);
+
+        menuItemsEl.setAttribute('selected', idx);
+      }
+    });
   }
 
   /**
@@ -273,7 +317,10 @@ export class CXLMarketingNavElement extends LitElement {
       searchElement = this.querySelector('.menu-item-search');
     }
 
-    this.menuItemSearchElement.querySelector('vaadin-context-menu').listenOn = searchElement;
+    // Empty `cxl-marketing-nav` check.
+    if (searchElement) {
+      this.menuItemSearchElement.querySelector('vaadin-context-menu').listenOn = searchElement;
+    }
   }
 
   /**

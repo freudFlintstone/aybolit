@@ -1,5 +1,6 @@
 html {
   // Variables.
+  --cxl-content-width: 36em;
   --cxl-wrap-width: 72rem;
   --cxl-wrap-padding: var(--lumo-space-m);
 
@@ -50,6 +51,16 @@ strong {
   }
 }
 
+code,
+pre {
+  overflow-x: scroll;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /**
  * headroom.js
  */
@@ -64,4 +75,20 @@ strong {
   &--unpinned {
     transform: translateY(-100%);
   }
+}
+
+/**
+ * Classes.
+ */
+// @see https://tailwindcss.com/docs/font-weight/
+// @todo Integrate tailwindcss.
+.font-light {
+  font-weight: 300;
+}
+
+.thumbnail {
+  --cxl-thumbnail-size: calc(var(--lumo-icon-size-l) * 3);
+  width: var(--cxl-thumbnail-size);
+  height: var(--cxl-thumbnail-size);
+  border-radius: 50%;
 }
