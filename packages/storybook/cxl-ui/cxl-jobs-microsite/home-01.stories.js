@@ -28,7 +28,192 @@ export const CxlJobsMicrositeHomOne = () => {
         >
           <div class="wrap-header wrap" id="wrap-header">
             <!-- hbd_header -->
-            ../vendor/cxl/wp-theme-lib/templates/menu/primary.php
+
+            <cxl-marketing-nav
+              class="menu menu-primary"
+              role="navigation"
+              id="menu-primary"
+              aria-label="Primary Menu"
+              itemscope="itemscope"
+              itemtype="http://schema.org/SiteNavigationElement"
+              slot="header"
+            >
+              <template id="cxl-marketing-nav-search-form-template">
+                <vaadin-context-menu-item class="menu-item-search">
+                  <form
+                    id="search-form"
+                    role="search"
+                    method="get"
+                    class="search-form"
+                    action="https://jobs.uprecords.org/"
+                  >
+                    <label for="search-input">Search CXL Jobs app:</label>
+                    <input
+                      id="search-input"
+                      type="search"
+                      class="search-field"
+                      placeholder="Search …"
+                      value=""
+                      name="s"
+                    />
+                    <vaadin-button
+                      type="submit"
+                      class="search-submit"
+                      aria-label="Search"
+                      theme="icon"
+                      onclick="document.getElementById('search-form').submit();"
+                    >
+                      <iron-icon icon="lumo:angle-right"></iron-icon>
+                    </vaadin-button>
+                  </form>
+                </vaadin-context-menu-item>
+              </template>
+
+              <vaadin-tabs
+                id="menu-global-items"
+                class="menu-items"
+                theme="cxl-marketing-nav"
+                selected="-1"
+              >
+                <vaadin-tab
+                  theme="cxl-marketing-nav"
+                  id="menu-item-459"
+                  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-459 menu-item- menu-item-depth-0"
+                >
+                  <a href="https://jobs.uprecords.org/#home" aria-current="page"
+                    ><span data-post-status="publish"></span>
+                    <iron-icon
+                      icon="cxl:logo"
+                      style="width: var(--lumo-icon-size-xl, 48px);"
+                    ></iron-icon> </a
+                ></vaadin-tab>
+                <vaadin-tab
+                  theme="cxl-marketing-nav"
+                  id="menu-item-461"
+                  class="menu-item-split-nav menu-item menu-item-type-post_type menu-item-object-page menu-item-461 menu-item-parent-archive menu-item-internships menu-item-depth-0"
+                >
+                  <a href="https://jobs.uprecords.org/internships/"
+                    ><span data-post-status="publish"></span
+                    ><span data-post-status="publish"></span>Internships</a
+                  ></vaadin-tab
+                >
+                <vaadin-tab
+                  theme="cxl-marketing-nav"
+                  id="menu-item-382"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-382 menu-item-parent-archive menu-item-job-apply menu-item-depth-0"
+                >
+                  <a href="https://jobs.uprecords.org/job-apply/"
+                    ><span data-post-status="publish"></span
+                    ><span data-post-status="publish"></span>Job Apply</a
+                  ></vaadin-tab
+                >
+                <vaadin-tab
+                  theme="cxl-marketing-nav"
+                  id="menu-item-383"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-383 menu-item-parent-archive menu-item-home-02 menu-item-depth-0"
+                >
+                  <a href="https://jobs.uprecords.org/home-02/"
+                    ><span data-post-status="publish"></span
+                    ><span data-post-status="publish"></span>Home 02</a
+                  ></vaadin-tab
+                >
+                <vaadin-tab
+                  theme="cxl-marketing-nav"
+                  id="menu-item-384"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-384 menu-item-parent-archive menu-item-jobs menu-item-depth-0"
+                >
+                  <a href="https://jobs.uprecords.org/jobs/"
+                    ><span data-post-status="publish"></span
+                    ><span data-post-status="publish"></span>Jobs</a
+                  ></vaadin-tab
+                >
+                <vaadin-tab
+                  theme="cxl-marketing-nav"
+                  id="menu-item-385"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-385 menu-item-parent-archive menu-item-post-a-job menu-item-depth-0"
+                >
+                  <a href="https://jobs.uprecords.org/post-a-job/"
+                    ><span data-post-status="publish"></span
+                    ><span data-post-status="publish"></span>Post a Job</a
+                  ></vaadin-tab
+                >
+                <vaadin-tab
+                  theme="cxl-marketing-nav"
+                  id="menu-item-386"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-386 menu-item-parent-archive menu-item-see-current-openings menu-item-depth-0"
+                >
+                  <a title="Current openings" href="https://jobs.uprecords.org/all-jobs/"
+                    ><span data-post-status="publish"></span>
+                    <vaadin-button theme="primary" tabindex="0" role="button"
+                      >See current openings
+                    </vaadin-button>
+                  </a></vaadin-tab
+                >
+              </vaadin-tabs>
+              <script>
+                window.CXL = window.CXL || {};
+                window.CXL.contextMenuItems = window.CXL.contextMenuItems || {};
+                window.CXL.contextMenuItems['global'] = [
+                  {
+                    depth: 0,
+                    text: '',
+                    component: 'a',
+                    href: 'https:\\/\\/jobs.uprecords.org\\/#home',
+                    id: 459,
+                    parent: 0
+                  },
+                  {
+                    depth: 0,
+                    text: 'Internships',
+                    component: 'a',
+                    href: 'https:\\/\\/jobs.uprecords.org\\/internships\\/',
+                    id: 461,
+                    parent: 0
+                  },
+                  {
+                    depth: 0,
+                    text: 'Job Apply',
+                    component: 'a',
+                    href: 'https:\\/\\/jobs.uprecords.org\\/job-apply\\/',
+                    id: 382,
+                    parent: 0
+                  },
+                  {
+                    depth: 0,
+                    text: 'Home 02',
+                    component: 'a',
+                    href: 'https:\\/\\/jobs.uprecords.org\\/home-02\\/',
+                    id: 383,
+                    parent: 0
+                  },
+                  {
+                    depth: 0,
+                    text: 'Jobs',
+                    component: 'a',
+                    href: 'https:\\/\\/jobs.uprecords.org\\/jobs\\/',
+                    id: 384,
+                    parent: 0
+                  },
+                  {
+                    depth: 0,
+                    text: 'Post a Job',
+                    component: 'a',
+                    href: 'https:\\/\\/jobs.uprecords.org\\/post-a-job\\/',
+                    id: 385,
+                    parent: 0
+                  },
+                  {
+                    depth: 0,
+                    text: 'See current openings',
+                    component: 'a',
+                    href: 'https:\\/\\/jobs.uprecords.org\\/all-jobs\\/',
+                    id: 386,
+                    parent: 0
+                  }
+                ];
+              </script> </cxl-marketing-nav
+            ><!-- #menu-primary -->
+
             <!-- end hbd_header -->
           </div>
           <!-- #wrap-header -->
@@ -54,14 +239,23 @@ export const CxlJobsMicrositeHomOne = () => {
                   itemtype="http://schema.org/CreativeWork"
                   id="post-26"
                 >
-                  <header class="entry-header o-content-width">
+                  <header class="entry-header">
                     <h1 class="entry-title" itemprop="headline">
                       <span data-post-status="publish"></span>Home
                     </h1>
+
+                    <div class="entry-byline">
+                      <a
+                        class="post-edit-link button"
+                        href="https://jobs.uprecords.org/wp-admin/post.php?post=26&amp;action=edit&amp;classic-editor"
+                        >Edit page</a
+                      >
+                    </div>
+                    <!-- .entry-byline -->
                   </header>
                   <!-- .entry-header -->
 
-                  <div class="entry-content o-content-width" itemprop="text">
+                  <div class="entry-content" itemprop="text">
                     <figure class="wp-block-image alignwide size-large">
                       <img
                         src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/featured-img-1024x429.jpg"
@@ -437,11 +631,9 @@ export const CxlJobsMicrositeHomOne = () => {
                             <a href="#cxl-live-conference">CXL Live</a> in Austin and
                             <a href="#elite-camp-conference">Elite Camp</a> in Estonia. It’s when
                             the whole CXL team comes together. We don’t use any event management
-                            companies, it’s all done by our people.
-                            <br />
-                            <br />It also gets bloody hot in Austin in the summer, so the whole
-                            teams ships over to Estonia for a month or so (or at least has in the
-                            last 2 years). Fun times!
+                            companies, it’s all done by our people.<br /><br />It also gets bloody
+                            hot in Austin in the summer, so the whole teams ships over to Estonia
+                            for a month or so (or at least has in the last 2 years). Fun times!
                           </p>
                         </blockquote>
                       </div>
@@ -544,134 +736,140 @@ export const CxlJobsMicrositeHomOne = () => {
                       data-orderby="featured"
                       data-order="DESC"
                       data-categories=""
+                      data-disable-form-state-storage=""
                       data-post_id="26"
                     >
-                      <vaadin-accordion class="job_listings" opened="NaN">
+                      <cxl-vaadin-accordion class="plural" theme="cxl-jobs-listing" opened="0">
                         <vaadin-accordion-panel
-                          theme="reverse"
-                          class="entry author-jobs post-324 job_listing type-job_listing status-publish has-post-thumbnail job-type-cro"
+                          theme="cxl-jobs-listing reverse"
+                          class="entry author-something post-435 job_listing type-job_listing status-publish job_listing_tag-jokes job-type-full-time"
                           data-longitude=""
                           data-latitude=""
                           tabindex="0"
                         >
-                          <div slot="summary">
-                            <h3>
-                              Front-End UI Engineer on WordPress projects
-                              <span class="location"> Tallinn, Estonia </span>
+                          <div class="entry-header" slot="summary">
+                            <h3 class="entry-title">
+                              Enternaining people on a beach
+                              <span class="location"> Sunny Beach </span>
                             </h3>
                           </div>
-                          <div>
+                          <div class="entry-summary" itemprop="description">
                             <img
                               class="company_logo"
-                              src="https://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/koonus-50x32-1.png"
-                              alt="XYZ"
+                              src="https://jobs.uprecords.org/wp-content/plugins/wp-job-manager/assets/images/company.png"
+                              alt="NoName"
                             />
                             <div class="position">
-                              <h3>Front-End UI Engineer on WordPress projects</h3>
+                              <h3>Enternaining people on a beach</h3>
                               <div class="company">
-                                <strong>XYZ</strong>
+                                <strong>NoName</strong>
                               </div>
                             </div>
                             <div class="location">
-                              Tallinn, Estonia
-                            </div>
-                            <ul class="meta">
-                              <li class="job-type cro">CRO</li>
-
-                              <li class="date">
-                                <time datetime="2020-01-21">Posted 3 days ago</time>
-                              </li>
-                            </ul>
-                            <a
-                              href="https://jobs.uprecords.org/job/front-end-ui-engineer-on-wordpress-projects/"
-                            >
-                              View Job
-                            </a>
-                          </div>
-                        </vaadin-accordion-panel>
-
-                        <vaadin-accordion-panel
-                          theme="reverse"
-                          class="entry author-jobs post-217 job_listing type-job_listing status-publish has-post-thumbnail job-type-freelance"
-                          data-longitude=""
-                          data-latitude=""
-                          tabindex="0"
-                        >
-                          <div slot="summary">
-                            <h3>Content Marketer <span class="location"> Any Location </span></h3>
-                          </div>
-                          <div>
-                            <img
-                              class="company_logo"
-                              src="https://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/koonus-50x32-1.png"
-                              alt="XYZ"
-                            />
-                            <div class="position">
-                              <h3>Content Marketer</h3>
-                              <div class="company">
-                                <strong>XYZ</strong>
-                              </div>
-                            </div>
-                            <div class="location">
-                              Any Location
-                            </div>
-                            <ul class="meta">
-                              <li class="job-type freelance">Freelance</li>
-
-                              <li class="date">
-                                <time datetime="2020-01-20">Posted 4 days ago</time>
-                              </li>
-                            </ul>
-                            <a href="https://jobs.uprecords.org/job/content-marketer/">
-                              View Job
-                            </a>
-                          </div>
-                        </vaadin-accordion-panel>
-
-                        <vaadin-accordion-panel
-                          theme="reverse"
-                          class="entry author-jobs post-212 job_listing type-job_listing status-publish has-post-thumbnail job-type-full-time"
-                          data-longitude=""
-                          data-latitude=""
-                          tabindex="0"
-                        >
-                          <div slot="summary">
-                            <h3>
-                              WordPress developer extalong title for sure
-                              <span class="location"> Tallinn, Estonia </span>
-                            </h3>
-                          </div>
-                          <div>
-                            <img
-                              class="company_logo"
-                              src="https://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/koonus-50x32-1.png"
-                              alt="XYZ"
-                            />
-                            <div class="position">
-                              <h3>WordPress developer extalong title for sure</h3>
-                              <div class="company">
-                                <strong>XYZ</strong>
-                              </div>
-                            </div>
-                            <div class="location">
-                              Tallinn, Estonia
+                              Sunny Beach
                             </div>
                             <ul class="meta">
                               <li class="job-type full-time">Full Time</li>
 
                               <li class="date">
-                                <time datetime="2020-01-20">Posted 4 days ago</time>
+                                <time datetime="2020-05-26">Posted 4 weeks ago</time>
                               </li>
                             </ul>
                             <a
-                              href="https://jobs.uprecords.org/job/wordpress-developer-extalong-title-for-sure/"
+                              href="https://jobs.uprecords.org/job/sunny-beach-2-enternaining-people-on-a-beach/"
                             >
                               View Job
                             </a>
                           </div>
                         </vaadin-accordion-panel>
-                      </vaadin-accordion>
-                      <a class="load_more_jobs" href="#"><strong>Load more listings</strong></a>
+
+                        <vaadin-accordion-panel
+                          theme="cxl-jobs-listing reverse"
+                          class="entry author-postingajob post-431 job_listing type-job_listing status-expired job_listing_tag-management job_listing_tag-projects job-type-part-time"
+                          data-longitude=""
+                          data-latitude=""
+                          tabindex="0"
+                        >
+                          <div class="entry-header" slot="summary">
+                            <h3 class="entry-title">
+                              Wizard of Light Bulb Moments
+                              <span class="location"> Klaipeda, Lithuania </span>
+                            </h3>
+                          </div>
+                          <div class="entry-summary" itemprop="description">
+                            <img
+                              class="company_logo"
+                              src="https://jobs.uprecords.org/wp-content/plugins/wp-job-manager/assets/images/company.png"
+                              alt="CompanyName"
+                            />
+                            <div class="position">
+                              <h3>Wizard of Light Bulb Moments</h3>
+                              <div class="company">
+                                <strong>CompanyName</strong>
+                              </div>
+                            </div>
+                            <div class="location">
+                              Klaipeda, Lithuania
+                            </div>
+                            <ul class="meta">
+                              <li class="job-type part-time">Part Time</li>
+
+                              <li class="date">
+                                <time datetime="2020-05-22">Posted 1 month ago</time>
+                              </li>
+                            </ul>
+                            <a
+                              href="https://jobs.uprecords.org/job/klaipeda-lithuania-3-wizard-of-light-bulb-moments/"
+                            >
+                              View Job
+                            </a>
+                          </div>
+                        </vaadin-accordion-panel>
+
+                        <vaadin-accordion-panel
+                          theme="cxl-jobs-listing reverse"
+                          class="entry author-newuser post-426 job_listing type-job_listing status-expired job_listing_tag-tags job-type-full-time"
+                          data-longitude=""
+                          data-latitude=""
+                          tabindex="0"
+                        >
+                          <div class="entry-header" slot="summary">
+                            <h3 class="entry-title">
+                              job title <span class="location"> london </span>
+                            </h3>
+                          </div>
+                          <div class="entry-summary" itemprop="description">
+                            <img
+                              class="company_logo"
+                              src="https://jobs.uprecords.org/wp-content/plugins/wp-job-manager/assets/images/company.png"
+                              alt="company name"
+                            />
+                            <div class="position">
+                              <h3>job title</h3>
+                              <div class="company">
+                                <strong>company name</strong>
+                              </div>
+                            </div>
+                            <div class="location">
+                              london
+                            </div>
+                            <ul class="meta">
+                              <li class="job-type full-time">Full Time</li>
+
+                              <li class="date">
+                                <time datetime="2020-05-21">Posted 1 month ago</time>
+                              </li>
+                            </ul>
+                            <a href="https://jobs.uprecords.org/job/london-2-job-title-3/">
+                              View Job
+                            </a>
+                          </div>
+                        </vaadin-accordion-panel>
+
+                        <a class="load_more_jobs" href="#"
+                          ><strong>Load more listings</strong></a
+                        ></cxl-vaadin-accordion
+                      >
                     </div>
 
                     <h3 class="has-text-align-center">We work hard &amp; play hard</h3>
@@ -717,7 +915,7 @@ export const CxlJobsMicrositeHomOne = () => {
                       </ul>
                     </figure>
 
-                    <h2 id="hear-from-your-future-teammates">
+                    <h2 class="has-text-align-center" id="hear-from-your-future-teammates">
                       Hear from your future teammates<a
                         class="anchorjs-link "
                         aria-label="Anchor"
@@ -770,7 +968,7 @@ export const CxlJobsMicrositeHomOne = () => {
                     </div>
 
                     <div class="wp-block-columns">
-                      <div class="wp-block-column aligncenter">
+                      <div class="wp-block-column aligncenter" style="flex-basis:50%">
                         <figure class="wp-block-image size-full is-resized is-style-circle-mask">
                           <img
                             src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/small-img-2.jpg"
@@ -804,145 +1002,145 @@ export const CxlJobsMicrositeHomOne = () => {
                       data-orderby="featured"
                       data-order="DESC"
                       data-categories=""
+                      data-disable-form-state-storage=""
                       data-post_id="26"
                     >
-                      <vaadin-accordion class="job_listings" opened="NaN">
+                      <cxl-vaadin-accordion class="plural" theme="cxl-jobs-listing" opened="0">
                         <vaadin-accordion-panel
-                          theme="reverse"
-                          class="entry author-jobs post-324 job_listing type-job_listing status-publish has-post-thumbnail job-type-cro"
+                          theme="cxl-jobs-listing reverse"
+                          class="entry author-something post-435 job_listing type-job_listing status-publish job_listing_tag-jokes job-type-full-time"
                           data-longitude=""
                           data-latitude=""
                           tabindex="0"
                         >
-                          <div slot="summary">
-                            <h3>
-                              Front-End UI Engineer on WordPress projects
-                              <span class="location"> Tallinn, Estonia </span>
+                          <div class="entry-header" slot="summary">
+                            <h3 class="entry-title">
+                              Enternaining people on a beach
+                              <span class="location"> Sunny Beach </span>
                             </h3>
                           </div>
-                          <div>
+                          <div class="entry-summary" itemprop="description">
                             <img
                               class="company_logo"
-                              src="https://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/koonus-50x32-1.png"
-                              alt="XYZ"
+                              src="https://jobs.uprecords.org/wp-content/plugins/wp-job-manager/assets/images/company.png"
+                              alt="NoName"
                             />
                             <div class="position">
-                              <h3>Front-End UI Engineer on WordPress projects</h3>
+                              <h3>Enternaining people on a beach</h3>
                               <div class="company">
-                                <strong>XYZ</strong>
+                                <strong>NoName</strong>
                               </div>
                             </div>
                             <div class="location">
-                              Tallinn, Estonia
-                            </div>
-                            <ul class="meta">
-                              <li class="job-type cro">CRO</li>
-
-                              <li class="date">
-                                <time datetime="2020-01-21">Posted 3 days ago</time>
-                              </li>
-                            </ul>
-                            <a
-                              href="https://jobs.uprecords.org/job/front-end-ui-engineer-on-wordpress-projects/"
-                            >
-                              View Job
-                            </a>
-                          </div>
-                        </vaadin-accordion-panel>
-
-                        <vaadin-accordion-panel
-                          theme="reverse"
-                          class="entry author-jobs post-217 job_listing type-job_listing status-publish has-post-thumbnail job-type-freelance"
-                          data-longitude=""
-                          data-latitude=""
-                          tabindex="0"
-                        >
-                          <div slot="summary">
-                            <h3>Content Marketer <span class="location"> Any Location </span></h3>
-                          </div>
-                          <div>
-                            <img
-                              class="company_logo"
-                              src="https://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/koonus-50x32-1.png"
-                              alt="XYZ"
-                            />
-                            <div class="position">
-                              <h3>Content Marketer</h3>
-                              <div class="company">
-                                <strong>XYZ</strong>
-                              </div>
-                            </div>
-                            <div class="location">
-                              Any Location
-                            </div>
-                            <ul class="meta">
-                              <li class="job-type freelance">Freelance</li>
-
-                              <li class="date">
-                                <time datetime="2020-01-20">Posted 4 days ago</time>
-                              </li>
-                            </ul>
-                            <a href="https://jobs.uprecords.org/job/content-marketer/">
-                              View Job
-                            </a>
-                          </div>
-                        </vaadin-accordion-panel>
-
-                        <vaadin-accordion-panel
-                          theme="reverse"
-                          class="entry author-jobs post-212 job_listing type-job_listing status-publish has-post-thumbnail job-type-full-time"
-                          data-longitude=""
-                          data-latitude=""
-                          tabindex="0"
-                        >
-                          <div slot="summary">
-                            <h3>
-                              WordPress developer extalong title for sure
-                              <span class="location"> Tallinn, Estonia </span>
-                            </h3>
-                          </div>
-                          <div>
-                            <img
-                              class="company_logo"
-                              src="https://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/koonus-50x32-1.png"
-                              alt="XYZ"
-                            />
-                            <div class="position">
-                              <h3>WordPress developer extalong title for sure</h3>
-                              <div class="company">
-                                <strong>XYZ</strong>
-                              </div>
-                            </div>
-                            <div class="location">
-                              Tallinn, Estonia
+                              Sunny Beach
                             </div>
                             <ul class="meta">
                               <li class="job-type full-time">Full Time</li>
 
                               <li class="date">
-                                <time datetime="2020-01-20">Posted 4 days ago</time>
+                                <time datetime="2020-05-26">Posted 4 weeks ago</time>
                               </li>
                             </ul>
                             <a
-                              href="https://jobs.uprecords.org/job/wordpress-developer-extalong-title-for-sure/"
+                              href="https://jobs.uprecords.org/job/sunny-beach-2-enternaining-people-on-a-beach/"
                             >
                               View Job
                             </a>
                           </div>
                         </vaadin-accordion-panel>
-                      </vaadin-accordion>
-                      <a class="load_more_jobs" href="#"><strong>Load more listings</strong></a>
+
+                        <vaadin-accordion-panel
+                          theme="cxl-jobs-listing reverse"
+                          class="entry author-postingajob post-431 job_listing type-job_listing status-expired job_listing_tag-management job_listing_tag-projects job-type-part-time"
+                          data-longitude=""
+                          data-latitude=""
+                          tabindex="0"
+                        >
+                          <div class="entry-header" slot="summary">
+                            <h3 class="entry-title">
+                              Wizard of Light Bulb Moments
+                              <span class="location"> Klaipeda, Lithuania </span>
+                            </h3>
+                          </div>
+                          <div class="entry-summary" itemprop="description">
+                            <img
+                              class="company_logo"
+                              src="https://jobs.uprecords.org/wp-content/plugins/wp-job-manager/assets/images/company.png"
+                              alt="CompanyName"
+                            />
+                            <div class="position">
+                              <h3>Wizard of Light Bulb Moments</h3>
+                              <div class="company">
+                                <strong>CompanyName</strong>
+                              </div>
+                            </div>
+                            <div class="location">
+                              Klaipeda, Lithuania
+                            </div>
+                            <ul class="meta">
+                              <li class="job-type part-time">Part Time</li>
+
+                              <li class="date">
+                                <time datetime="2020-05-22">Posted 1 month ago</time>
+                              </li>
+                            </ul>
+                            <a
+                              href="https://jobs.uprecords.org/job/klaipeda-lithuania-3-wizard-of-light-bulb-moments/"
+                            >
+                              View Job
+                            </a>
+                          </div>
+                        </vaadin-accordion-panel>
+
+                        <vaadin-accordion-panel
+                          theme="cxl-jobs-listing reverse"
+                          class="entry author-newuser post-426 job_listing type-job_listing status-expired job_listing_tag-tags job-type-full-time"
+                          data-longitude=""
+                          data-latitude=""
+                          tabindex="0"
+                        >
+                          <div class="entry-header" slot="summary">
+                            <h3 class="entry-title">
+                              job title <span class="location"> london </span>
+                            </h3>
+                          </div>
+                          <div class="entry-summary" itemprop="description">
+                            <img
+                              class="company_logo"
+                              src="https://jobs.uprecords.org/wp-content/plugins/wp-job-manager/assets/images/company.png"
+                              alt="company name"
+                            />
+                            <div class="position">
+                              <h3>job title</h3>
+                              <div class="company">
+                                <strong>company name</strong>
+                              </div>
+                            </div>
+                            <div class="location">
+                              london
+                            </div>
+                            <ul class="meta">
+                              <li class="job-type full-time">Full Time</li>
+
+                              <li class="date">
+                                <time datetime="2020-05-21">Posted 1 month ago</time>
+                              </li>
+                            </ul>
+                            <a href="https://jobs.uprecords.org/job/london-2-job-title-3/">
+                              View Job
+                            </a>
+                          </div>
+                        </vaadin-accordion-panel>
+
+                        <a class="load_more_jobs" href="#"
+                          ><strong>Load more listings</strong></a
+                        ></cxl-vaadin-accordion
+                      >
                     </div>
                   </div>
                   <!-- .entry-content -->
 
-                  <footer class="entry-footer o-content-width">
-                    <a
-                      class="post-edit-link"
-                      href="https://jobs.uprecords.org/wp-admin/post.php?post=26&amp;action=edit"
-                      >Edit This</a
-                    >
-                  </footer>
+                  <footer class="entry-footer"></footer>
                   <!-- .entry-footer -->
                 </article>
                 <!-- .entry -->
@@ -959,7 +1157,6 @@ export const CxlJobsMicrositeHomOne = () => {
           </div>
           <!-- #wrap-main -->
         </div>
-        <!-- #main -->
 
         <!-- hbd_before_footer -->
         <!-- end hbd_before_footer -->
