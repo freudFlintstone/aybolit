@@ -92,3 +92,20 @@ img {
   height: var(--cxl-thumbnail-size);
   border-radius: 50%;
 }
+
+.cxl-jobs-blockquote {
+  --lumo-secondary-text-color: var(--lumo-tint);
+  padding: var(--lumo-space-m) var(--lumo-space-xl);
+  margin: 0;
+  font-style: initial;
+  font-weight: 600;
+  color: var(--lumo-shade);
+  background-color: var(--lumo-shade-5pct);
+  border-left: unset;
+  box-shadow: unset;
+
+  &::before {
+    display: none;
+    content: unset;
+  }
+}
