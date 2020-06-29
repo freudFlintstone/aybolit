@@ -1,14 +1,14 @@
 import { html } from 'lit-html';
-import '@conversionxl/cxl-ui/src/components/cxl-institute-layout.js';
+import '@conversionxl/cxl-ui/src/components/cxl-app-layout.js';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
 
 export default {
   title: 'CXL UI'
 };
 
-export const CxlInstituteLayout = () => {
+export const CxlAppLayout = () => {
   return html`
-    <cxl-institute-layout id="container">
+    <cxl-app-layout id="container">
       <cxl-marketing-nav slot="header">
         <vaadin-tabs
           id="menu-primary-items"
@@ -170,10 +170,10 @@ export const CxlInstituteLayout = () => {
         <h2 id="overview-video">Overview video<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#overview-video" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
         <p>Ending paragraph here.</p>
       </article>
-    </cxl-institute-layout>
+    </cxl-app-layout>
 `;
 };
 
-CxlInstituteLayout.story = {
-  name: 'cxl-institute-layout'
+CxlAppLayout.story = {
+  name: 'cxl-app-layout'
 };
