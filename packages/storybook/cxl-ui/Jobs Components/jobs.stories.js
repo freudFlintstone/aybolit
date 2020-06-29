@@ -7,7 +7,7 @@ export default {
   title: 'CXL UI|Jobs'
 };
 
-export const CxlAppLayout = () => {
+export const CxlJobsOpenings = () => {
   return html`
     <cxl-app-layout id="container" theme="cxl-jobs-home">
       <cxl-marketing-nav class="menu menu-primary" slot="header" theme="cxl-jobs-nav">
@@ -56,8 +56,12 @@ export const CxlAppLayout = () => {
             <vaadin-tab>Job offers</vaadin-tab>
             <vaadin-tab>Find Employees</vaadin-tab>
           </vaadin-tabs>
-          <cxl-vaadin-accordion id="cxl-vaadin-accordion-26107" class="plural" theme="reverse">
-            <vaadin-accordion-panel id="1" class="entry" theme="reverse">
+          <cxl-vaadin-accordion
+            id="cxl-vaadin-accordion-26107"
+            class="plural"
+            theme="reverse cxl-jobs-listing"
+          >
+            <vaadin-accordion-panel id="1" class="entry" theme="reverse cxl-jobs-listing">
               <header class="entry-header" slot="summary">
                 <h5 class="entry-title" itemprop="headline">
                   <a>Wordpress Developer extralong title for sure</a>
@@ -73,7 +77,7 @@ export const CxlAppLayout = () => {
                 <p>Job description details</p>
               </div>
             </vaadin-accordion-panel>
-            <vaadin-accordion-panel id="1" class="entry" theme="reverse">
+            <vaadin-accordion-panel id="1" class="entry" theme="reverse cxl-jobs-listing">
               <header class="entry-header" slot="summary">
                 <h5 class="entry-title" itemprop="headline">
                   <a>Content Marketer</a>
@@ -89,7 +93,7 @@ export const CxlAppLayout = () => {
                 <p>Job description details</p>
               </div>
             </vaadin-accordion-panel>
-            <vaadin-accordion-panel id="1" class="entry" theme="reverse">
+            <vaadin-accordion-panel id="1" class="entry" theme="reverse cxl-jobs-listing">
               <header class="entry-header" slot="summary">
                 <h5 class="entry-title" itemprop="headline">
                   <a>Quality Assurance tester</a>
@@ -112,6 +116,6 @@ export const CxlAppLayout = () => {
   `;
 };
 
-CxlAppLayout.story = {
-  name: 'cxl-jobs-openings'
+CxlJobsOpenings.story = {
+  name: 'cxl-jobs'
 };
