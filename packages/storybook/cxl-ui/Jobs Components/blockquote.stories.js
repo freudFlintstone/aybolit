@@ -9,7 +9,7 @@ export default {
 
 export const CxlJobsBlockquote = () => {
   return html`
-    <cxl-app-layout id="container" theme="cxl-jobs-home flat-shadow">
+    <cxl-app-layout id="container" theme="cxl-jobs-home">
       <cxl-marketing-nav class="menu menu-primary" slot="header" theme="cxl-jobs-nav">
         <vaadin-tabs
           id="menu-global-items"
