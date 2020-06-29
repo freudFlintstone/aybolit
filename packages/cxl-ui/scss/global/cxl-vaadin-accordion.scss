@@ -139,19 +139,18 @@ cxl-vaadin-accordion {
    * Theme "cxl-jobs-listing".
    */
   &[theme~="cxl-jobs-listing"] {
-    .entry-header {
-      .entry-title {
-        margin: 0;
-        font-size: var(--lumo-font-size-m);
+    h3 {
+      margin: 0;
+      font-size: var(--lumo-font-size-m);
 
-        > span {
-          margin-left: var(--lumo-space-m);
-          font-weight: 400;
-        }
+      > .location {
+        margin-left: var(--lumo-space-m);
+        font-weight: 400;
+      }
 
-        a {
-          color: var(--lumo-body-text-color);
-        }
+      /* stylelint-disable selector-max-type */
+      a {
+        color: var(--lumo-body-text-color);
       }
     }
   }
