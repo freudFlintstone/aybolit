@@ -65,3 +65,13 @@ $vaadin-tab-horizontal-padding: 0.75rem;
   margin-right: auto;
   margin-left: auto;
 }
+
+// show horizontal scrollbar
+:host([orientation="horizontal"][theme~="cxl-jobs-horizontal-slider"]) {
+  overflow-x: auto;
+}
+
+:host([orientation="horizontal"][theme~="cxl-jobs-horizontal-slider"])
+  [part="tabs"]::-webkit-scrollbar {
+  display: unset;
+}
