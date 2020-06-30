@@ -9,7 +9,7 @@ export default {
 
 export const CxlJobsBlockquote = () => {
   return html`
-    <cxl-app-layout id="container" theme="cxl-jobs-home">
+    <cxl-app-layout id="container" theme="cxl-jobs-home flat-shadow">
       <cxl-marketing-nav class="menu menu-primary" slot="header" theme="cxl-jobs-nav">
         <vaadin-tabs
           id="menu-global-items"
@@ -63,7 +63,7 @@ export const CxlJobsBlockquote = () => {
             </div>
 
             <div class="wp-block-column">
-              <blockquote class="cxl-jobs-blockquote">
+              <blockquote class="cxl-jobs-blockquote shadow-m">
                 <p>
                   One piece of the fun is organizing our 2 conferences per year –
                   <a href="#cxl-live-conference">CXL Live</a> in Austin and

@@ -18,6 +18,13 @@ html {
     #{$cxl-box-shadow-width} #{$cxl-box-shadow-width} 0 0 #{$cxl-box-shadow-color},
     #{$cxl-box-shadow-width} 0 0 0 #{$cxl-box-shadow-color} inset,
     0 #{$cxl-box-shadow-width} 0 0 #{$cxl-box-shadow-color} inset;
+
+  // Jobs microsite shadow styles
+  --cxl-jobs-box-shadow-xs: -4px 4px 0 0 var(--lumo-shade-10pct);
+  --cxl-jobs-box-shadow-s: -6px 6px 0 0 var(--lumo-shade-10pct);
+  --cxl-jobs-box-shadow-m: -8px 8px 0 0 var(--lumo-shade-10pct);
+  --cxl-jobs-box-shadow-l: -10px 10px 0 0 var(--lumo-shade-10pct);
+  --cxl-jobs-box-shadow-xl: -12px 12px 0 0 var(--lumo-shade-10pct);
 }
 
 // @see https://github.com/necolas/normalize.css/blob/8.0.1/normalize.css#L20
@@ -93,10 +100,11 @@ img {
   border-radius: 50%;
 }
 
+/**
+ * Jobs Microsite styles
+ */
+
 .cxl-jobs-blockquote {
-  --lumo-secondary-text-color: var(--lumo-tint);
-  padding: var(--lumo-space-m) var(--lumo-space-xl);
-  margin: 0;
   font-style: initial;
   font-weight: 600;
   color: var(--lumo-shade);
@@ -108,4 +116,24 @@ img {
     display: none;
     content: unset;
   }
+}
+
+.shadow-xs {
+  box-shadow: var(--cxl-jobs-box-shadow-xs);
+}
+
+.shadow-s {
+  box-shadow: var(--cxl-jobs-box-shadow-s);
+}
+
+.shadow-m {
+  box-shadow: var(--cxl-jobs-box-shadow-m);
+}
+
+.shadow-l {
+  box-shadow: var(--cxl-jobs-box-shadow-l);
+}
+
+.shadow-xl {
+  box-shadow: var(--cxl-jobs-box-shadow-xl);
 }
