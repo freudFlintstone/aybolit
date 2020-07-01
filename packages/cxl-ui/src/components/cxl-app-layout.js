@@ -11,22 +11,23 @@ import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
 import '@vaadin/vaadin-tabs';
 import '@vaadin/vaadin-progress-bar';
 
-const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
-
 @customElement('cxl-app-layout')
 export class CXLAppLayout extends LitElement {
   @query('aside')
   asideElement;
 
+  @property({ type: String, attribute: 'aside-local-storage-key' })
+  _asideLocalStorageKey = `cxl-app-layout-aside-opened--${window.location.pathname}`;
+
   @property({ type: Boolean })
   get asideOpened() {
-    this._asideOpened = JSON.parse(localStorage.getItem(ASIDE_LOCAL_STORAGE_KEY));
+    this._asideOpened = JSON.parse(localStorage.getItem(this._asideLocalStorageKey));
 
     return this._asideOpened === null || this._asideOpened;
   }
 
   set asideOpened(value) {
-    localStorage.setItem(ASIDE_LOCAL_STORAGE_KEY, JSON.stringify(value));
+    localStorage.setItem(this._asideLocalStorageKey, JSON.stringify(value));
 
     this.requestUpdate('asideOpened', this._asideOpened);
   }
