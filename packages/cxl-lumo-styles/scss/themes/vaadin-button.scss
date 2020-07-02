@@ -1,0 +1,9 @@
+:host([theme~="outlined"]) {
+  background-color: transparent;
+  border: 1px solid var(--lumo-primary-color);
+}
+
+:host([theme~="shade"]) {
+  --_lumo-button-color: var(--lumo-shade);
+  border-color: var(--lumo-shade);
+}
