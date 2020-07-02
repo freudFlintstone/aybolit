@@ -315,7 +315,7 @@ export const CxlJobsMicrositeHomOne = () => {
                             <img
                               src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/small-img-1.jpg"
                               alt=""
-                              class="wp-image-117"
+                              class="wp-image-117 shadow-m"
                             />
                           </figure>
                         </div>
@@ -327,7 +327,7 @@ export const CxlJobsMicrositeHomOne = () => {
                             <img
                               src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/small-img-1.jpg"
                               alt=""
-                              class="wp-image-117"
+                              class="wp-image-117 shadow-m"
                             />
                           </figure>
                         </div>
@@ -339,7 +339,7 @@ export const CxlJobsMicrositeHomOne = () => {
                             <img
                               src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/small-img-1.jpg"
                               alt=""
-                              class="wp-image-117"
+                              class="wp-image-117 shadow-m"
                             />
                           </figure>
                         </div>
@@ -351,7 +351,7 @@ export const CxlJobsMicrositeHomOne = () => {
                             <img
                               src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/small-img-1.jpg"
                               alt=""
-                              class="wp-image-117"
+                              class="wp-image-117 shadow-m"
                             />
                           </figure>
                         </div>
@@ -363,7 +363,7 @@ export const CxlJobsMicrositeHomOne = () => {
                             <img
                               src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/small-img-1.jpg"
                               alt=""
-                              class="wp-image-117"
+                              class="wp-image-117 shadow-m"
                             />
                           </figure>
                         </div>
@@ -375,7 +375,7 @@ export const CxlJobsMicrositeHomOne = () => {
                             <img
                               src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/small-img-1.jpg"
                               alt=""
-                              class="wp-image-117"
+                              class="wp-image-117 shadow-m"
                             />
                           </figure>
                         </div>
@@ -399,7 +399,7 @@ export const CxlJobsMicrositeHomOne = () => {
                         <img
                           src="http://jobs.uprecords.org/wp-content/uploads/sites/4/2020/01/why-work-large-img-1.jpg"
                           alt=""
-                          class="wp-image-120"
+                          class="wp-image-120 shadow-l"
                         />
                       </figure>
                       <div class="wp-block-media-text__content">
@@ -625,7 +625,7 @@ export const CxlJobsMicrositeHomOne = () => {
                       </div>
 
                       <div class="wp-block-column">
-                        <blockquote class="wp-block-quote">
+                        <blockquote class="wp-block-quote cxl-jobs-blockquote">
                           <p>
                             One piece of the fun is organizing our 2 conferences per year –
                             <a href="#cxl-live-conference">CXL Live</a> in Austin and
