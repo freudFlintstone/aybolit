@@ -134,4 +134,44 @@ cxl-vaadin-accordion {
       background-color: var(--lumo-contrast-70pct);
     }
   }
+
+  /**
+   * Theme "cxl-jobs-listing".
+   */
+  &[theme~="cxl-jobs-listing"] {
+    h3,
+    .entry-title {
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: var(--lumo-font-size-m);
+
+      /* stylelint-disable selector-max-type */
+      a {
+        color: var(--lumo-body-text-color);
+      }
+    }
+
+    /* summary details style */
+    .location,
+    .summary-details {
+      display: inline;
+      margin-left: var(--lumo-space-l);
+      font-weight: 400;
+
+      > * {
+        display: inline;
+        margin-right: var(--lumo-space-m);
+        list-style: none;
+      }
+
+      > .highlighted {
+        color: var(--lumo-primary-text-color);
+      }
+
+      > :not(:first-child)::before {
+        margin-right: var(--lumo-space-m);
+        content: "•";
+      }
+    }
+  }
 }
