@@ -1,0 +1,84 @@
+:host {
+  --cxl-separator-size: calc(var(--lumo-space-m) * 0.75);
+  display: flex;
+  align-items: center;
+  padding: var(--lumo-space-s) var(--lumo-space-m);
+  background-color: var(--lumo-tint);
+  background-image: linear-gradient(var(--lumo-tint-5pct), var(--lumo-tint-5pct));
+  border: 1px solid var(--lumo-shade-10pct);
+  border-color: var(--lumo-shade-20pct);
+  border-radius: var(--lumo-border-radius-s);
+
+  > ::slotted(*) {
+    position: relative;
+    padding-left: var(--cxl-separator-size);
+    margin-left: var(--cxl-separator-size);
+  }
+
+  ::slotted(.job-title) {
+    width: auto;
+    margin: auto 0;
+  }
+
+  ::slotted(.job-location) {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  ::slotted(.highlighted) {
+    color: var(--lumo-primary-text-color);
+  }
+
+  ::slotted(.job-types) {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 var(--cxl-separator-size);
+    margin: 0 0 0 var(--cxl-separator-size);
+    list-style: none;
+  }
+
+  ::slotted(.job-type)::before {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    content: "";
+    background-color: var(--lumo-contrast-70pct);
+    border-radius: 50%;
+  }
+
+  ::slotted(vaadin-button) {
+    margin-left: auto;
+  }
+}
+
+:host(.sticky-featured-banner.headroom--pinned) {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  transform: translateY(0);
+}
+
+:host(.headroom--unpinned) {
+  // Needs to use imporant, otherwise the property is overwritten when headroom unpins it
+  /* stylelint-disable-next-line declaration-no-important */
+  transform: translateY(0) !important;
+}
+
+:host(:not(.headroom--pinned)) {
+  ::slotted(.job-title) {
+    display: none;
+  }
+
+  ::slotted(.job-location) {
+    margin-left: 0;
+  }
+}
+
+:host([hidden]) {
+  display: none;
+}
