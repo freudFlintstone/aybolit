@@ -1,50 +1,53 @@
-/* eslint-disable */
 /**
- *
  * JW Custom Plugin: Theater mode
  * Description: Resize Player
  * ID: cxlJWTTheaterMode
  * Author: kyle@cxl.com
  * Dependencies: none
  *
+ * @todo refactor for multi-video support
+ * @todo integrate with cxl app layout sidebar toggle
+ * @todo integrate with transcript container
  */
 
 (() => {
-  const id = 'cxlJWTheaterMode';
 
-  let playerContainer;
+    const id = 'cxlJWTheaterMode';
 
-  class plugin {
-    constructor(playerInstance) {
-      // Start Plugin Code
+    let playerContainer;
 
-      let player = '';
+    class plugin {
+        constructor(playerInstance) {
+            // Start Plugin Code
 
-      const { path } = data;
-      const buttonId = 'toggle-theater-mode';
-      const iconPath = `${path}images/wide-tv.svg`;
-      const tooltipText = 'Toggle Theater Mode';
-      /** *M Start Theater Mode Interactivity */
-      const buttonClickAction = () => {
-        playerContainer.classList.toggle('theater-mode');
-      };
+            let player = '';
 
-      playerInstance.on('ready', () => {
-        // Call the player's `addButton` API method to add the custom button
-        playerInstance.addButton(iconPath, tooltipText, buttonClickAction, buttonId);
-      });
+            const path = data.path;
+            const buttonId = 'toggle-theater-mode';
+            const iconPath = path + 'images/wide-tv.svg';
+            const tooltipText = 'Toggle Theater Mode';
+            /** *M Start Theater Mode Interactivity */
+            const buttonClickAction = () => {
+                playerContainer.classList.toggle('theater-mode');
+            };
 
-      playerInstance.on('viewable', () => {
-        player = playerInstance.getContainer();
-        playerContainer = document.getElementById(`${player.getAttribute('id')}`).parentElement;
-      });
-      /** * End Theater Mode Interactivity M-END */
-      // End Plugin Code
+            playerInstance.on('ready', () => {
+                // Call the player's `addButton` API method to add the custom button
+                playerInstance.addButton(iconPath, tooltipText, buttonClickAction, buttonId);
+            });
+
+            playerInstance.on('viewable', () => {
+                player = playerInstance.getContainer();
+                playerContainer = document.getElementById(`${player.getAttribute('id')}`).parentElement;
+            });
+            /** * End Theater Mode Interactivity M-END*/
+            // End Plugin Code
+        }
     }
-  }
 
-  plugin.version = '1.0.0';
+    plugin.version = '1.0.0';
 
-  const registerPlugin = window.jwplayerPluginJsonp || window.jwplayer().registerPlugin;
-  registerPlugin(id, '1.0.0', plugin);
+    const registerPlugin = window.jwplayerPluginJsonp || window.jwplayer().registerPlugin;
+    registerPlugin(id, '1.0.0', plugin);
+
 })();
