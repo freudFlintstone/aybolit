@@ -3,12 +3,12 @@ import '@conversionxl/cxl-ui/src/components/cxl-app-layout.js';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
 
 export default {
-  title: 'CXL UI'
+  title: 'CXL UI | cxl-app-layout'
 };
 
-export const CxlAppLayout = () => {
+export const CxlAppLayoutThemeCxlInstitute = () => {
   return html`
-    <cxl-app-layout id="container">
+    <cxl-app-layout id="container" theme="cxl-institute" aside-local-storage-key="cxl-institute-aside-opened">
       <cxl-marketing-nav slot="header">
         <vaadin-tabs
           id="menu-primary-items"
@@ -174,6 +174,6 @@ export const CxlAppLayout = () => {
 `;
 };
 
-CxlAppLayout.story = {
-  name: 'cxl-app-layout'
+CxlAppLayoutThemeCxlInstitute.story = {
+  name: '[theme=cxl-institute]'
 };
