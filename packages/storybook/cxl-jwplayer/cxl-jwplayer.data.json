@@ -128,5 +128,107 @@
     },
     "transcript": false,
     "chapters": false
+  },
+  "fZ0XiGdb": {
+    "path": "https://conversionxli.warmpress.com/wp-content/plugins/cxl-jwplayer/",
+    "plugins": [
+      "cxl-vtt-parser",
+      "cxlJWTranscript",
+      "cxlJWChapters"
+    ],
+    "media_config": {
+      "title": "Adobe Analytics Lesson 01: Starting out with Adobe Analytics",
+      "description": "Lesson Objectives:\r\n\r\nKnow your key business objectives and how to measure them\r\nUnderstand how Adobe Analytics collects data\r\nIntroduction to Analysis Workspace",
+      "kind": "Single Item",
+      "playlist": [
+        {
+          "title": "Adobe Analytics Lesson 01: Starting out with Adobe Analytics",
+          "mediaid": "fZ0XiGdb",
+          "link": "https://cxl.com/institute/lesson/starting-out-with-adobe-analytics/",
+          "image": "https://cdn.jwplayer.com/v2/media/fZ0XiGdb/poster.jpg?width=720",
+          "images": [
+            {
+              "src": "https://cdn.jwplayer.com/v2/media/fZ0XiGdb/poster.jpg?width=320",
+              "width": 320,
+              "type": "image/jpeg"
+            },
+            {
+              "src": "https://cdn.jwplayer.com/v2/media/fZ0XiGdb/poster.jpg?width=480",
+              "width": 480,
+              "type": "image/jpeg"
+            },
+            {
+              "src": "https://cdn.jwplayer.com/v2/media/fZ0XiGdb/poster.jpg?width=640",
+              "width": 640,
+              "type": "image/jpeg"
+            },
+            {
+              "src": "https://cdn.jwplayer.com/v2/media/fZ0XiGdb/poster.jpg?width=720",
+              "width": 720,
+              "type": "image/jpeg"
+            }
+          ],
+          "duration": 3350,
+          "pubdate": 1577988966,
+          "description": "Lesson Objectives:\r\n\r\nKnow your key business objectives and how to measure them\r\nUnderstand how Adobe Analytics collects data\r\nIntroduction to Analysis Workspace",
+          "tags": "Adobe Analytics,slug--adobe-analytics,course--lesson",
+          "sources": [
+            {
+              "default": false,
+              "type": "hls",
+              "file": "https://cdn.jwplayer.com/manifests/fZ0XiGdb.m3u8",
+              "label": "0",
+              "mimeType": "application/vnd.apple.mpegurl",
+              "liveSyncDuration": 25,
+              "preload": "metadata"
+            }
+          ],
+          "tracks": [
+            {
+              "file": "https://cdn.jwplayer.com/tracks/t5TenddO",
+              "kind": "captions",
+              "label": "English"
+            },
+            {
+              "file": "https://cdn.jwplayer.com/tracks/Vd46YBrJ.vtt",
+              "kind": "chapters",
+              "label": "Chapters"
+            },
+            {
+              "file": "https://cdn.jwplayer.com/strips/fZ0XiGdb-120.vtt",
+              "kind": "thumbnails"
+            }
+          ],
+          "variations": [],
+          "asset_id": "vid-adobe-analytics--course--lesson-01",
+          "post_order": "1",
+          "wp_parent_id": "826531",
+          "wp_post_id": "1627057"
+        }
+      ],
+      "feed_instance_id": "7a05a730-a637-416f-9a8d-adca6d512415",
+      "controls": true,
+      "playbackRateControls": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.25,
+        1.5,
+        1.75,
+        2
+      ],
+      "displaydescription": false,
+      "stretching": "uniform",
+      "skin": {
+        "name": "cxl-institute"
+      },
+      "plugins": {
+        "cxlJWTranscript": true,
+        "cxlJWChapters": false
+      }
+    },
+    "transcript": true,
+    "chapters": false
   }
 }

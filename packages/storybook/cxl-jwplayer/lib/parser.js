@@ -1,34 +1,28 @@
-<script>
-  // @todo Remove this after user agent stylesheet bug is fixed
-  // @see https://bugs.chromium.org/p/chromium/issues/detail?id=946975
-  delete Document.prototype.adoptedStyleSheets;
-</script>
-<link rel="stylesheet" id="cxl-font-css"  href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900|Libre+Baskerville:400,400i,700" type="text/css" media="all">
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
 
-<!-- Load JW Player -->
-<script src="https://cdn.jwplayer.com/libraries/ph5ocxbr.js"></script>
-<script>
+// Not intended to be fast, but if you can make it faster, please help out!
 
 (function () {
-    var WebVTTParser = function() {
+    const WebVTTParser = function() {
       this.parse = function(input, mode) {
-        //XXX need global search and replace for \0
-        var NEWLINE = /\r\n|\r|\n/,
-            startTime = Date.now(),
-            linePos = 0,
-            lines = input.split(NEWLINE),
-            alreadyCollected = false,
-            cues = [],
-            errors = []
+        // XXX need global search and replace for \0
+        const NEWLINE = /\r\n|\r|\n/;
+            const startTime = Date.now();
+            let linePos = 0;
+            const lines = input.split(NEWLINE);
+            let alreadyCollected = false;
+            const cues = [];
+            const errors = []
         function err(message, col) {
-          errors.push({message:message, line:linePos+1, col:col})
+          errors.push({message, line:linePos+1, col})
         }
 
-        var line = lines[linePos],
-            lineLength = line.length,
-            signature = "WEBVTT",
-            bom = 0,
-            signature_length = signature.length
+        const line = lines[linePos];
+            const lineLength = line.length;
+            const signature = "WEBVTT";
+            let bom = 0;
+            let signature_length = signature.length
 
         /* Byte order mark */
         if (line[0] === "\ufeff") {
@@ -83,7 +77,7 @@
             tree:null
           }
 
-          var parseTimings = true
+          let parseTimings = true
 
           if(lines[linePos].indexOf("-->") == -1) {
             cue.id = lines[linePos]
@@ -117,8 +111,8 @@
 
           /* TIMINGS */
           alreadyCollected = false
-          var timings = new WebVTTCueTimingsAndSettingsParser(lines[linePos], err)
-          var previousCueStart = 0
+          const timings = new WebVTTCueTimingsAndSettingsParser(lines[linePos], err)
+          let previousCueStart = 0
           if(cues.length > 0) {
             previousCueStart = cues[cues.length-1].startTime
           }
@@ -154,7 +148,7 @@
           }
 
           /* CUE TEXT PROCESSING */
-          var cuetextparser = new WebVTTCueTextParser(cue.text, err, mode)
+          const cuetextparser = new WebVTTCueTextParser(cue.text, err, mode)
           cue.tree = cuetextparser.parse(cue.startTime, cue.endTime)
           cues.push(cue)
         }
@@ -170,19 +164,19 @@
           return 0
         })
         /* END */
-        return {cues:cues, errors:errors, time:Date.now()-startTime}
+        return {cues, errors, time:Date.now()-startTime}
       }
     }
 
     var WebVTTCueTimingsAndSettingsParser = function(line, errorHandler) {
-      var SPACE = /[\u0020\t\f]/,
-          NOSPACE = /[^\u0020\t\f]/,
-          line = line,
-          pos = 0,
-          err = function(message) {
+      const SPACE = /[\u0020\t\f]/;
+          const NOSPACE = /[^\u0020\t\f]/;
+          var line = line;
+          let pos = 0;
+          const err = function(message) {
             errorHandler(message, pos+1)
-          },
-          spaceBeforeSetting = true
+          };
+          let spaceBeforeSetting = true
       function skip(pattern) {
         while(
           line[pos] != undefined &&
@@ -192,7 +186,7 @@
         }
       }
       function collect(pattern) {
-        var str = ""
+        let str = ""
         while(
           line[pos] != undefined &&
           pattern.test(line[pos])
@@ -204,11 +198,11 @@
       }
       /* http://dev.w3.org/html5/webvtt/#collect-a-webvtt-timestamp */
       function timestamp() {
-        var units = "minutes",
-            val1,
-            val2,
-            val3,
-            val4
+        let units = "minutes";
+            let val1;
+            let val2;
+            let val3;
+            let val4
         // 3
         if(line[pos] == undefined) {
           err("No timestamp found.")
@@ -279,15 +273,15 @@
 
       /* http://dev.w3.org/html5/webvtt/#parse-the-webvtt-settings */
       function parseSettings(input, cue) {
-        var settings = input.split(SPACE),
-            seen = []
-        for(var i=0; i < settings.length; i++) {
+        const settings = input.split(SPACE);
+            const seen = []
+        for(let i=0; i < settings.length; i++) {
           if(settings[i] == "")
             continue
 
-          var index = settings[i].indexOf(':'),
-              setting = settings[i].slice(0, index),
-              value = settings[i].slice(index + 1)
+          const index = settings[i].indexOf(':');
+              const setting = settings[i].slice(0, index);
+              const value = settings[i].slice(index + 1)
 
           if(seen.indexOf(setting) != -1) {
             err("Duplicate setting.")
@@ -351,9 +345,9 @@
             }
             cue.size = parseInt(value, 10)
           } else if(setting == "align") { // alignment
-            var alignValues = ["start", "middle", "end", "left", "right"]
+            const alignValues = ["start", "middle", "end", "left", "right"]
             if(alignValues.indexOf(value) == -1) {
-              err("Alignment can only be set to one of " + alignValues.join(", ") + ".")
+              err(`Alignment can only be set to one of ${  alignValues.join(", ")  }.`)
               continue
             }
             cue.alignment = value
@@ -412,7 +406,7 @@
         return true
       }
       this.parseTimestamp = function() {
-        var ts = timestamp()
+        const ts = timestamp()
         if(line[pos] != undefined) {
           err("Timestamp must not have trailing characters.")
           return
@@ -422,41 +416,41 @@
     }
 
     var WebVTTCueTextParser = function(line, errorHandler, mode) {
-      var line = line,
-          pos = 0,
-          err = function(message) {
+      var line = line;
+          let pos = 0;
+          const err = function(message) {
             if(mode == "metadata")
               return
             errorHandler(message, pos+1)
           }
 
       this.parse = function(cueStart, cueEnd) {
-        var result = {children:[]},
-            current = result,
-            timestamps = []
+        const result = {children:[]};
+            let current = result;
+            const timestamps = []
 
         function attach(token) {
           current.children.push({type:"object", name:token[1], classes:token[2], children:[], parent:current})
           current = current.children[current.children.length-1]
         }
         function inScope(name) {
-          var node = current
+          let node = current
           while(node) {
             if(node.name == name)
               return true
             node = node.parent
           }
-          return
+
         }
 
         while(line[pos] != undefined) {
-          var token = nextToken()
+          const token = nextToken()
           if(token[0] == "text") {
             current.children.push({type:"text", value:token[1], parent:current})
           } else if(token[0] == "start tag") {
             if(mode == "chapters")
               err("Start tags not allowed in chapter title text.")
-            var name = token[1]
+            const name = token[1]
             if(name != "v" && name != "lang" && token[3] != "") {
               err("Only <v> and <lang> can have an annotation.")
             }
@@ -499,8 +493,8 @@
           } else if(token[0] == "timestamp") {
             if(mode == "chapters")
               err("Timestamp not allowed in chapter title text.")
-            var timings = new WebVTTCueTimingsAndSettingsParser(token[1], err),
-                timestamp = timings.parseTimestamp()
+            const timings = new WebVTTCueTimingsAndSettingsParser(token[1], err);
+                const timestamp = timings.parseTimestamp()
             if(timestamp != undefined) {
               if(timestamp <= cueStart || timestamp >= cueEnd) {
                 err("Timestamp must be between start timestamp and end timestamp.")
@@ -523,12 +517,12 @@
       }
 
       function nextToken() {
-        var state = "data",
-            result = "",
-            buffer = "",
-            classes = []
+        let state = "data";
+            let result = "";
+            let buffer = "";
+            const classes = []
         while(line[pos-1] != undefined || pos == 0) {
-          var c = line[pos]
+          const c = line[pos]
           if(state == "data") {
             if(c == "&") {
               buffer = c
@@ -562,7 +556,7 @@
                 result += "\u00A0"
               } else {
                 err("Incorrect escape.")
-                result += buffer + ";"
+                result += `${buffer  };`
               }
               state = "data"
             } else if(c == "<" || c == undefined) {
@@ -637,27 +631,27 @@
               }
               buffer = buffer.split(/[\u0020\t\f\r\n]+/).filter(function(item) { if(item) return true }).join(" ")
               return ["start tag", result, classes, buffer]
-            } else {
-              buffer +=c
             }
+              buffer +=c
+
           } else if(state == "end tag") {
             if(c == ">" || c == undefined) {
               if(c == ">") {
                 pos++
               }
               return ["end tag", result]
-            } else {
-              result += c
             }
+              result += c
+
           } else if(state == "timestamp tag") {
             if(c == ">" || c == undefined) {
               if(c == ">") {
                 pos++
               }
               return ["timestamp", result]
-            } else {
-              result += c
             }
+              result += c
+
           } else {
             err("Never happens.") // The joke is it might.
           }
@@ -667,39 +661,39 @@
       }
     }
 
-    var WebVTTSerializer = function() {
+    const WebVTTSerializer = function() {
       function serializeTree(tree) {
-        var result = ""
-        for (var i = 0; i < tree.length; i++) {
-          var node = tree[i]
+        let result = ""
+        for (let i = 0; i < tree.length; i++) {
+          const node = tree[i]
           if(node.type == "text") {
             result += node.value
           } else if(node.type == "object") {
-            result += "<" + node.name
+            result += `<${  node.name}`
             if(node.classes) {
-              for(var y = 0; y < node.classes.length; y++) {
-                result += "." + node.classes[y]
+              for(let y = 0; y < node.classes.length; y++) {
+                result += `.${  node.classes[y]}`
               }
             }
             if(node.value) {
-              result += " " + node.value
+              result += ` ${  node.value}`
             }
             result += ">"
             if(node.children)
               result += serializeTree(node.children)
-            result += "</" + node.name + ">"
+            result += `</${  node.name  }>`
           } else {
-            result += "<" + node.value + ">"
+            result += `<${  node.value  }>`
           }
         }
         return result
       }
       function serializeCue(cue) {
-        return cue.startTime + " " + cue.endTime + "\n" + serializeTree(cue.tree.children) + "\n\n"
+        return `${cue.startTime  } ${  cue.endTime  }\n${  serializeTree(cue.tree.children)  }\n\n`
       }
       this.serialize = function(cues) {
-        var result = ""
-        for(var i=0;i<cues.length;i++) {
+        let result = ""
+        for(let i=0;i<cues.length;i++) {
           result += serializeCue(cues[i])
         }
         return result
@@ -715,4 +709,3 @@
     if (typeof window !== 'undefined') exportify(window);
     if (typeof exports !== 'undefined') exportify(exports);
   })()
-</script>

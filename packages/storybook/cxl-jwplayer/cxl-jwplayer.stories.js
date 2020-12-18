@@ -8,10 +8,17 @@ export default {
 
 export const CxlJWPlayer = () => {
   return html`
+
     <style>
       .jwplayers-wrapper {
         max-width: 800px;
+        margin: auto;
       }
+
+      cxl-jwplayer {
+        margin: 50px;
+      }
+
     </style>
 
     <div class="jwplayers-wrapper">
