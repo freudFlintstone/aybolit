@@ -1,10 +1,16 @@
 import { LitElement, html, customElement, property } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
-import cxlJwplayerGlobalStyles from '../styles/global/cxl-jwplayer-css.js';
+import CXLJWPlayerGlobalStyles from '../styles/global/cxl-jwplayer-css.js';
+// import { JWTranscriptPlugin } from '../plugins/cxlJWTranscript.js'
+
+const dynamicImport = async (plugin) => {
+  const imported = await import(`../plugins/${plugin}.js`)
+  return imported.default
+}
 
 @customElement('cxl-jwplayer')
-export class CxlJwPlayer extends LitElement {
+export class CXLJWPlayer extends LitElement {
   @property({ type: Object })
   player = null;
 
@@ -22,20 +28,21 @@ export class CxlJwPlayer extends LitElement {
   }
 
   /*
-   * Implemented to avoid default, which attaches a shadowDOM tree byt default.
-   */
+  * Implemented to avoid default, which attaches a shadowDOM tree byt default.
+  */
   createRenderRoot() {
     return this;
   }
 
   render() {
     return html`
-      <div id="cxl_transcript_container_${this.mediaId}" class="cxl-jwplayer-container">
+      <div id="jwplayer_container_${this.mediaId}" class="cxl-jwplayer-container">
         <div id="cxl_jwplayer_${this.mediaId}" class="cxl-jwplayer"></div>
         ${this.config.transcript
           ? html`
               <div id="cxl_transcript_container" class="transcript-container">
                 <div id="searchbox" class="searchbox">
+                  <iron-icon icon="lumo:search"></iron-icon>
                   <input
                     id="search"
                     type="search"
@@ -64,7 +71,7 @@ export class CxlJwPlayer extends LitElement {
 
     this.setupPlayer();
 
-    registerGlobalStyles(cxlJwplayerGlobalStyles, {
+    registerGlobalStyles(CXLJWPlayerGlobalStyles, {
       moduleId: 'cxl-jwplayer-global'
     });
   }
@@ -83,6 +90,24 @@ export class CxlJwPlayer extends LitElement {
     if (!this.mediaId) this.mediaId = this.config.media_config.playlist[0].mediaId;
 
     const playerDiv = this.querySelector(`#cxl_jwplayer_${this.mediaId}`);
+    this.loadPlugins(this.config.media_config)
     this.player = this.jwplayer(playerDiv).setup(this.config.media_config);
+    /**
+     *
+     * Check config and load necessary plugins
+     *
+     */
+  }
+
+  loadPlugins(config) {
+    const plugins = Object.keys(config.plugins);
+    // Check all tracks against available plugins
+    plugins.forEach( async (plugin) => {
+      if (!config.plugins[plugin]) return
+      const pluginClass = await dynamicImport(plugin);
+
+      this.player.registerPlugin(plugin, '6.0', pluginClass)
+      console.info('loading plugin:', pluginClass.id, pluginClass.version)
+    })
   }
 }
