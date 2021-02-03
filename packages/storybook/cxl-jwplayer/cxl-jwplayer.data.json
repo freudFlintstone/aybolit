@@ -223,10 +223,7 @@
       "skin": {
         "name": "cxl-institute"
       },
-      "plugins": {
-        "cxlJWTranscript": true,
-        "cxlJWChapters": false
-      }
+      "plugins": {}
     },
     "transcript": true,
     "chapters": false

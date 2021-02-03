@@ -2,12 +2,6 @@ import { LitElement, html, customElement, property } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
 import CXLJWPlayerGlobalStyles from '../styles/global/cxl-jwplayer-css.js';
-// import { JWTranscriptPlugin } from '../plugins/cxlJWTranscript.js'
-
-const dynamicImport = async (plugin) => {
-  const imported = await import(`../plugins/${plugin}.js`)
-  return imported.default
-}
 
 @customElement('cxl-jwplayer')
 export class CXLJWPlayer extends LitElement {
@@ -28,8 +22,8 @@ export class CXLJWPlayer extends LitElement {
   }
 
   /*
-  * Implemented to avoid default, which attaches a shadowDOM tree byt default.
-  */
+   * Implemented to avoid default, which attaches a shadowDOM tree byt default.
+   */
   createRenderRoot() {
     return this;
   }
@@ -72,42 +66,40 @@ export class CXLJWPlayer extends LitElement {
     this.setupPlayer();
 
     registerGlobalStyles(CXLJWPlayerGlobalStyles, {
-      moduleId: 'cxl-jwplayer-global'
+      moduleId: 'cxl-jwplayer-global',
     });
   }
 
+  /**
+   *
+   * Configure and Setup the Player using config object assigned by parent
+   *
+   */
   setupPlayer() {
-    /**
-     *
-     * Configure and Setup the Player using config object assigned by parent
-     *
-     */
     if (!Object.keys(this.config).length || !this.config.media_config) {
       // eslint-disable-next-line no-console
       console.warn('No media config data for player setup.');
     }
 
-    if (!this.mediaId) this.mediaId = this.config.media_config.playlist[0].mediaId;
-
     const playerDiv = this.querySelector(`#cxl_jwplayer_${this.mediaId}`);
-    this.loadPlugins(this.config.media_config)
+    this.loadPlugins();
     this.player = this.jwplayer(playerDiv).setup(this.config.media_config);
-    /**
-     *
-     * Check config and load necessary plugins
-     *
-     */
   }
 
-  loadPlugins(config) {
-    const plugins = Object.keys(config.plugins);
+  /**
+   *
+   * Check config and load necessary plugins
+   *
+   */
+  loadPlugins() {
+    const setup = this.config;
+    const config = setup.media_config;
+    const plugins = Object.keys(setup.plugins);
     // Check all tracks against available plugins
-    plugins.forEach( async (plugin) => {
-      if (!config.plugins[plugin]) return
-      const pluginClass = await dynamicImport(plugin);
-
-      this.player.registerPlugin(plugin, '6.0', pluginClass)
-      console.info('loading plugin:', pluginClass.id, pluginClass.version)
-    })
+    plugins.forEach(async (plugin) => {
+      if (!config.plugins[plugin] || plugin.indexOf('-') !== -1) return;
+      config.plugins[plugin] = true;
+    });
+    setup.media_config = config;
   }
 }
